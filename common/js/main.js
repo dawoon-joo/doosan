@@ -55,10 +55,13 @@ var app = new (function () {
         document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.add('prev');
         document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.remove('active');
         nextPage.classList.add('active');
-        if (nextPage.id === 'depth-1-3') {
+        if (nextPage.id === 'depth-1-2') {
+          this.animateText('#depth-1-2 .mask', 0.7);
+        } else if (nextPage.id === 'depth-1-3') {
           var prevPage = nextPage.previousElementSibling;
           gsap.to(nextPage, { delay: 0.7, duration: 0.5, autoAlpha: 1 });
           gsap.to(prevPage, { delay: 1.3, duration: 0, autoAlpha: 0 });
+          this.animateText('#depth-1-3 .mask', 1);
         }
         this.changeVertController();
       }
@@ -69,7 +72,9 @@ var app = new (function () {
         document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.remove('active');
         prevPage.classList.remove('prev');
         prevPage.classList.add('active');
-        if (prevPage.id === 'depth-1-2') {
+        if (prevPage.id === 'depth-1-1') {
+        } else if (prevPage.id === 'depth-1-2') {
+          this.animateText('#depth-1-2 .mask', 1.4);
           var nextNextPage = prevPage.nextElementSibling;
           gsap.to(nextNextPage, { delay: 0.7, duration: 1, autoAlpha: 0, });
           gsap.to(nextNextPage, { duration: 0, y: 0, });
@@ -144,6 +149,38 @@ var app = new (function () {
       });
     });
   };
+
+  this.animateText = function(selector, delay) {
+    console.log('animateText');
+    const element = document.querySelector(selector);
+    const text = element.textContent;
+    element.innerHTML = '';
+
+    text.split('').forEach(char => {
+        const span = document.createElement('span');
+        if (char === ' ') {
+            span.innerHTML = '&nbsp;';
+        } else {
+            span.textContent = char;
+        }
+        element.appendChild(span);
+    });
+
+    const tl1 = gsap.timeline();
+    tl1.to(`${selector} span`, {
+        color: '#005eb8', 
+        stagger: 0.05,
+        duration: 0.2,
+        delay: delay
+    });
+
+    const tl2 = gsap.timeline({ delay: delay + 0.6 });
+    tl2.to(`${selector} span`, {
+        color: '#000', 
+        stagger: 0.05,
+        duration: 0.2
+    });
+  }
 
   this.init = function (_parent) {
     var _this = this;

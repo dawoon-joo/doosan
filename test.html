@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animation Example</title>
+    <style>
+        .desc {
+            font-size: 80px;
+            font-weight: bold;
+            color: #000; /* 초기 색상을 검정색으로 설정 */
+        }
+        .desc span {
+            display: inline-block;
+            transition: color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-wrap">
+        <p class="desc">두산 밥캣</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const desc = document.querySelector('.desc');
+            const text = desc.textContent;
+            desc.innerHTML = '';
+
+            text.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                desc.appendChild(span);
+            });
+
+            const tl1 = gsap.timeline();
+            tl1.to('.desc span', {
+                color: '#005eb8',
+                stagger: 0.05,
+                duration: 0.2
+            });
+
+            const tl2 = gsap.timeline({ delay: 0.6 });
+            tl2.to('.desc span', {
+                color: '#000',
+                stagger: 0.05,
+                duration: 0.2
+            });
+        });
+    </script>
+</body>
+</html>
