@@ -8,7 +8,7 @@ h1 { font-size: 80px; font-weight: bold; line-height: normal;}
 /* header */
 .header { position: fixed; width: 100%; height: 92px; background: transparent; z-index: 10; } 
 .header .header-inner { max-width: 1800px; width: 95%; height: 100%; margin: 0 auto; position: relative; } 
-.header .logo { position: absolute; top: 50%; left: 5%; transform: translateY(-50%); width: 121px; height: 17px; background: url(/common/images/logo-hd.png) no-repeat center; z-index: 1; } 
+.header .logo { position: absolute; top: 50%; left: 5%; transform: translateY(-50%); width: 121px; height: 17px; background: url(../images/logo-hd.png) no-repeat center; z-index: 1; } 
 .header .gnb { position: absolute; top: 0; display: flex; justify-content: center; width: 100%; height: 100%; overflow: hidden; } 
 .header .gnb .depth1 { display: flex; } 
 .header .gnb a { color: #fff; padding: 20px 30px; font-weight: 500; display: flex; } 
