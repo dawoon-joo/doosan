@@ -42,6 +42,7 @@ var app = new (function () {
 
   this.movePage = function (_derection, _option) {
     var _this = this;
+    console.log(_this);
     var derection = _derection;
     var option = _option;
     var aniSec = 600;
@@ -59,9 +60,10 @@ var app = new (function () {
           this.animateText('#depth-1-2 .mask', 0.7);
         } else if (nextPage.id === 'depth-1-3') {
           var prevPage = nextPage.previousElementSibling;
-          gsap.to(nextPage, { delay: 0.7, duration: 0.5, autoAlpha: 1 });
-          gsap.to(prevPage, { delay: 1.3, duration: 0, autoAlpha: 0 });
-          this.animateText('#depth-1-3 .mask', 1);
+          gsap.to(nextPage, { delay: 0.6, duration: 0.5, autoAlpha: 1 });
+          gsap.to(prevPage, { delay: 1.2, duration: 0, autoAlpha: 0 });
+          nextPage.style.pointerEvents = 'auto';
+          this.animateText('#depth-1-3 .mask', 0.8);
         }
         this.changeVertController();
       }
@@ -74,25 +76,63 @@ var app = new (function () {
         prevPage.classList.add('active');
         if (prevPage.id === 'depth-1-1') {
         } else if (prevPage.id === 'depth-1-2') {
-          this.animateText('#depth-1-2 .mask', 1.4);
+          this.animateText('#depth-1-2 .mask', 0.8);
           var nextNextPage = prevPage.nextElementSibling;
-          gsap.to(nextNextPage, { delay: 0.7, duration: 1, autoAlpha: 0, });
+          gsap.to(nextNextPage, { delay: 0.6, duration: 0.5, autoAlpha: 0, });
           gsap.to(nextNextPage, { duration: 0, y: 0, });
-          gsap.to(prevPage, { duration: 0.5, autoAlpha: 1, });
+          gsap.to(prevPage, { duration: 0, autoAlpha: 1, });
+          nextNextPage.style.pointerEvents = 'none';
+        } else if (prevPage.id === 'depth-1-3') {
+          var dots = document.querySelectorAll('.paging-dot .dots a');
         }
         this.changeVertController();
       }
     } else {
       // dots click
       this.currentPage = _derection;
+      console.log();
       this.changeVertController();
-      document.querySelector('#' + _this.parrentPage + ' .page-vertical.active').classList.remove('active');
-      document.querySelector('#' + _this.parrentPage + ' .page-vertical.active').classList.remove('prev');
-      document.getElementById(_derection).classList.add('active');
-      var prevAll = document.getElementById(_derection).previousElementSiblings;
-      var nextAll = document.getElementById(_derection).nextElementSiblings;
-      prevAll.forEach(function (el) { el.classList.add('prev'); });
-      nextAll.forEach(function (el) { el.classList.remove('prev'); });
+
+      var currentActivePage = document.querySelector('#' + _this.parrentPage + ' .page-vertical.active');
+      if (currentActivePage) {
+          currentActivePage.classList.remove('active');
+          currentActivePage.classList.remove('prev');
+      }
+
+      var newActivePage = document.getElementById(_derection);
+      if (newActivePage) {
+          newActivePage.classList.add('active');
+
+          var prevElement = newActivePage.previousElementSibling;
+          while (prevElement) {
+              prevElement.classList.add('prev');
+              prevElement = prevElement.previousElementSibling;
+          }
+
+          var nextElement = newActivePage.nextElementSibling;
+          while (nextElement) {
+              nextElement.classList.remove('prev');
+              nextElement = nextElement.nextElementSibling;
+          }
+
+          // 조건부 효과 적용
+          if (newActivePage.id === 'depth-1-2') {
+            this.animateText('#depth-1-2 .mask', 0.7);
+            var nextPage = newActivePage.nextElementSibling;
+            gsap.to(nextPage, { delay: 0.6, duration: 0.5, autoAlpha: 0, });
+            gsap.to(nextPage, { duration: 0, y: 0, });
+            gsap.to(newActivePage, { duration: 0, autoAlpha: 1, });
+            nextPage.style.pointerEvents = 'none';
+          } else if (newActivePage.id === 'depth-1-3') {
+              var prevPage = newActivePage.previousElementSibling;
+              gsap.to(newActivePage, { delay: 0.6, duration: 0.5, autoAlpha: 1 });
+              newActivePage.style.pointerEvents = 'auto';
+              this.animateText('#depth-1-3 .mask', 0.8);
+          } else { 
+            gsap.to(document.getElementById('depth-1-3'), { delay: 0.6, duration: 0.5, autoAlpha: 0, });
+            document.getElementById('depth-1-3').style.pointerEvents = 'none';
+          }
+      }
     }
 
     setTimeout(function () {
@@ -113,15 +153,19 @@ var app = new (function () {
 
     // 백그라운드 이미지 변경에 따른 컬러 변경
     var dotsContainer = document.querySelector('.paging-dot .dots');
-    if (this.currentPage == 'depth-1-2' || this.currentPage == 'depth-1-4' || this.currentPage == 'depth-1-5') {
+    if (this.currentPage !== 'depth-1-1') {
+      dotsContainer.classList.add('type1');
+    } else {
+      dotsContainer.classList.remove('type1');
+    }
+    if (this.currentPage == 'depth-1-2' || this.currentPage == 'depth-1-3' || this.currentPage == 'depth-1-5') {
       dotsContainer.classList.add('type2');
     } else {
       dotsContainer.classList.remove('type2');
     }
-    if (this.currentPage == 'depth-1-5') {
-      dotsContainer.classList.add('type-last');
-    } else {
-      dotsContainer.classList.remove('type-last');
+    if (this.currentPage == 'depth-1-3') {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[1].classList.add('active'); 
     }
   };
 
@@ -136,6 +180,7 @@ var app = new (function () {
       dot.addEventListener('click', function () {
         var page = _this.currentPage.substring(0, 8) + (Array.prototype.indexOf.call(dots, dot) + 1);
         _this.movePage(page);
+        console.log(page);
       });
     });
   };
