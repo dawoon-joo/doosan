@@ -41,7 +41,7 @@ h2 { font-size: 50px; font-weight: bold; line-height: normal;}
 .page-vertical.prev { transform: scale(0.96) translateY(-20%); } 
 .page-vertical:nth-child(2).prev { transform: none; } 
 .page-vertical:nth-child(2),
-.page-vertical:nth-child(3) { padding-top: 170px;} 
+.page-vertical:nth-child(3) { display: flex; justify-content: center; align-items: center;} 
 .page-vertical:nth-child(3) { opacity: 0; visibility: hidden; } 
 /* main-visaul */
 .main-visual .content-body { position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
