@@ -1,15 +1,11 @@
-
-// // wheel scroll
-
 var link = '';
-
-$(window).on('load', function () {
+window.addEventListener('load', function () {
   var browser = '';
   app.init(link);
 });
 
 var app = new (function () {
-  this.$swipeH = $('.page-vertical');
+  this.$swipeH = document.querySelectorAll('.page-vertical');
   this.parrentPage = 'depth-1';
   this.currentPage = 'depth-1-1';
   this.pageType = 'single';
@@ -24,23 +20,13 @@ var app = new (function () {
   this.drag = function () {
     var _this = this;
 
-    $('#main-contents').on('mousewheel DOMMouseScroll', function (e) {
-      console.log('dasd')
+    document.getElementById('main-contents').addEventListener('wheel', function (e) {
       if (_this.is_pageAnimating) {
+        e.preventDefault();
         return false;
       }
 
-      var delta = 0;
-
-      if (!event) event = window.event;
-      if (event.wheelDelta) {
-        delta = event.wheelDelta / 120;
-        if (window.opera) {
-          delta = -delta;
-        }
-      } else if (event.detail) {
-        delta = -event.detail / 3;
-      }
+      var delta = e.deltaY || -e.wheelDelta || e.detail;
 
       if (delta > 0) {
         if (!_this.is_downScrollLock) {
@@ -62,57 +48,46 @@ var app = new (function () {
 
     this.is_pageAnimating = true;
 
-    if (derection == 'up') {
-      if (
-        $('#' + this.parrentPage)
-          .find('.page-vertical.active')
-          .next().length > 0
-      ) {
-        this.currentPage = $('#' + this.parrentPage)
-          .find('.page-vertical.active')
-          .next('.page-vertical')
-          .attr('id');
-        $('#' + this.parrentPage)
-          .find('.page-vertical.active')
-          .addClass('prev')
-          .removeClass('active')
-          .next()
-          .addClass('active');
+    if (derection == 'down') {
+      var nextPage = document.querySelector('#' + this.parrentPage + ' .page-vertical.active').nextElementSibling;
+      if (nextPage) {
+        this.currentPage = nextPage.id;
+        document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.add('prev');
+        document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.remove('active');
+        nextPage.classList.add('active');
+        if (nextPage.id === 'depth-1-3') {
+          var prevPage = nextPage.previousElementSibling;
+          gsap.to(nextPage, { delay: 0.7, duration: 0.5, autoAlpha: 1 });
+          gsap.to(prevPage, { delay: 1.3, duration: 0, autoAlpha: 0 });
+        }
         this.changeVertController();
       }
-    } else if (derection == 'down') {
-      if (
-        $('#' + this.parrentPage)
-          .find('.page-vertical.active')
-          .prev().length > 0
-      ) {
-        this.currentPage = $('#' + this.parrentPage)
-          .find('.page-vertical.active')
-          .prev('.page-vertical')
-          .attr('id');
-        $('#' + this.parrentPage)
-          .find('.page-vertical.active')
-          .removeClass('active')
-          .prev()
-          .removeClass('prev')
-          .addClass('active');
+    } else if (derection == 'up') {
+      var prevPage = document.querySelector('#' + this.parrentPage + ' .page-vertical.active').previousElementSibling;
+      if (prevPage) {
+        this.currentPage = prevPage.id;
+        document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.remove('active');
+        prevPage.classList.remove('prev');
+        prevPage.classList.add('active');
+        if (prevPage.id === 'depth-1-2') {
+          var nextNextPage = prevPage.nextElementSibling;
+          gsap.to(nextNextPage, { delay: 0.7, duration: 1, autoAlpha: 0, });
+          gsap.to(nextNextPage, { duration: 0, y: 0, });
+          gsap.to(prevPage, { duration: 0.5, autoAlpha: 1, });
+        }
         this.changeVertController();
       }
     } else {
       // dots click
       this.currentPage = _derection;
       this.changeVertController();
-      $('#' + _this.parrentPage)
-        .find('.page-vertical.active')
-        .removeClass('active')
-        .removeClass('prev');
-      $('#' + _derection).addClass('active');
-      $('#' + _derection)
-        .prevAll()
-        .addClass('prev');
-      $('#' + _derection)
-        .nextAll()
-        .removeClass('prev');
+      document.querySelector('#' + _this.parrentPage + ' .page-vertical.active').classList.remove('active');
+      document.querySelector('#' + _this.parrentPage + ' .page-vertical.active').classList.remove('prev');
+      document.getElementById(_derection).classList.add('active');
+      var prevAll = document.getElementById(_derection).previousElementSiblings;
+      var nextAll = document.getElementById(_derection).nextElementSiblings;
+      prevAll.forEach(function (el) { el.classList.add('prev'); });
+      nextAll.forEach(function (el) { el.classList.remove('prev'); });
     }
 
     setTimeout(function () {
@@ -121,19 +96,27 @@ var app = new (function () {
   };
 
   this.changeVertController = function () {
-    var num = this.currentPage.substring(8, 9) - 1;
-    $('.paging-dot .dots a').eq(num).addClass('active').siblings().removeClass('active');
+    var num = parseInt(this.currentPage.substring(8, 9)) - 1;
+    var dots = document.querySelectorAll('.paging-dot .dots a');
+    dots.forEach(function (dot, index) {
+      if (index === num) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
 
     // 백그라운드 이미지 변경에 따른 컬러 변경
+    var dotsContainer = document.querySelector('.paging-dot .dots');
     if (this.currentPage == 'depth-1-2' || this.currentPage == 'depth-1-4' || this.currentPage == 'depth-1-5') {
-      $('.paging-dot .dots').addClass('type2');
+      dotsContainer.classList.add('type2');
     } else {
-      $('.paging-dot .dots').removeClass('type2');
+      dotsContainer.classList.remove('type2');
     }
     if (this.currentPage == 'depth-1-5') {
-      $('.paging-dot .dots').addClass('type-last');
+      dotsContainer.classList.add('type-last');
     } else {
-      $('.paging-dot .dots').removeClass('type-last');
+      dotsContainer.classList.remove('type-last');
     }
   };
 
@@ -143,18 +126,22 @@ var app = new (function () {
 
   this.onVertControllEvent = function () {
     var _this = this;
-    $('.paging-dot .dots')
-      .find('a')
-      .on('click', function () {
-        var page = _this.currentPage.substring(0, 8) + ($(this).index() + 1);
+    var dots = document.querySelectorAll('.paging-dot .dots a');
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var page = _this.currentPage.substring(0, 8) + (Array.prototype.indexOf.call(dots, dot) + 1);
         _this.movePage(page);
       });
+    });
   };
 
   this.onUpDownControllEvent = function () {
     var _this = this;
-    $('.paging-scroll a').on('click', function () {
-      _this.movePage('up');
+    var scrollLinks = document.querySelectorAll('.paging-scroll a');
+    scrollLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        _this.movePage('up');
+      });
     });
   };
 
@@ -171,8 +158,10 @@ var app = new (function () {
     var winMobile = window.matchMedia('screen and (max-width: 1024px)');
 
     if (winMobile.matches) {
-      $('#main-contents').on('touchstart mousedown', function (e) {
+      var mainContents = document.getElementById('main-contents');
+      mainContents.addEventListener('touchstart', function (e) {
         if (_this.is_pageAnimating) {
+          e.preventDefault();
           return false;
         }
         var xPos = 0;
@@ -181,18 +170,19 @@ var app = new (function () {
           xPos = e.pageX;
           yPos = e.pageY;
         } else {
-          xPos = e.originalEvent.touches[0].pageX;
-          yPos = e.originalEvent.touches[0].pageY;
+          xPos = e.touches[0].pageX;
+          yPos = e.touches[0].pageY;
         }
 
         _this.startX = xPos;
         _this.startY = yPos;
 
-        this.target = e.target;
+        _this.target = e.target;
       });
 
-      $('#main-contents').on('touchend mouseup', function (e) {
+      mainContents.addEventListener('touchend', function (e) {
         if (_this.is_pageAnimating) {
+          e.preventDefault();
           return false;
         }
         var xPos = 0;
@@ -201,8 +191,8 @@ var app = new (function () {
           xPos = e.pageX;
           yPos = e.pageY;
         } else {
-          xPos = e.originalEvent.changedTouches[0].pageX;
-          yPos = e.originalEvent.changedTouches[0].pageY;
+          xPos = e.changedTouches[0].pageX;
+          yPos = e.changedTouches[0].pageY;
         }
         _this.endX = xPos;
         _this.endY = yPos;
@@ -219,22 +209,13 @@ var app = new (function () {
       });
     }
 
-    $('#main-contents').on('mousewheel DOMMouseScroll', function (e) {
+    document.getElementById('main-contents').addEventListener('wheel', function (e) {
       if (_this.is_pageAnimating) {
+        e.preventDefault();
         return false;
       }
 
-      var delta = 0;
-
-      if (!event) event = window.event;
-      if (event.wheelDelta) {
-        delta = event.wheelDelta / 120;
-        if (window.opera) {
-          delta = -delta;
-        }
-      } else if (event.detail) {
-        delta = -event.detail / 3;
-      }
+      var delta = e.deltaY || -e.wheelDelta || e.detail;
 
       if (delta > 0) {
         if (!_this.is_downScrollLock) {
