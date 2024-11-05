@@ -17,37 +17,165 @@
     </style>
 </head>
 <body>
-    <div class="text-wrap">
-        <p class="desc">두산 밥캣</p>
+    <div style="width: 100%; height: 100vh; background-color: #41dcff;"></div>
+<div class="deco_txt_wrap">
+
+
+    <div class="container_bring">
+        <h2 class="text">PERFECT CHOICE</h2>
+        <h2 class="text">COMFORTABLE SPACE</h2>
+        <h2 class="text">S ONE ENG</h2>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const desc = document.querySelector('.desc');
-            const text = desc.textContent;
-            desc.innerHTML = '';
+    <div class="deco_box deco-box1"></div>
+    <div class="deco_box deco-box2"></div>
 
-            text.split('').forEach(char => {
-                const span = document.createElement('span');
-                span.textContent = char;
-                desc.appendChild(span);
-            });
 
-            const tl1 = gsap.timeline();
-            tl1.to('.desc span', {
-                color: '#005eb8',
-                stagger: 0.05,
-                duration: 0.2
-            });
+</div>
+<div style="width: 100%; height: 100vh; background-color: #41dcff;"></div>
 
-            const tl2 = gsap.timeline({ delay: 0.6 });
-            tl2.to('.desc span', {
-                color: '#000',
-                stagger: 0.05,
-                duration: 0.2
-            });
+
+<style>
+    .deco_txt_wrap {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url('https://cdn.imweb.me/upload/S20240628e8c05fb74d0f1/5ea0ea6ae0988.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        /*background-image: linear-gradient(180deg, black, #0a132e);*/
+        /* background-color:#040711; */
+    }
+
+    .deco_box {
+        width: 400px;
+        height: 400px;
+        z-index: -1;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    .deco-box1 {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        background-image: url('https://cdn.imweb.me/upload/S20240416a555055a29105/e5c231f905167.jpg');
+        z-index: 1;
+    }
+
+
+    .deco-box2 {
+        position: absolute;
+        bottom: 100px;
+        right: 100px;
+        background-image: url('https://cdn.imweb.me/upload/S20240416a555055a29105/333a6fc114117.jpg');
+        z-index: 1;
+    }
+
+
+    .container_bring {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+
+    .container_bring .text {
+        font-size: 5vw;
+
+        line-height: 125%;
+        margin: 0;
+        text-align: center;
+        font-weight: 800 !important;
+
+        width: 100%;
+        color: rgb(182, 182, 182, 0.2);
+        background: linear-gradient(90deg, #41dcff, #233dff) no-repeat;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 0%;
+        transition: background-size cubic-bezier(.1, .5, .5, 1) 0.5s;
+
+        display: flex;
+        /* flex-direction: column; */
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+        /*border-bottom: 1px solid #2F2B28;*/
+    }
+
+
+    .container_bring a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+</style>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js'></script>
+
+
+
+<script>
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const textElements = gsap.utils.toArray('.text');
+
+    textElements.forEach(text => {
+        gsap.to(text, {
+            backgroundSize: '100%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: text,
+                start: 'center 80%',
+                end: 'center 20%',
+                scrub: true,
+            },
         });
-    </script>
+    });
+
+    gsap.to(".deco-box1", {
+        duration: 2,
+        y: 400,
+        borderRadius: 400,
+        scrollTrigger: {
+            trigger: ".deco_txt_wrap",
+            start: 'top 50%',  // 필요한 경우 수정
+            end: 'bottom 20%', // 필요한 경우 수정
+            scrub: 1,
+        }
+    });
+
+    gsap.to(".deco-box2", {
+        duration: 2,
+        y: -400,
+        borderRadius: 400,
+        scrollTrigger: {
+            trigger: ".deco_txt_wrap",
+            start: 'top 50%',  // 필요한 경우 수정
+            end: 'bottom 20%', // 필요한 경우 수정
+            scrub: 1,
+        }
+    });
+
+</script>
+
 </body>
 </html>
