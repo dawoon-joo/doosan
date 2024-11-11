@@ -25,7 +25,7 @@ span{vertical-align:middle;}
 /* default setting */
 html { width:100%; margin:0; padding:0; }
 * html * { zoom:1; }
-body { width:100%; height:auto; font-family:'Pretendard','Noto Sans KR',Dotum,Helvetica,AppleGothic,Gulim,'Roboto','굴림',Sans-serif; color:#111; -webkit-text-size-adjust:none;     letter-spacing: -0.05em; font-size: 18px; background: transparent; line-height: 1.5;}
+body { width:100%; height:auto; font-family:'Pretendard','Noto Sans KR',Dotum,Helvetica,AppleGothic,Gulim,'Roboto','굴림',Sans-serif; color: var(--primary-color); -webkit-text-size-adjust:none;     letter-spacing: -0.05em; font-size: 18px; background: transparent; line-height: 1.5;}
 * {
 	line-height:1.5;
 	font-family:'Pretendard','Noto Sans KR',Dotum,Helvetica,AppleGothic,Gulim,'Roboto','굴림',Sans-serif;
