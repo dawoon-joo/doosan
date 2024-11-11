@@ -142,6 +142,7 @@ let common = {
             if(handler.isMobile()){
                 return;
             }
+            gsap.killTweensOf(GNB);
             if (option.headerPreviousTheme === 'white') {
                 HEADER.dataset.headerTheme = 'white';
                 option.headerPreviousTheme = '';
@@ -150,7 +151,7 @@ let common = {
                 HEADER.dataset.headerTheme = 'transparent';
             }
             HEADER.removeAttribute('data-header-GNB');
-            gsap.to(GNB, { duration: 0.3, height: option.headerMinHeight });
+            gsap.to(GNB, { duration: 0.2, height: option.headerMinHeight });
         }
     },
     sub: () => {

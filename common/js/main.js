@@ -64,6 +64,9 @@ var app = new (function () {
           gsap.to(prevPage, { delay: 1.2, duration: 0, autoAlpha: 0 });
           nextPage.style.pointerEvents = 'auto';
           this.animateText('#depth-1-3 .mask', 0.8);
+        } else if (nextPage.id === 'depth-1-4') {
+          var prevPage = nextPage.previousElementSibling;
+          // gsap.to(prevPage, { scale:0.96, duration: 0.5, });
         }
         this.changeVertController();
       }
@@ -115,19 +118,14 @@ var app = new (function () {
               nextElement = nextElement.nextElementSibling;
           }
 
-          // 조건부 효과 적용
           if (newActivePage.id === 'depth-1-2') {
             this.animateText('#depth-1-2 .mask', 0.7);
             var nextPage = newActivePage.nextElementSibling;
             gsap.to(nextPage, { delay: 0.6, duration: 0.5, autoAlpha: 0, });
-            gsap.to(nextPage, { duration: 0, y: 0, });
+            gsap.to(nextPage, { duration: 0, y: 0, scale: 1, });
             gsap.to(newActivePage, { duration: 0, autoAlpha: 1, });
             nextPage.style.pointerEvents = 'none';
           } else if (newActivePage.id === 'depth-1-3') {
-              var prevPage = newActivePage.previousElementSibling;
-              gsap.to(newActivePage, { delay: 0.6, duration: 0.5, autoAlpha: 1 });
-              newActivePage.style.pointerEvents = 'auto';
-              this.animateText('#depth-1-3 .mask', 0.8);
           } else { 
             gsap.to(document.getElementById('depth-1-3'), { delay: 0.6, duration: 0.5, autoAlpha: 0, });
             document.getElementById('depth-1-3').style.pointerEvents = 'none';
@@ -141,6 +139,7 @@ var app = new (function () {
   };
 
   this.changeVertController = function () {
+    const header = document.querySelector('.header');
     var num = parseInt(this.currentPage.substring(8, 9)) - 1;
     var dots = document.querySelectorAll('.paging-dot .dots a');
     dots.forEach(function (dot, index) {
@@ -155,8 +154,10 @@ var app = new (function () {
     var dotsContainer = document.querySelector('.paging-dot .dots');
     if (this.currentPage !== 'depth-1-1') {
       dotsContainer.classList.add('type1');
+      header.dataset.headerType = "light"
     } else {
       dotsContainer.classList.remove('type1');
+      header.dataset.headerType = "white";
     }
     if (this.currentPage == 'depth-1-2' || this.currentPage == 'depth-1-3' || this.currentPage == 'depth-1-5') {
       dotsContainer.classList.add('type2');
@@ -166,6 +167,9 @@ var app = new (function () {
     if (this.currentPage == 'depth-1-3') {
       dots.forEach(dot => dot.classList.remove('active'));
       dots[1].classList.add('active'); 
+    }
+    if (this.currentPage == 'depth-1-4') {
+      header.dataset.headerType = "white";
     }
   };
 
