@@ -30,7 +30,7 @@ requestAnimationFrame(raf);
 document.addEventListener("DOMContentLoaded", function() {
   var isLocal = window.location.hostname === 'dawoon-joo.github.io' || window.location.hostname === '192.168.0.7';
   var headerUrl = isLocal ? '../../inc/header.html' : '/doosan/inc/header.html';
-  loadContent('header', headerUrl, function() {
+  loadContent('header', '/doosan/inc/header.html', function() {
     observeElement('header', function() {
       common.init();
       common.windowScroll();
