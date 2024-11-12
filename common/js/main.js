@@ -57,16 +57,18 @@ var app = new (function () {
         document.querySelector('#' + this.parrentPage + ' .page-vertical.active').classList.remove('active');
         nextPage.classList.add('active');
         if (nextPage.id === 'depth-1-2') {
-          this.animateText('#depth-1-2 .mask', 0.7);
+          this.animateText('#depth-1-2 .mask', 0.9);
         } else if (nextPage.id === 'depth-1-3') {
           var prevPage = nextPage.previousElementSibling;
-          gsap.to(nextPage, { delay: 0.6, duration: 0.5, autoAlpha: 1 });
-          gsap.to(prevPage, { delay: 1.2, duration: 0, autoAlpha: 0 });
+          gsap.to(nextPage, { delay: 0.8, duration: 0.2, autoAlpha: 1 });
+          gsap.to(prevPage, { delay: 1.4, duration: 0, autoAlpha: 0 });
           nextPage.style.pointerEvents = 'auto';
-          this.animateText('#depth-1-3 .mask', 0.8);
+          this.animateText('#depth-1-3 .mask', 1.2);
         } else if (nextPage.id === 'depth-1-4') {
           var prevPage = nextPage.previousElementSibling;
-          // gsap.to(prevPage, { scale:0.96, duration: 0.5, });
+          document.querySelectorAll('.main-company article').forEach((el, index)=>{
+            gsap.fromTo(el,{ y: 100, autoAlpha: 0 },{ y: 0, autoAlpha: 1, duration: 1, delay: 0.5 + index * 0.1, ease: 'power4.out' });
+          })
         }
         this.changeVertController();
       }
@@ -81,12 +83,17 @@ var app = new (function () {
         } else if (prevPage.id === 'depth-1-2') {
           this.animateText('#depth-1-2 .mask', 0.8);
           var nextNextPage = prevPage.nextElementSibling;
-          gsap.to(nextNextPage, { delay: 0.6, duration: 0.5, autoAlpha: 0, });
+          gsap.to(nextNextPage, { delay: 0.6, duration: 0.2, autoAlpha: 0, });
           gsap.to(nextNextPage, { duration: 0, y: 0, });
           gsap.to(prevPage, { duration: 0, autoAlpha: 1, });
           nextNextPage.style.pointerEvents = 'none';
         } else if (prevPage.id === 'depth-1-3') {
           var dots = document.querySelectorAll('.paging-dot .dots a');
+          this.animateText('#depth-1-3 .mask', 0.6);
+        } else if (prevPage.id === 'depth-1-4') {
+          document.querySelectorAll('.main-company article').forEach((el, index)=>{
+            gsap.fromTo(el,{ y: 100, autoAlpha: 0 },{ y: 0, autoAlpha: 1, duration: 1, delay: 0.5 + index * 0.1, ease: 'power4.out' });
+          })
         }
         this.changeVertController();
       }
@@ -126,8 +133,12 @@ var app = new (function () {
             gsap.to(newActivePage, { duration: 0, autoAlpha: 1, });
             nextPage.style.pointerEvents = 'none';
           } else if (newActivePage.id === 'depth-1-3') {
+          } else if (newActivePage.id === 'depth-1-4') {
+            document.querySelectorAll('.main-company article').forEach((el, index)=>{
+              gsap.fromTo(el,{ y: 100, autoAlpha: 0 },{ y: 0, autoAlpha: 1, duration: 1, delay: 0.5 + index * 0.1, ease: 'power4.out' });
+            }) 
           } else { 
-            gsap.to(document.getElementById('depth-1-3'), { delay: 0.6, duration: 0.5, autoAlpha: 0, });
+            gsap.to(document.getElementById('depth-1-3'), { delay: 0.6, duration: 0.5, autoAlpha: 1, });
             document.getElementById('depth-1-3').style.pointerEvents = 'none';
           }
       }
@@ -170,6 +181,9 @@ var app = new (function () {
     }
     if (this.currentPage == 'depth-1-4') {
       header.dataset.headerType = "white";
+    }
+    if (this.currentPage == 'depth-1-6') {
+      dotsContainer.classList.remove('type1');
     }
   };
 

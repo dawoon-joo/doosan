@@ -1,4 +1,4 @@
-const revealOption = { duration: 1200, distance: '60px', opacity: 0, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', reset: false, beforeReveal: (el) => { el.classList.add('sr-animate') }, beforeReset: (el) => { el.classList.remove('sr-animate') } }
+const revealOption = { duration: 1200, distance: '100px', opacity: 0, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', reset: false, beforeReveal: (el) => { el.classList.add('sr-animate') }, beforeReset: (el) => { el.classList.remove('sr-animate') } }
 const revealOption2 = { duration: 1200, distance: '1920px', opacity: 1, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', reset: false, beforeReveal: (el) => { el.classList.add('sr-animate'); }, beforeReset: (el) => { el.classList.remove('sr-animate'); }};
 const fadeIn = { ...revealOption, distance: 0 }
 const fadeUp = { ...revealOption, origin: 'bottom' }
@@ -28,7 +28,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 document.addEventListener("DOMContentLoaded", function() {
-  loadContent('header', '/doosan/inc/header.html', function() {
+  var isLocal = window.location.hostname === 'dawoon-joo.github.io' || window.location.hostname === '192.168.0.7';
+  var headerUrl = isLocal ? '../../inc/header.html' : '/doosan/inc/header.html';
+  loadContent('header', headerUrl, function() {
     observeElement('header', function() {
       common.init();
       common.windowScroll();
