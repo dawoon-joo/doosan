@@ -28,7 +28,7 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 document.addEventListener("DOMContentLoaded", function() {
-  loadContent('header', '../../inc/header.html', function() {
+  loadContent('header', '/doosan/inc/header.html', function() {
     observeElement('header', function() {
       common.init();
       common.windowScroll();
