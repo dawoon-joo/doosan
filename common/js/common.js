@@ -14,23 +14,23 @@ let option = {
     ticking: false,
     timeline: [],
 }
-lenis = new Lenis({
-  duration: 1.2,
-  infinite: false,
-  easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-  gestureOrientation: "vertical",
-  normalizeWheel: false,
-  smoothTouch: true
-});
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// lenis = new Lenis({
+//   duration: 1.2,
+//   infinite: false,
+//   easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+//   gestureOrientation: "vertical",
+//   normalizeWheel: false,
+//   smoothTouch: true
+// });
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
 document.addEventListener("DOMContentLoaded", function() {
-  var isLocal = window.location.hostname === 'dawoon-joo.github.io' || window.location.hostname === '192.168.0.7';
+  var isLocal = window.location.hostname === 'dawoon-joo.github.io/doosan/' || window.location.hostname === '192.168.0.7';
   var headerUrl = isLocal ? '../../inc/header.html' : '/doosan/inc/header.html';
-  loadContent('header', '/doosan/inc/header.html', function() {
+  loadContent('header', headerUrl, function() {
     observeElement('header', function() {
       common.init();
       common.windowScroll();
@@ -85,7 +85,8 @@ let common = {
         HEADER = document.querySelector('header');
         FOOTER = document.querySelector('footer');
         GNB = HEADER.querySelector('.gnb');
-        NAV = HEADER.querySelector('.nav');
+        NAV = HEADER.querySelectorAll('.nav .depth1 > li');
+        NAVLINK = HEADER.querySelectorAll('.nav .depth1 > li > a');
 
         gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
         handler.initialize();
@@ -122,10 +123,16 @@ let common = {
         toggleHeader();
         language();
 
-        NAV.addEventListener('mouseenter', mouseEnter);
-        NAV.addEventListener('mouseleave', mouseLeave);
+        NAV.forEach(item => {
+          const link = item.querySelector('a');
+          item.addEventListener('mouseenter', mouseEnter);
+          item.addEventListener('mouseleave', mouseLeave);
+          // link.addEventListener('focus', mouseEnter);
+          // item.addEventListener('focusin', handleFocusIn);
+          // item.addEventListener('focusout', handleFocusOut);
+        });
 
-        function mouseEnter(){
+        function mouseEnter(event){
             option.headerTheme = HEADER.dataset.headerTheme;
             if(handler.isMobile()){
                 return;
@@ -138,9 +145,14 @@ let common = {
                 HEADER.dataset.headerTheme = 'light';
             }
             HEADER.dataset.headerGnb = 'opened';
-            gsap.to(GNB, { duration: 0.5, height: option.headerMaxHeight });
+            const link = event.currentTarget;
+            const depth1 = link.closest('li');
+            const submenu = depth1.querySelector('.header-submenu');
+            if (submenu) {
+                gsap.to(submenu, { duration: 0.5, opacity: 1, visibility: 'visible' });
+            }
         }
-        function mouseLeave() {
+        function mouseLeave(event) {
             if(handler.isMobile()){
                 return;
             }
@@ -153,8 +165,26 @@ let common = {
                 HEADER.dataset.headerTheme = 'transparent';
             }
             HEADER.removeAttribute('data-header-GNB');
-            gsap.to(GNB, { duration: 0.2, height: option.headerMinHeight });
+            const link = event.currentTarget;
+            const depth1 = link.closest('li');
+            const submenu = depth1.querySelector('.header-submenu');
+            if (submenu) {
+                gsap.to(submenu, { duration: 0.5, opacity: 0, visibility: 'hidden' });
+            }
         }
+        // function handleFocusIn(event) {
+        //   const item = event.currentTarget;
+        //   item.dataset.focused = 'true';
+        // }
+        
+        // function handleFocusOut(event) {
+        //     const item = event.currentTarget;
+        //     setTimeout(() => {
+        //         if (!item.contains(document.activeElement)) {
+        //             mouseLeave({ currentTarget: item });
+        //         }
+        //     }, 0);
+        // }
     },
     sub: () => {
       sublinkWrap();
