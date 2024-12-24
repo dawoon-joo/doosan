@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두산밥캣코리아</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/kr/common/css/base.css">
+  <link rel="stylesheet" href="/kr/common/css/common.css">
+  <link rel="stylesheet" href="/kr/common/css/sub.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="/kr/common/js/lenis.min.js"></script>
+  <script src="/kr/common/js/scrollreveal.min.js"></script>
+  <script src="/kr/common/js/ScrollToPlugin.min.js"></script>
+  <script src="/kr/common/js/ScrollTrigger.min.js"></script>
+  <script src="/kr/common/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <script src="/kr/common/js/gsap.min.js"></script>
+  <script src="/kr/common/js/product.js"></script>
+  <script src="/kr/common/js/sub.js"></script>
+  <script src="/kr/common/js/common.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header"></header>
+  <div class="wrap sub nv">
+    <section class="sec sec-selector-type2">
+      <div class="inner">
+        <div class="sub-link-boxs">
+          <ul>
+            <li><a href="javascript:"><span class="hide">HOME</span><i class="ico ico-home"></i></a></li>
+            <li>제품</li>
+            <li class="drop">
+              제품검색
+              <!-- <i class="ico-arrow-drop"></i>
+              <ul>
+                <li><a href="/kr/parts-service/parts/genuine.html">순정부품</a></li>
+                <li><a href="/kr/parts-service/parts/tire.html">타이어</a></li>
+                <li><a href="/kr/parts-service/parts/filter.html">필터</a></li>
+                <li><a href="/kr/parts-service/parts/oil.html">오일 및 윤활유</a></li>
+              </ul> -->
+            </li>
+          </ul>
+        </div>
+        <div class="text-boxs">
+          <h2 class="heading">제품검색</h2>
+        </div>
+      </div>
+    </section>
+    <section class="sec product-search">
+      <div class="inner">
+        <div class="content-top">
+          <div class="filter-search">
+            <div class="search-top">
+              <div class="guide">
+                <span></span>
+                맞춤형 검색
+              </div>
+              <div class="search-wrap">
+                <form action="/search" method="get" class="search-form">
+                  <div class="search-box">
+                    <input type="text" name="keyword" placeholder="검색어를 입력해주세요" class="search-input" required="">
+                    <button type="submit" class="btn-search">
+                      <span class="hidden">검색</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="search-body">
+              <div class="search-list">
+                <div class="search-boxs">
+                  <div class="title">차종</div>
+                  <!-- [D] active 선택된 버튼 -->
+                  <!-- [D] disable 비활성화 -->
+                  <div class="search-items">
+                    <button type="button" name="button" class="active">지게차</button>
+                    <button type="button" name="button">소형물류장비</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">동력방식</div>
+                  <div class="search-items">
+                    <button type="button" name="button">디젤</button>
+                    <button type="button" name="button">LPG</button>
+                    <button type="button" name="button">전동</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">탑승형식</div>
+                  <div class="search-items">
+                    <button type="button" name="button" class="disable">좌승식</button>
+                    <button type="button" name="button" class="disable">입승식</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">적재능력</div>
+                  <div class="search-items">
+                    <button type="button" name="button" class="disable">소형 (1톤~3톤)</button>
+                    <button type="button" name="button" class="disable">중형 (3.5톤~8톤)</button>
+                    <button type="button" name="button" class="disable">대형 (11톤~16톤)</button>
+                    <button type="button" name="button" class="disable">초대형 (18톤~30톤)</button>
+                  </div>
+                </div>
+              </div>
+              <button class="return" type="button">
+                <span></span>
+                선택 초기화
+              </button>
+            </div>
+          </div>
+          <div class="filter-list">
+            <div class="total">
+              총 <span class="accent-color">3개</span>의 제품이 있습니다.
+            </div>
+            <div class="list">
+              <article>
+                <a href="javascript:">
+                  <div class="img-box">
+                    <figure>
+                      <img src="/kr/common/images/sub/product/search-thum1.png" alt="">
+                    </figure>
+                    <div class="motion">
+                      <svg viewBox="0 0 348 350" width="100%" height="100%" preserveAspectRatio="none">
+                        <rect x="1.5" y="1.5" width="345" height="347" rx="10" ry="10"
+                        fill="transparent" stroke="#0458a9" stroke-width="3"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 class="sbj">2t - 3.3t, 프리미엄 디젤 지게차</h3>
+                  <div class="link-btn small">
+                    <span class="text">
+                      <span>자세히 보기</span>
+                    </span>
+                    <span class="ico ico-arrow-link"></span>
+                  </div>
+                </a>
+              </article>
+              <article>
+                <a href="javascript:">
+                  <div class="img-box">
+                    <figure>
+                      <img src="/kr/common/images/sub/product/search-thum2.png" alt="">
+                    </figure>
+                    <div class="motion">
+                      <svg viewBox="0 0 348 350" width="100%" height="100%" preserveAspectRatio="none">
+                        <rect x="1.5" y="1.5" width="345" height="347" rx="10" ry="10"
+                        fill="transparent" stroke="#0458a9" stroke-width="3"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 class="sbj">2t - 3.3t, 표준형 디젤 지게차</h3>
+                  <div class="link-btn small">
+                    <span class="text">
+                      <span>자세히 보기</span>
+                    </span>
+                    <span class="ico ico-arrow-link"></span>
+                  </div>
+                </a>
+              </article>
+              <article>
+                <a href="javascript:">
+                  <div class="img-box">
+                    <figure>
+                      <img src="/kr/common/images/sub/product/search-thum3.png" alt="">
+                    </figure>
+                    <div class="motion">
+                      <svg viewBox="0 0 348 350" width="100%" height="100%" preserveAspectRatio="none">
+                        <rect x="1.5" y="1.5" width="345" height="347" rx="10" ry="10"
+                        fill="transparent" stroke="#0458a9" stroke-width="3"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 class="sbj">3.5t - 5t, 경제형 디젤 지게차</h3>
+                  <div class="link-btn small">
+                    <span class="text">
+                      <span>자세히 보기</span>
+                    </span>
+                    <span class="ico ico-arrow-link"></span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-bottom-banner">
+      <div class="grid-box">
+        <a href="/kr/purchase/contact.html" class="col left">
+          <div class="text-boxs">
+            <h2 class="heading">상담신청</h2>
+            <p class="desc">지게차에 대한 자세한 안내를 받아보세요.</p>
+          </div>
+        </a>
+        <a href="/kr/purchase/location.html" class="col right">
+          <div class="text-boxs">
+            <h2 class="heading">국내 대리점 찾기</h2>
+            <p class="desc">가장 가까운 대리점를 확인해 보세요. </p>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="inner">
+      </div> -->
+    </section>
+  </div>
+  <footer id="footer" class="footer">
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    ScrollReveal().reveal(".sec:not(.sec-bottom-banner) .heading", {...fadeUp});
+    ScrollReveal().reveal(".filter-search", {...fadeUp, delay: 200});
+    ScrollReveal().reveal(".product-search", {...fadeUp});
+    ScrollReveal().reveal(".filter-list .list article", {...fadeUp, interval: 200, delay: 100});
+  })
+</script>
+
+</html>

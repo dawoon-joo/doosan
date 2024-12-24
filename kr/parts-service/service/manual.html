@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두산밥캣코리아</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/kr/common/css/base.css">
+  <link rel="stylesheet" href="/kr/common/css/common.css">
+  <link rel="stylesheet" href="/kr/common/css/sub.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="/kr/common/js/lenis.min.js"></script>
+  <script src="/kr/common/js/scrollreveal.min.js"></script>
+  <script src="/kr/common/js/ScrollToPlugin.min.js"></script>
+  <script src="/kr/common/js/ScrollTrigger.min.js"></script>
+  <script src="/kr/common/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <script src="/kr/common/js/gsap.min.js"></script>
+  <script src="/kr/common/js/product.js"></script>
+  <script src="/kr/common/js/sub.js"></script>
+  <script src="/kr/common/js/common.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header"></header>
+  <div class="wrap sub nv">
+    <section class="sec sec-selector-type2">
+      <div class="inner">
+        <div class="sub-link-boxs">
+          <ul>
+            <li><a href="javascript:"><span class="hide">HOME</span><i class="ico ico-home"></i></a></li>
+            <li>부품 & 서비스</li>
+            <li>서비스</li>
+            <li class="drop">
+              취급설명서
+              <i class="ico-arrow-drop"></i>
+              <ul>
+                <li><a href="/kr/parts-service/service/support.html">서비스 지원</a></li>
+                <li><a href="/kr/parts-service/service/manual.html">취급설명서</a></li>
+                <li><a href="/kr/parts-service/service/video.html">유지보수 비디오</a></li>
+                <li><a href="/kr/parts-service/service/network.html">서비스 네트워크</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="text-boxs">
+          <h1 class="heading">취급설명서</h1>
+          <p class="text">
+            <span class="accent-color motion">운전자의 안전과 장비의 성능 유지</span>를 위해 <br class="pc">
+            운전자와 유지보수 담당자가 <span class="accent-color motion">숙지해야 할 상세 정보</span>를 확인하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sec service-manual">
+      <div class="inner">
+        <div class="content-body">
+          <div class="filter-search">
+            <div class="search-top">
+              <div class="guide">
+                <span></span>
+                맞춤형 검색
+              </div>
+              <div class="search-wrap">
+                <form action="/search" method="get" class="search-form">
+                  <div class="search-box">
+                    <input type="text" name="keyword" placeholder="검색어를 입력해주세요" class="search-input" required>
+                    <button type="submit" class="btn-search">
+                      <span class="hidden">검색</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="search-body">
+              <div class="search-list">
+                <div class="search-boxs">
+                  <div class="title">동력방식</div>
+                  <!-- [D] active 선택된 버튼 -->
+                  <!-- [D] disable 비활성화 -->
+                  <div class="search-items">
+                    <button type="button" name="button" class="active">디젤</button>
+                    <button type="button" name="button">LPG</button>
+                    <button type="button" name="button">전동</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">탑승형식</div>
+                  <div class="search-items">
+                    <button type="button" name="button">좌승식</button>
+                    <button type="button" name="button">입승식</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">적재능력</div>
+                  <div class="search-items">
+                    <button type="button" name="button" class="disable">소형 (1톤~3톤)</button>
+                    <button type="button" name="button" class="disable">중형 (3.5톤~8톤)</button>
+                    <button type="button" name="button" class="disable">대형 (11톤~16톤)</button>
+                    <button type="button" name="button" class="disable">초대형 (18톤~30톤)</button>
+                  </div>
+                </div>
+              </div>
+              <button class="return" type="button">
+                <span></span>
+                선택 초기화
+              </button>
+            </div>
+          </div>
+          <div class="filter-table">
+            <div class="total">
+              <dl>
+                <dt><span class="accent-color">Total</span> :</dt>
+                <dd>74 (<span class="accent-color">1</span> / 15 Page) </dd>
+              </dl>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>제품명</th>
+                    <th>자료명</th>
+                    <th>다운로드</th>
+                  </tr>
+                </thead>
+                <tbdoy>
+                  <tr>
+                    <td>2t - 3.3t, 프리미엄 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>2t - 3.3t, 표준형 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>3.5t - 5t, 경제형 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>5t - 7t, 경제형 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>5t - 8t , 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>10t -  18t , 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>18t - 30t , 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>2t- 3.3t , LPG 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>3.5t - 4.5t, LPG 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                  <tr>
+                    <td>5t - 7t, LPG 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a href="/kr/common/images/sub/product/diesel/D100,120,140,160,180S-9, DV180,250,300S-9_SB2512C03_BK.pdf" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+                </tbdoy>
+              </table>
+              <div class="pagination">
+                <div class="wrap-indi xx">
+                  <div class="indicator">
+                    <button href="#" class="btn btn-prev-end invisible"></button>
+                    <button href="#" class="btn btn-prev invisible"></button>
+                    <ul class="indi"><li><a href="javascript:" class="active">1</a></li><li><a href="javascript:">2</a></li><li><a href="javascript:">3</a></li></ul>
+                    <button href="#" class="btn btn-next"></button>
+                    <button href="#" class="btn btn-next-end"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-bottom-banner">
+      <div class="grid-box">
+        <a href="/kr/purchase/contact.html" class="col left">
+          <div class="text-boxs">
+            <h2 class="heading">상담신청</h2>
+            <p class="desc">지게차에 대한 자세한 안내를 받아보세요.</p>
+          </div>
+        </a>
+        <a href="/kr/purchase/location.html" class="col right">
+          <div class="text-boxs">
+            <h2 class="heading">국내 대리점 찾기</h2>
+            <p class="desc">가장 가까운 대리점를 확인해 보세요. </p>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="inner">
+      </div> -->
+    </section>
+  </div>
+  <footer id="footer" class="footer">
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    ScrollReveal().reveal(".sec:not(.sec-bottom-banner) .text-boxs .heading", {...fadeUp});
+    ScrollReveal().reveal(".sec:not(.sec-bottom-banner) .text-boxs .text", {...fadeUp, delay: 200});
+    ScrollReveal().reveal(".filter-search", {...fadeUp});
+    ScrollReveal().reveal(".filter-table", {...fadeUp});
+  })
+  // 혹시 몰라서 만듬
+  // const ITEMS_PER_PAGE = 10;
+  // function initFilterTable() {
+  //   const filterButtons = document.querySelectorAll('.search-items button');
+  //   const tableBody = document.querySelector('.table-wrap table tbody');
+  //   const resetButton = document.querySelector('.return');
+  //   const pagination = document.querySelector('.pagination');
+  //
+  //   // 전체 데이터 (실제로는 서버에서 받아올 데이터)
+  //   const allItems = [
+  //     { type: '디젤', riding: '좌승식', capacity: '소형', name: '2t - 3.3t, 프리미엄 디젤 지게차', document: '취급설명서' },
+  //   ];
+  //
+  //   let filteredItems = [...allItems];
+  //   let currentPage = 1;
+  //   let activeFilters = {
+  //     type: null,
+  //     riding: null,
+  //     capacity: null
+  //   };
+  //
+  //   function updateTable() {
+  //     // 필터링된 아이템 계산
+  //     filteredItems = allItems.filter(item => {
+  //       if (activeFilters.type && item.type !== activeFilters.type) return false;
+  //       if (activeFilters.riding && item.riding !== activeFilters.riding) return false;
+  //       if (activeFilters.capacity && item.capacity !== activeFilters.capacity) return false;
+  //       return true;
+  //     });
+  //
+  //     // 페이지네이션 계산
+  //     const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+  //     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  //     const pageItems = filteredItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  //
+  //     // 테이블 업데이트
+  //     tableBody.innerHTML = pageItems.map(item => `
+  //       <tr>
+  //         <td>${item.name}</td>
+  //         <td>${item.document}</td>
+  //         <td><a href="#" download><span class="ico-download-type2"></span></a></td>
+  //       </tr>
+  //     `).join('');
+  //
+  //     // Total 카운트 업데이트
+  //     document.querySelector('.total dd').innerHTML =
+  //       `${filteredItems.length} (<span class="accent-color">${currentPage}</span> / ${totalPages} Page)`;
+  //
+  //     // 페이지네이션 업데이트
+  //     updatePagination(totalPages);
+  //   }
+  //
+  //   function updatePagination(totalPages) {
+  //     const indiList = document.querySelector('.indi');
+  //     const prevBtn = document.querySelector('.btn-prev');
+  //     const nextBtn = document.querySelector('.btn-next');
+  //     const prevEndBtn = document.querySelector('.btn-prev-end');
+  //     const nextEndBtn = document.querySelector('.btn-next-end');
+  //
+  //     // 페이지 버튼 생성
+  //     indiList.innerHTML = Array.from({length: totalPages}, (_, i) => i + 1)
+  //       .map(page => `
+  //         <li><a href="javascript:" class="${page === currentPage ? 'active' : ''}">${page}</a></li>
+  //       `).join('');
+  //
+  //     // 이전/다음 버튼 상태 업데이트
+  //     prevBtn.classList.toggle('invisible', currentPage === 1);
+  //     prevEndBtn.classList.toggle('invisible', currentPage === 1);
+  //     nextBtn.classList.toggle('invisible', currentPage === totalPages);
+  //     nextEndBtn.classList.toggle('invisible', currentPage === totalPages);
+  //   }
+  //
+  //   // 필터 버튼 클릭 이벤트
+  //   filterButtons.forEach(button => {
+  //     button.addEventListener('click', () => {
+  //       const category = button.closest('.search-boxs').querySelector('.title').textContent;
+  //       const value = button.textContent;
+  //
+  //       // 같은 카테고리의 다른 버튼들 비활성화
+  //       button.closest('.search-items').querySelectorAll('button').forEach(btn => {
+  //         btn.classList.remove('active');
+  //       });
+  //
+  //       // 현재 버튼 활성화/비활성화 토글
+  //       button.classList.toggle('active');
+  //
+  //       // 필터 상태 업데이트
+  //       if (button.classList.contains('active')) {
+  //         if (category === '동력방식') activeFilters.type = value;
+  //         else if (category === '탑승형식') activeFilters.riding = value;
+  //         else if (category === '적재능력') activeFilters.capacity = value;
+  //       } else {
+  //         if (category === '동력방식') activeFilters.type = null;
+  //         else if (category === '탑승형식') activeFilters.riding = null;
+  //         else if (category === '적재능력') activeFilters.capacity = null;
+  //       }
+  //
+  //       currentPage = 1; // 페이지 초기화
+  //       updateTable();
+  //     });
+  //   });
+  //
+  //   // 초기화 버튼 클릭 이벤트
+  //   resetButton.addEventListener('click', () => {
+  //     filterButtons.forEach(button => button.classList.remove('active'));
+  //     activeFilters = { type: null, riding: null, capacity: null };
+  //     currentPage = 1;
+  //     updateTable();
+  //   });
+  //
+  //   // 페이지네이션 클릭 이벤트
+  //   pagination.addEventListener('click', (e) => {
+  //     const pageLink = e.target.closest('.indi a');
+  //     if (pageLink) {
+  //       currentPage = parseInt(pageLink.textContent);
+  //       updateTable();
+  //     }
+  //
+  //     // 이전/다음 버튼 클릭
+  //     if (e.target.classList.contains('btn-prev')) currentPage--;
+  //     if (e.target.classList.contains('btn-next')) currentPage++;
+  //     if (e.target.classList.contains('btn-prev-end')) currentPage = 1;
+  //     if (e.target.classList.contains('btn-next-end')) currentPage = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+  //
+  //     if (e.target.classList.contains('btn')) {
+  //       updateTable();
+  //     }
+  //   });
+  //
+  //   // 초기 테이블 렌더링
+  //   updateTable();
+  // }
+  // initFilterTable();
+</script>
+
+</html>

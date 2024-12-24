@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두산밥캣코리아</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/kr/common/css/base.css">
+  <link rel="stylesheet" href="/kr/common/css/common.css">
+  <link rel="stylesheet" href="/kr/common/css/sub.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="/kr/common/js/lenis.min.js"></script>
+  <script src="/kr/common/js/scrollreveal.min.js"></script>
+  <script src="/kr/common/js/ScrollToPlugin.min.js"></script>
+  <script src="/kr/common/js/ScrollTrigger.min.js"></script>
+  <script src="/kr/common/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <script src="/kr/common/js/gsap.min.js"></script>
+  <script src="/kr/common/js/product.js"></script>
+  <script src="/kr/common/js/sub.js"></script>
+  <script src="/kr/common/js/common.js"></script>
+</head>
+
+<body>
+  <header id="header" class="header"></header>
+  <div class="wrap sub nv">
+    <section class="sec sec-selector-type2">
+      <div class="inner">
+        <div class="sub-link-boxs">
+          <ul>
+            <li><a href="javascript:"><span class="hide">HOME</span><i class="ico ico-home"></i></a></li>
+            <li>구매 문의</li>
+            <li class="drop">
+              상담 신청
+              <i class="ico-arrow-drop"></i>
+              <ul>
+                <li><a href="/kr/purchase/location.html">국내 대리점 찾기</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="sec purchase-contact">
+      <div class="inner">
+        <div class="form-wrap">
+          <form id="form-contact" action="/announcement/inquiry/save" method="post">
+            <h1 class="heading">상담신청</h1>
+            <span class="guide">* 필수입력항목</span>
+            <ul class="contact-list">
+              <li class="v2">
+                <div class="col left">문의유형<span>*</span></div>
+                <div class="col right">
+                  <div class="custom-select">
+                    <label for="question" class="select">
+                      <select id="question" name="cateNo" required class="hidden-select">
+                        <option value="" disabled selected>문의 구분 및 관심 제품을 선택해주세요.</option>
+                        <option value="1">엔진 지게차</option>
+                        <option value="2">전동 지게차</option>
+                        <option value="3">창고 물류 장비</option>
+                        <option value="4">리튬 배터리 지게차</option>
+                        <option value="5">무인지게차 (AGF)</option>
+                        <option value="6">수소 연료전지 지게차</option>
+                        <option value="7">Machine IQ (TMS)</option>
+                        <option value="8">부품 문의</option>
+                        <option value="9">서비스 문의</option>
+                        <option value="10">기타 문의</option>
+                      </select>
+                    </label>
+
+                    <!-- 커스텀 UI -->
+                    <button type="button" class="selected">
+                      문의 구분 및 관심 제품을 선택해주세요.
+                      <i class="ico-arrow-dropdown"></i>
+                    </button>
+                    <ul class="option-list" data-lenis-prevent>
+                      <li><button type="button" data-value="1">엔진 지게차</button></li>
+                      <li><button type="button" data-value="2">전동 지게차</button></li>
+                      <li><button type="button" data-value="3">창고 물류 장비</button></li>
+                      <li><button type="button" data-value="4">리튬 배터리 지게차</button></li>
+                      <li><button type="button" data-value="5">무인지게차 (AGF)</button></li>
+                      <li><button type="button" data-value="6">수소 연료전지 지게차</button></li>
+                      <li><button type="button" data-value="7">Machine IQ (TMS)</button></li>
+                      <li><button type="button" data-value="8">부품 문의</button></li>
+                      <li><button type="button" data-value="9">서비스 문의</button></li>
+                      <li><button type="button" data-value="10">기타 문의</button></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="v2">
+                <div class="col left">이름<span>*</span></div>
+                <div class="col right">
+                  <label for="name">
+                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요." required="">
+                  </label>
+                </div>
+              </li>
+              <li class="v2">
+                <div class="col left">전화번호<span>*</span></div>
+                <div class="col right">
+                  <label for="phone">
+                    <input type="text" id="phone" name="phone" placeholder="전화번호를 입력해 주세요." required="">
+                  </label>
+                </div>
+              </li>
+              <li class="v2">
+                <div class="col left">회사명</div>
+                <div class="col right">
+                  <label for="company">
+                    <input type="text" id="company" name="company" placeholder="회사명을 입력해주세요." required="">
+                  </label>
+                </div>
+              </li>
+              <li class="v2">
+                <div class="col left">이메일</div>
+                <div class="col right">
+                  <label for="email">
+                    <input type="text" id="email" name="email" placeholder="이메일을 입력해 주세요." required="">
+                  </label>
+                </div>
+              </li>
+              <li class="v2">
+                <div class="col left">지역<span>*</span></div>
+                <div class="col right">
+                  <div class="select-group">
+                    <!-- 시/도 선택 -->
+                    <div class="custom-select">
+                      <label for="city" class="select">
+                        <select id="city" name="city" required class="hidden-select">
+                          <option value="" disabled selected>시/도 선택</option>
+                          <option value="seoul">서울특별시</option>
+                          <option value="busan">부산광역시</option>
+                          <option value="daegu">대구광역시</option>
+                          <option value="incheon">인천광역시</option>
+                          <option value="gwangju">광주광역시</option>
+                          <option value="daejeon">대전광역시</option>
+                          <option value="ulsan">울산광역시</option>
+                          <option value="sejong">세종특별자치시</option>
+                          <option value="gyeonggi">경기도</option>
+                          <option value="gangwon">강원도</option>
+                          <option value="chungbuk">충청북도</option>
+                          <option value="chungnam">충청남도</option>
+                          <option value="jeonbuk">전라북도</option>
+                          <option value="jeonnam">전라남도</option>
+                          <option value="gyeongbuk">경상북도</option>
+                          <option value="gyeongnam">경상남도</option>
+                          <option value="jeju">제주특별자치도</option>
+                        </select>
+                      </label>
+
+                      <button type="button" class="selected">
+                        시/도 선택
+                        <i class="ico-arrow-dropdown"></i>
+                      </button>
+                      <ul class="option-list" data-lenis-prevent>
+                        <li><button type="button" data-value="seoul">서울특별시</button></li>
+                        <li><button type="button" data-value="busan">부산광역시</button></li>
+                        <li><button type="button" data-value="daegu">대구광역시</button></li>
+                        <li><button type="button" data-value="incheon">인천광역시</button></li>
+                        <li><button type="button" data-value="gwangju">광주광역시</button></li>
+                        <li><button type="button" data-value="daejeon">대전광역시</button></li>
+                        <li><button type="button" data-value="ulsan">울산광역시</button></li>
+                        <li><button type="button" data-value="sejong">세종특별자치시</button></li>
+                        <li><button type="button" data-value="gyeonggi">경기도</button></li>
+                        <li><button type="button" data-value="gangwon">강원도</button></li>
+                        <li><button type="button" data-value="chungbuk">충청북도</button></li>
+                        <li><button type="button" data-value="chungnam">충청남도</button></li>
+                        <li><button type="button" data-value="jeonbuk">전라북도</button></li>
+                        <li><button type="button" data-value="jeonnam">전라남도</button></li>
+                        <li><button type="button" data-value="gyeongbuk">경상북도</button></li>
+                        <li><button type="button" data-value="gyeongnam">경상남도</button></li>
+                        <li><button type="button" data-value="jeju">제주특별자치도</button></li>
+                      </ul>
+                    </div>
+                    <!-- 군/구 선택 -->
+                    <div class="custom-select">
+                      <label for="district" class="select">
+                        <select id="district" name="district" required class="hidden-select">
+                          <option value="" disabled selected>군/구 선택</option>
+                        </select>
+                      </label>
+
+                      <button type="button" class="selected">
+                        군/구 선택
+                        <i class="ico-arrow-dropdown"></i>
+                      </button>
+                      <ul class="option-list" data-lenis-prevent>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="aft">
+                <div class="col left">내용<span>*</span></div>
+                <div class="col right v2">
+                  <label for="content">
+                    <textarea id="content" name="content" placeholder="내용을 입력해주세요." required=""></textarea>
+                  </label>
+                </div>
+              </li>
+              <li class="">
+                <div class="col left">첨부파일</div>
+                <div class="col right">
+                  <div class="file-upload">
+                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,.hwp,.jpg,.jpeg,.png">
+                    <span class="placeholder">파일을 첨부해주세요.</span>
+                    <button type="button" class="btn-upload" onclick="document.getElementById('file').click()">찾아보기</button>
+                  </div>
+                  <p class="file-notice"><b>*</b> 첨부 파일은 jpg, png, gif, hwp, pdf, ppt, xls, zip 파일에 한해 등록이 가능합니다. / 최대 용량 : 10MB</p>
+                </div>
+              </li>
+            </ul>
+            <div class="group">
+              <h2 class="heading">개인정보 수집 및 이용동의</h2>
+              <div class="list" data-lenis-prevent>
+                <div class="text">
+                  <p>
+                    두산밥캣코리아(주)는 (이하 '회사'는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
+                  </p>
+                  <p>
+                    회사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+                  </p>
+                  <p>
+                    회사는 개인정보취급방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
+                  </p>
+                  <p>
+                    본 방침은 : 2009 년 07 월 01 일 부터 시행됩니다.
+                  </p>
+                  <p>
+                    수집하는 개인정보 항목 및 보유기간
+                  </p>
+                  <p>
+                    회사는 회원가입, 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+                  </p>
+                  <p>
+                    수집항목 : 이름, 이메일, 전화번호, 소속회사
+                  </p>
+                  <p>
+                    보유기간 : 1년
+                  </p>
+                  <p>
+                    개인정보의 수집 및 이용목적
+                  </p>
+                  <p>
+                    회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.  <br>
+                    사용자 문의 및 불만 처리
+                  </p>
+                  <p>
+                    개인정보의 보유 및 이용기간
+                  </p>
+                  <p>
+                    회사는 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다.
+                  </p>
+                </div>
+              </div>
+              <div class="check-box">
+                <span class="desc">개인정보 수집 및 이용동의를 자세히 읽어 보신 후 동의해 주시기 바랍니다.</span>
+                <input type="checkbox" id="agree" name="agree" required="">
+                <label for="agree" class="check">필수정보 제공에 동의함</label>
+              </div>
+            </div>
+            <div class="step-btns">
+              <a href="javascript:history.back();" class="btn">취소하기</a>
+              <button class="btn submit" type="submit">문의하기</button>
+            </div>
+          </form>
+        </div>
+        <div class="side-btns sub">
+          <div class="group">
+            <a href="/kr/purchase/contact.html" class="link-btn white">
+              <span class="text">
+                <span>상담신청</span>
+              </span>
+              <span class="ico ico-chat"></span>
+            </a>
+            <a href="/kr/purchase/location.html" class="link-btn accent">
+              <span class="text">
+                <span>대리점 찾기</span>
+              </span>
+              <span class="ico ico-pin-map"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-bottom-banner">
+      <div class="grid-box">
+        <a href="/kr/purchase/contact.html" class="col left">
+          <div class="text-boxs">
+            <h2 class="heading">상담신청</h2>
+            <p class="desc">지게차에 대한 자세한 안내를 받아보세요.</p>
+          </div>
+        </a>
+        <a href="/kr/purchase/location.html" class="col right">
+          <div class="text-boxs">
+            <h2 class="heading">국내 대리점 찾기</h2>
+            <p class="desc">가장 가까운 대리점를 확인해 보세요. </p>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="inner">
+      </div> -->
+    </section>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', ()=> {
+      initInquirySelect();
+      initLocationSelect();
+      initFileUpload();
+    })
+    function initInquirySelect() {
+      const inquirySelect = document.querySelector('.custom-select:not(.select-group .custom-select)'); // select-group 외부의 custom-select
+      const selectedBtn = inquirySelect.querySelector('.selected');
+      const options = inquirySelect.querySelectorAll('.option-list button');
+      const hiddenSelect = inquirySelect.querySelector('select');
+
+      selectedBtn.addEventListener('click', () => {
+        inquirySelect.classList.toggle('active');
+      });
+
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          const value = option.dataset.value;
+          const text = option.textContent;
+
+          // UI 업데이트
+          selectedBtn.textContent = text;
+          selectedBtn.appendChild(document.createElement('i')).className = 'ico-arrow-dropdown';
+          inquirySelect.classList.remove('active');
+
+          // hidden select 값 업데이트
+          hiddenSelect.value = value;
+
+          // change 이벤트 발생
+          const event = new Event('change', { bubbles: true });
+          hiddenSelect.dispatchEvent(event);
+        });
+      });
+
+      // 외부 클릭시 닫기
+      document.addEventListener('click', (e) => {
+        if (!inquirySelect.contains(e.target)) {
+          inquirySelect.classList.remove('active');
+        }
+      });
+    }
+    const areaData = {
+      '서울특별시': ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구'],
+      '부산광역시': ['강서구', '금정구', '남구', '동구', '동래구', '부산진구', '북구', '사상구', '사하구', '서구', '수영구', '연제구', '영도구', '중구', '해운대구', '기장군'],
+      '대구광역시': ['남구', '달서구', '동구', '북구', '서구', '수성구', '중구', '달성군'],
+      '인천광역시': ['계양구', '남동구', '동구', '미추홀구', '부평구', '서구', '연수구', '중구', '강화군', '옹진군'],
+      '광주광역시': ['광산구', '남구', '동구', '북구', '서구'],
+      '대전광역시': ['대덕구', '동구', '서구', '유성구', '중구'],
+      '울산광역시': ['남구', '동구', '북구', '중구', '울주군'],
+      '세종특별자치시': ['세종시'],
+      '경기도': ['고양시', '과천시', '광명시', '광주시', '구리시', '군포시', '김포시', '남양주시', '동두천시', '부천시', '성남시', '수원시', '시흥시', '안산시', '안성시', '안양시', '양주시', '오산시', '용인시', '의왕시', '의정부시', '이천시', '파주시', '평택시', '포천시', '하남시', '화성시', '가평군', '양평군', '여주군', '연천군'],
+      '강원도': ['강릉시', '동해시', '삼척시', '속초시', '원주시', '춘천시', '태백시', '고성군', '양구군', '양양군', '영월군', '인제군', '정선군', '철원군', '평창군', '홍천군', '화천군', '횡성군'],
+      '충청북도': ['제천시', '청주시', '충주시', '괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '증평군', '진천군'],
+      '충청남도': ['계룡시', '공주시', '논산시', '보령시', '서산시', '아산시', '천안시', '금산군', '부여군', '서천군', '예산군', '청양군', '태안군', '홍성군'],
+      '전라북도': ['군산시', '김제시', '남원시', '익산시', '전주시', '정읍시', '고창군', '무주군', '부안군', '순창군', '완주군', '임실군', '장수군', '진안군'],
+      '전라남도': ['광양시', '나주시', '목포시', '순천시', '여수시', '강진군', '고흥군', '곡성군', '구례군', '담양군', '무안군', '보성군', '신안군', '영광군', '영암군', '완도군', '장성군', '장흥군', '진도군', '함평군', '해남군', '화순군'],
+      '경상북도': ['경산시', '경주시', '구미시', '김천시', '문경시', '상주시', '안동시', '영주시', '영천시', '포항시', '고령군', '군위군', '봉화군', '성주군', '영덕군', '영양군', '예천군', '울릉군', '울진군', '의성군', '청도군', '청송군', '칠곡군'],
+      '경상남도': ['거제시', '김해시', '밀양시', '사천시', '양산시', '진주시', '창원시', '통영시', '거창군', '고성군', '남해군', '산청군', '의령군', '창녕군', '하동군', '함안군', '함양군', '합천군'],
+      '제주특별자치도': ['제주시', '서귀포시']
+    };
+    function initLocationSelect() {
+      const selectGroup = document.querySelector('.select-group');
+      const customSelects = selectGroup.querySelectorAll('.custom-select');
+      const citySelect = customSelects[0];
+      const districtSelect = customSelects[1];
+
+      function initDistrictOptions() {
+        const districtOptionList = districtSelect.querySelector('.option-list');
+        const districtHiddenSelect = districtSelect.querySelector('select');
+        const districtButton = districtSelect.querySelector('.selected');
+
+        // 옵션 리스트에 - 항목만 추가
+        districtOptionList.innerHTML = `
+          <li class="disabled"><button type="button">-</button></li>
+        `;
+
+        // hidden select 초기화
+        districtHiddenSelect.innerHTML = `
+          <option value="" disabled selected>군/구 선택</option>
+        `;
+
+        // 선택된 값 초기화
+        districtButton.textContent = '군/구 선택';
+        districtButton.appendChild(document.createElement('i')).className = 'ico-arrow-dropdown';
+      }
+
+      // 옵션 클릭 이벤트 핸들러
+      function handleOptionClick(select, option) {
+        const selectedBtn = select.querySelector('.selected');
+        const hiddenSelect = select.querySelector('select');
+        const value = option.dataset.value;
+        const text = option.textContent;
+
+        // UI 업데이트
+        selectedBtn.textContent = text;
+        selectedBtn.appendChild(document.createElement('i')).className = 'ico-arrow-dropdown';
+        select.classList.remove('active');
+
+        // hidden select 값 업데이트
+        hiddenSelect.value = value;
+
+        // change 이벤트 발생
+        const event = new Event('change', { bubbles: true });
+        hiddenSelect.dispatchEvent(event);
+
+        // 시/도가 변경되면 군/구 옵션 업데이트
+        if (select === citySelect) {
+          updateDistrictOptions(text);
+        }
+      }
+
+      function updateDistrictOptions(cityValue) {
+        const districts = areaData[cityValue] || [];
+        const districtOptionList = districtSelect.querySelector('.option-list');
+        const districtHiddenSelect = districtSelect.querySelector('select');
+        const districtButton = districtSelect.querySelector('.selected');
+
+        // 옵션 리스트 업데이트
+        districtOptionList.innerHTML = `
+          <li><button type="button" data-value="">군/구 선택</button></li>
+          ${districts.map(district => `
+            <li><button type="button" data-value="${district}">${district}</button></li>
+          `).join('')}
+        `;
+
+        // hidden select 업데이트
+        districtHiddenSelect.innerHTML = `
+          <option value="" disabled selected>군/구 선택</option>
+          ${districts.map(district => `
+            <option value="${district}">${district}</option>
+          `).join('')}
+        `;
+
+        // 선택된 값 초기화
+        districtButton.textContent = '군/구 선택';
+        districtButton.appendChild(document.createElement('i')).className = 'ico-arrow-dropdown';
+        districtHiddenSelect.value = '';
+
+        // 새로 생성된 옵션들에 대한 이벤트 바인딩
+        const newOptions = districtOptionList.querySelectorAll('button');
+        newOptions.forEach(option => {
+          option.addEventListener('click', () => handleOptionClick(districtSelect, option));
+        });
+      }
+      initDistrictOptions();
+
+      customSelects.forEach(select => {
+        const selectedBtn = select.querySelector('.selected');
+        const options = select.querySelectorAll('.option-list button');
+
+        selectedBtn.addEventListener('click', () => {
+          // 다른 셀렉트박스 닫기
+          customSelects.forEach(s => {
+            if (s !== select) s.classList.remove('active');
+          });
+          select.classList.toggle('active');
+        });
+
+        // 초기 옵션들에 대한 이벤트 바인딩
+        options.forEach(option => {
+          option.addEventListener('click', () => handleOptionClick(select, option));
+        });
+      });
+
+      // 외부 클릭시 닫기
+      document.addEventListener('click', (e) => {
+        if (!selectGroup.contains(e.target)) {
+          customSelects.forEach(select => select.classList.remove('active'));
+        }
+      });
+    }
+    function initFileUpload() {
+      const fileInput = document.querySelector('.file-upload input[type="file"]');
+      const placeholder = document.querySelector('.file-upload .placeholder');
+
+      fileInput.addEventListener('change', (e) => {
+        const fileName = e.target.files[0]?.name;
+        if (fileName) {
+          placeholder.textContent = fileName;
+        } else {
+          placeholder.textContent = '파일을 선택해 주세요.';
+        }
+      });
+    }
+  </script>
+  <footer id="footer" class="footer">
+  </footer>
+</html>
