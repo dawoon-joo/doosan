@@ -1,27 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
   animateText('.sec-visual .heading');
-  floating();
+  // floating();
   initAccentAnimation();
   initTableScroll();
 })
 function animateText(selector) {
   const content = document.querySelector(selector);
   if(!content) { return;}
-  const text = content.textContent;
-  content.innerHTML = '';
-  text.split('').forEach(char => {
-    const span = document.createElement('span');
-    if (char === ' ') {
-      span.innerHTML = '&nbsp;';
-    } else {
-      span.textContent = char;
+
+  // 텍스트 분할 로직
+  const nodes = Array.from(content.childNodes);
+  let newHtml = '';
+
+  nodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const chars = node.textContent.split('');
+      newHtml += chars.map(char =>
+        char === ' ' ?
+          '<span>&nbsp;</span>' :
+          `<span>${char}</span>`
+      ).join('');
+    } else if (node.nodeName === 'BR') {
+      // 기존 br의 클래스 유지
+      const className = node.className;
+      newHtml += `<br${className ? ` class="${className}"` : ''}>`;
     }
-    content.appendChild(span);
   });
+
+  content.innerHTML = newHtml;
+
+  // 애니메이션 로직
   const elements = document.querySelectorAll(`${selector} span`);
   document.body.style.overflow = 'hidden';
   lenis.stop();
+
   const tl1 = gsap.timeline({
     onComplete: () => {
       setTimeout(() => {
@@ -36,40 +49,18 @@ function animateText(selector) {
           lenis.start();
           document.body.style.overflow = 'auto';
         }, 500);
-
       }, 500);
     }
   });
+
   elements.forEach((el, index) => {
-    const delay = 0.2 + Math.pow(index, 0.7) * 0.07;
     tl1.to(el, {
       duration: 0.4,
       autoAlpha: 1,
       transform: 'none',
       delay: 0.2 + index * 0.04,
-      // delay: delay,
       ease: "power1.outIn",
     }, 'text');
-  });
-}
-function floating() {
-  const scrollTo = document.querySelector('.sec-selector .content-top');
-  if (!scrollTo) return;
-
-  gsap.to(scrollTo, {
-    scrollTrigger: {
-      trigger: '.sec-selector',
-      start: 'top top',
-      // markers: true,
-      onEnter: () => {
-        scrollTo.style.position = 'fixed';
-        scrollTo.classList.add('active');
-      },
-      onLeaveBack: () => {
-        scrollTo.style.position = 'relative';
-        scrollTo.classList.remove('active');
-      }
-    }
   });
 }
 const initAccentAnimation = () => {

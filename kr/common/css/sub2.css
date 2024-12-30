@@ -36,9 +36,8 @@
 @media screen and (max-width: 767px) {
   .wrap.nv { padding-top: 70px;}
   .sec-visual .heading { font-size: 30px;}
-  .sec-visual.type2 .sbj { font-size: 20px; margin-bottom: 10px;}
+  .sec-visual.type2 .sbj { font-size: 20px;}
   .sec-visual .text { font-size: 16px;}
-  .sec-visual .sbj { margin-bottom: 10px;}
 }
 .section-group { position: relative;}
 .section-group > .side-btns.sub { top: 28px;}
@@ -142,7 +141,6 @@
 }
 @media screen and (max-width: 767px) {
   .sec-selector-type2 { padding-top: 20px; margin-bottom: 70px;}
-  .sec-selector-type2.v2 { margin-bottom: 20px;}
   .sec-selector-type2 .heading { font-size: 24px; margin-bottom: 20px;}
   .sec-selector-type2 .text { font-size: 18px;}
 }
@@ -169,7 +167,7 @@
 .sec-product .product-list_eco .product-item:first-child .img-box { margin-top: auto;}
 .sec-product .product-list_eco .product-item:nth-child(even) .col.text-boxs { order: 2; }
 .sec-product .product-list_eco .product-item:nth-child(even) .text-boxs { padding-left: 0;}
-.sec-product .product-list_eco .product-item > a { height: auto; margin: 0; flex-direction: row;}
+.sec-product .product-list_eco .product-item > a { height: auto; margin: 0;}
 .sec-product .product-list_eco .product-item .link-btn { margin: 0; font-weight: 500;}
 .sec-product .product-list_eco .product-item + .product-item { margin-top: 54px;}
 .sec-product .product-list_eco .text-boxs .title { margin-bottom: 20px;}
@@ -186,11 +184,6 @@
   .sec-product .product-list .motion { display: none;}
   .sec-product .product-item { padding: 45px 0 20px;}
   .sec-product .product-item .text-boxs .title { font-size: 24px;}
-  .sec-product .product-list_eco .product-item { padding: 0 5%;}
-  .sec-product .product-list_eco .product-item > a { flex-direction: row;}
-  .sec-product .product-list_eco .product-item .text-boxs { padding: 80px 0;}
-  .sec-product .product-list_eco .product-item .col.img-boxs { padding: 0 2.5%;}
-  .sec-product .product-list_eco .product-item:first-child .img-box { margin-top: 0;}
 }
 @media screen and (max-width: 767px) {
   .sec-product { padding: 70px 0;}
@@ -200,15 +193,6 @@
   .sec-product .product-item .text-boxs .title { font-size: 22px;}
   .sec-product .product-item .img-box { text-align: center;}
   .sec-product .product-item .img-box img { width: 90%;}
-  .sec-product .product-list_eco .product-item { padding: 7.5% 5%;}
-  .sec-product .product-list_eco .product-item > a { flex-direction: column-reverse;}
-  .sec-product .product-list_eco .product-item .col { width: 100%;}
-  .sec-product .product-list_eco .product-item .col.img-boxs { margin-bottom: 20px;}
-  .sec-product .product-list_eco .product-item .text-boxs { padding: 0;}
-  .sec-product .product-list_eco .product-item .img-box img { max-height: 300px;}
-  .sec-product .product-list_eco .text-boxs .desc { margin-bottom: 20px;}
-  .sec-product .product-list_eco .product-item:nth-child(even) .col.text-boxs { order:1;}
-  .sec-product .product-list_eco .product-item:nth-child(even) .col.img-boxs { order: 2;}
 }
 
 /* sec-product-view */
@@ -309,10 +293,9 @@
   .sec-product-view .text-wrap .list li:first-child { margin-right: 0;}
   .sec-product-view .text-wrap .list .title { font-size: 16px;}
   .sec-product-view .text-wrap .icon { width: 30px; height: 30px;}
-  .sec-product-view .text-wrap .list { margin-bottom: 50px;}
   .sec-product-view .text-wrap .list .value { font-size: 20px;}
   .sec-product-view .text-wrap .list .value span { margin-bottom: 0; font-size: 14px;}
-  .sec-product-view .product-view .content-top { margin-bottom: 0px;}
+  .sec-product-view .product-view .content-top { margin-bottom: 60px;}
   .sec-product-view.eco .product-view .text-wrap .text-boxs .sub-heading { font-size: 16px;}
   .sec-product-view .content-body .heading { font-size: 20px; margin-bottom: 20px;}
   .sec-product-view .content-body .product-table table { min-width: 767px;}
@@ -351,7 +334,7 @@
   .sec-bottom-banner .grid-box .col { padding: 30px 5%;}
   .sec-bottom-banner .grid-box .col .text-boxs { width: 100%;}
   .sec-bottom-banner .grid-box .col.right { padding-left: 5%;}
-  .sec-bottom-banner .text-boxs .heading { font-size: 22px;}
+  .sec-bottom-banner .text-boxs .heading { font-size: 24px;}
   .sec-bottom-banner .grid-box .col.left .text-boxs::before { right: 0;}
   .sec-bottom-banner .grid-box .col .text-boxs::before { width: 27px; height: 21px;}
 }
@@ -797,7 +780,7 @@
 .purchase-contact .form-wrap .custom-select .selected { width: 100%; padding: 15px 20px; background: #F7F7F7; border: none; text-align: left; position: relative; height: 60px; font-size: 16px; color: var(--primary-color);}
 .purchase-contact .form-wrap .custom-select .selected i { display: inline-block; width: 27px; height: 27px; background: url(../images/ico-arrow-dropdown.png) no-repeat center/auto 30%; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); filter: invert(1); }
 .purchase-contact .form-wrap .custom-select.active .selected i { transform: translateY(-50%) rotate(180deg); }
-.purchase-contact .form-wrap .custom-select .option-list { position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border: 1px solid #ddd; max-height: 400px; overflow-y: auto; display: none; z-index: 8; }
+.purchase-contact .form-wrap .custom-select .option-list { position: absolute; top: 100%; left: 0; width: 100%; background: #fff; border: 1px solid #ddd; max-height: 400px; overflow-y: auto; display: none; z-index: 9; }
 .purchase-contact .form-wrap .custom-select.active .option-list { display: block; }
 .purchase-contact .form-wrap .custom-select .option-list li { padding: 0;}
 .purchase-contact .form-wrap .custom-select .option-list li button { width: 100%; padding: 5px 20px; text-align: left; background: #fff; transition: background 0.2s; font-size: 16px; border: none; color: #666;}
@@ -869,7 +852,7 @@
   .support-partner { padding: 70px 0;}
   .support-partner .text-wrap { margin-bottom: 30px;}
   .support-partner .heading { margin-bottom: 20px; font-size: 22px;}
-  .support-partner .text { font-size: 16px;}
+  .support-partner .text { font-size: 18px;}
 }
 /* support-card */
 .support-card { padding-bottom: 170px;}
@@ -1242,8 +1225,6 @@
   .genuine-card .grid-box { grid-template-columns: repeat(1, 1fr); grid-auto-rows: auto;}
   .genuine-card article > a { padding: 25px 20px;}
   .genuine-card .flex-box { gap: 10px;}
-  .genuine-card .text-boxs .title { font-size: 18px;}
-  .genuine-card .img-box { text-align: center;}
   .genuine-card .text-boxs .link-btn .text span { font-size: 14px;}
 }
 
@@ -1548,81 +1529,31 @@
 
   @media screen and (max-width: 767px) {
     .terms_cont .top_info {padding: 30px 20px; font-size: 14px;}
-
   }
 
 /* privacy */
-#terms .inner {max-width: 1080px;}
-.tab-nav {padding: 80px 0 0; text-align: center;}
-.tab-nav li {display: inline-block; margin: 0 4px; vertical-align: middle;}
-.tab-nav li a, .tab-nav li button {display: block;  min-width: 280px; background: #f0f0f0; font-size: 18px; color: #333333; letter-spacing: -0.5px; text-align: center; line-height: 56px;}
-.tab-nav li.on a, .tab-nav li.on button {background: #005eb8; color: #fff; box-shadow: 1px 1px 15px rgb(0 94 184 / 44%);}
-.terms-listbtn {margin: 100px 0 100px; text-align: right;}
-.terms-listbtn .terms-list-date {display: inline-block; position: relative;}
-.terms-listbtn .terms-list-date strong {position: absolute; right: 100%; top: 50%; margin-right: 1em; width: 100%; font-size: 2rem; vertical-align: middle; transform: translateY(-50%);}
-.terms-listbtn .terms-list-date span { position: relative; display: inline-block; padding: 0 1.75em 0 0.5em; min-width: 225px; margin: 0;
-  width: 100%; height: 60px; border: none; border-bottom: 2px solid #333;
-  font-size: 20px; font-weight: 500; line-height: 58px; cursor: pointer; text-align: left; vertical-align: middle;}
-.terms-listbtn .terms-list-date span::before { content: ''; display: inline-block; background: url(../images/ico-arrow-dropdown.png) no-repeat 95% center; filter: invert(1); width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-.terms-listbtn ul {display: none; position: absolute; left: 0; top: 100%; z-index: 10; width: 100%; background: #fff; border: 1px solid #333; text-align: left;}
-.terms-listbtn ul li {margin: 0 !important;}
-.terms-listbtn ul li a {display: block; padding: 7px 10px; font-size: 18px;}
-.terms-listbtn ul li.on a {background: #333; color: #fff;}
-.term-conbox { display: none;}
-.term-conbox.on {display: block;}
-.terms-list p {font-size: 18px; font-weight: 300;}
-.terms-list dl {margin-top: 60px;}
-.terms-list a {color: #005eb8;}
-.terms-list a:hover {text-decoration: underline;}
-/* .terms-list dl:first-child {padding-top: 10px; border-top: 1px solid #dcdcdc;} */
-.terms-list dd ul li {position: relative; margin-left: 16px; font-size: 16px; color: #333; font-weight: 300; line-height: 24px;}
-.terms-list dd ul li:before {content: '-'; position: absolute; margin-left: -16px; font-size: 15px; color: #333; font-weight: 300;}
-.terms-list dl dt {margin-bottom: 1em; font-size: 24px; color: #000; font-weight: 600;}
-.terms-list dl dd .dd-con {margin: 10px 0;}
-.terms dd {font-size: 1.6rem; color: #333; line-height: 1.750em; font-weight: 300;}
-.terms dd:nth-child(2) {padding-top: 0;}
-.tbstyle02 table {border-top: 2px solid #000000; width: 100%; border-spacing: 0; border-collapse: collapse; margin: 10px 0;}
-.tbstyle02 table thead th {padding: 1.375em 0; border-bottom: 1px solid #e6e6e6; border-left: 1px solid #e6e6e6; background: #fafafa;
-  font-size: 1.6rem; color: #000000; font-weight: 400; letter-spacing: -0.016em;}
-.tbstyle02 table thead th:first-child {border-left: none !important;}
-.tbstyle02 table thead th {padding: 1em 0; font-size: 1.6rem;}
-.tbstyle02 table td {padding: 1.133em 0.3em; border-bottom: 1px solid #e6e6e6; border-left: 1px solid #e6e6e6; font-size: 1.5rem; color: #666;
-    line-height: 2em; font-weight: 300; letter-spacing: -0.017em; text-align: center;}
-.tbstyle02 table tbody td:first-child {border-left: none !important;}
-
-@media screen and (max-width: 767px) {
-  .terms-list p {font-size: 15px;}
-
-  .tab-nav li:last-child {margin-top: 10px;}
-  .terms-list dl dt {font-size: 18px;}
-  .terms-list dd ul li {font-size: 14px;}
-  .terms-listbtn .terms-list-date {width: 100%;}
-  .terms-listbtn .terms-list-date strong {position: relative; right: auto; top: auto; margin: 0; text-align: left; width: 100%; display: block; font-size: 16px;}
-  .terms-listbtn .terms-list-date span {display: inline-block; padding: 0 20px 0 10px; min-width: 225px; margin: 0; width: 100%; height: 48px;
-    border: none; border-bottom: 2px solid #333; background: url(/images/bu/bu-select.png) no-repeat 95% center; font-size: 2rem; font-weight: 500; line-height: 48px;
-    cursor: pointer; text-align: left; vertical-align: middle;}
-  .terms-listbtn ul li a {display: block; padding: 7px 10px; font-size: 14px;}
-  .tab-nav li a, .tab-nav li button {min-width: 225px; font-size: 16px; line-height: 48px;}
-}
-
-/* error */
-.parking-error {display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 730px; border-top: 1px solid #ddd; text-align: center;}
-.parking-error strong{display: block; margin: 80px 0 30px; font-size: 36px; color: #333333; line-height: 46px; letter-spacing: -0.5px; font-weight: 700;}
-.parking-error p {font-size: 18px; color: #666666; letter-spacing: -0.5px; line-height: 30px; font-weight: 300;}
-.parking-error .error-btn {margin-top: 80px;}
-.parking-error .error-btn a {min-width: 185px; padding: 18px 64px; margin-left: 20px; border: 1px solid #313131; font-size: 16px;  color: #313131; letter-spacing: -0.5px; line-height: 55px;}
-.parking-error .error-btn a:first-child {margin-left: 0;}
-.parking-error .error-btn a:hover {background: #333; color: #fff;}
-
-@media (max-width: 1080px) {
-  .parking-error {padding: 80px 0; min-height: auto;}
-}
-
-@media (max-width: 767px) {
-  .parking-error img {max-width: 150px;}
-  .parking-error strong {margin-top: 40px; font-size: 25px;}
-  .parking-error p {font-size: 15px; line-height: 25px;}
-  .parking-error .error-btn {margin-top: 40px;}
-  .parking-error .error-btn a {display: block !important; margin: 10px 0 0; padding: 0 8px; font-size: 14px; line-height: 48px;}
-
-}
+  .tab-nav {padding: 10em 0 0; text-align: center;}
+  .tab-nav li {display: inline-block; margin: 0 4px; vertical-align: middle;}
+  .tab-nav li a, .tab-nav li button {display: block;  min-width: 225px; background: #f0f0f0; font-size: 1.8rem; color: #333333; letter-spacing: -0.5px; text-align: center; line-height: 3.056em; padding: 0 1.111em;}
+  .tab-nav li.on a, .tab-nav li.on button {background: #005eb8; color: #fff; box-shadow: 1px 1px 15px rgb(0 94 184 / 44%);}
+  .terms-listbtn {margin: 5em 0 0; text-align: right;}
+  .terms-listbtn .terms-list-date {display: inline-block; position: relative;}
+  .terms-listbtn .terms-list-date strong {position: absolute; right: 100%; top: 50%; margin-right: 1em; width: 100%; font-size: 2rem; vertical-align: middle; transform: translateY(-50%);}
+  .terms-listbtn .terms-list-date span {display: inline-block; padding: 0 1.75em 0 0.5em; min-width: 225px; margin: 0;
+    width: 100%; height: 3em; border: none; border-bottom: 2px solid #333; background: url(/kr/common/images/ico-arrow-dropdown.png) no-repeat 95% center;
+    font-size: 2rem; font-weight: 500; line-height: 3em; cursor: pointer; text-align: left; vertical-align: middle;}
+  .terms-listbtn ul {display: none; position: absolute; left: 0; top: 100%; z-index: 10; width: 100%; background: #fff; border: 1px solid #333; text-align: left;}
+  .terms-listbtn ul li {margin: 0 !important;}
+  .terms-listbtn ul li a {display: block; padding: 7px 10px; font-size: 18px;}
+  .terms-listbtn ul li.on a {background: #333; color: #fff;}
+  .term-conbox.on {display: block;}
+  .terms-list dl {margin-top: 7em;}
+  .terms-list dl:first-child {padding-top: 10em; border-top: 1px solid #dcdcdc;}
+  .terms-list dl dt {margin-bottom: 1em; font-size: 2.4rem; color: #000; font-weight: 600;}
+  .terms dd {font-size: 1.6rem; color: #333; line-height: 1.750em; font-weight: 300;}
+  .terms dd:nth-child(2) {padding-top: 0;}
+  .tbstyle02 table {border-top: 2px solid #000000; width: 100%; border-spacing: 0; border-collapse: collapse;}
+  .tbstyle02 table thead th {padding: 1.375em 0; border-bottom: 1px solid #e6e6e6; border-left: 1px solid #e6e6e6; background: #fafafa;
+    font-size: 1.6rem; color: #000000; font-weight: 400; letter-spacing: -0.016em;}
+  .tbstyle02 table thead th:first-child {border-left: none !important;}
+  .tbstyle02 table thead th {padding: 1em 0; font-size: 1.6rem;}

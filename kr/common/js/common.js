@@ -308,7 +308,12 @@ let hamburger = {
 
         if (handler.isMobile()) {
           const currentUrl = window.location.pathname;
-          const currentMenu = document.querySelector(`.depth3 a[href="${currentUrl}"], .depth3 a[href="${currentUrl.replace(/\/$/, '')}"]`);
+          const currentMenu = document.querySelector(`
+            .depth2 > li > a[href="${currentUrl}"],
+            .depth2 > li > a[href="${currentUrl.replace(/\/$/, '')}"],
+            .depth3 a[href="${currentUrl}"],
+            .depth3 a[href="${currentUrl.replace(/\/$/, '')}"]
+          `);
 
           if (currentMenu) {
             // depth1 펼치기
@@ -317,19 +322,23 @@ let hamburger = {
               depth1Link.setAttribute('aria-expanded', 'true');
               const headerSubmenu = depth1Link.nextElementSibling;
 
-              // 일단 전체 요소를 보이게 설정
-              headerSubmenu.style.visibility = 'visible';
-              headerSubmenu.style.opacity = '1';
-              headerSubmenu.style.maxHeight = 'none'; // 임시로 제한 없애기
+              gsap.set(headerSubmenu, {
+                visibility: 'hidden',
+                position: 'absolute',
+                display: 'block',
+                maxHeight: 'none'
+              });
 
               // 실제 전체 높이 가져오기
-              const totalHeight = headerSubmenu.scrollHeight;
+              const totalHeight = headerSubmenu.getBoundingClientRect().height;
 
               // 최종 높이 설정
               gsap.set(headerSubmenu, {
+                position: '',
+                display: '',
                 maxHeight: totalHeight,
-                opacity: 1,
-                visibility: 'visible'
+                visibility: 'visible',
+                opacity: 1
               });
             }
 
@@ -338,10 +347,24 @@ let hamburger = {
             if (depth2Link) {
               depth2Link.setAttribute('aria-expanded', 'true');
               const depth3Menu = depth2Link.nextElementSibling;
+
+              // 임시로 보이게 만들어서 정확한 높이 계산
               gsap.set(depth3Menu, {
-                maxHeight: depth3Menu.scrollHeight,
-                opacity: 1,
-                visibility: 'visible'
+                visibility: 'hidden',
+                position: 'absolute',
+                display: 'block',
+                maxHeight: 'none'
+              });
+
+              const depth3Height = depth3Menu.getBoundingClientRect().height;
+
+              // 원래 상태로 되돌리고 애니메이션 적용
+              gsap.set(depth3Menu, {
+                position: '',
+                display: '',
+                maxHeight: depth3Height,
+                visibility: 'visible',
+                opacity: 1
               });
             }
           }
