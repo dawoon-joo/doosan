@@ -707,15 +707,22 @@ function searchToggle() {
   const searchOpenBtn = document.querySelector('.btn_search_open');
   const searchCloseBtn = document.querySelector('.btn_search_close');
   const searchWrap = document.querySelector('.search_wrap');
-
+  const body = document.body;
+  const html = document.documentElement;
   if (!searchOpenBtn || !searchCloseBtn || !searchWrap) return;
 
   searchOpenBtn.addEventListener('click', () => {
     searchWrap.classList.add('on', 'active');
+    body.setAttribute('data-lenis-prevent', '');
+    body.style.overflow = 'hidden';
+    html.style.overflow = 'hidden';
   });
 
   searchCloseBtn.addEventListener('click', () => {
     searchWrap.classList.remove('active');
+    body.removeAttribute('data-lenis-prevent');
+    body.style.removeProperty('overflow');
+    html.style.removeProperty('overflow');
     setTimeout(() => {
       searchWrap.classList.remove('on');
     }, 300);
