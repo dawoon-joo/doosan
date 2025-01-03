@@ -1745,3 +1745,20 @@
 	.search_results_cont .auto-keyword {width:100%;top:44px}
 	.search_results_cont .auto-keyword .auto-keyword-item {padding-left: 20px; padding-right: 3px; background-position: 0 0.5rem; margin-left: 10px; }
 }
+
+.pagination {margin-top:7rem; text-align:center; font-size:0;}
+.pagination .pg a { display:inline-block; width:3.5rem; height:3.5rem; line-height:3.5rem; font-size:1.6rem; color:#666; vertical-align:middle; text-align:center; margin:0 0.5rem;}
+.pagination .pg a:hover { color:#000;}
+.pagination .pg a.on { color:#005eb8 !important; position:relative;}
+.pagination .pg a.on::after {display:block; content:''; width:100%; height:2px; background-color:#005eb8; position:absolute; bottom:0; left:0;}
+.pagination .pg_btn { display:inline-block; position:relative; margin:0 1rem; width:2.5rem; height:3.5rem; background-repeat:no-repeat; background-position:center; vertical-align:middle; cursor:pointer;}
+.pagination .pg_btn.pg_start { background-image:url(/kr/common/images/ico-page-right-end.png); transform: scaleX(-1);}
+.pagination .pg_btn.pg_prev { background-image:url(/kr/common/images/ico-page-right.png); transform: scaleX(-1);}
+.pagination .pg_btn.pg_next { background-image:url(/kr/common/images/ico-page-right.png);}
+.pagination .pg_btn.pg_end { background-image:url(/kr/common/images/ico-page-right-end.png) ;}
+
+@media screen and (max-width: 767px) {
+  .pagination {margin-top:5rem;}
+  .pagination .pg a {width:3rem; height:3rem; line-height:3rem; font-size:1.5rem;}
+  .pagination .pg_btn {width:2rem; height:3rem;}
+}
