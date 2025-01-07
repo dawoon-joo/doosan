@@ -370,7 +370,33 @@
       initInquirySelect();
       initLocationSelect();
       initFileUpload();
+      setSelectValueFromURL();
     });
+    function setSelectValueFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        if(category) {
+            const selectElement = document.getElementById('category');
+            const customButton = selectElement.parentElement.nextElementSibling;
+            
+            // AGF를 UNMANNED로 매핑
+            const categoryMap = {
+                'agf': 'UNMANNED'
+            };
+            
+            const mappedCategory = categoryMap[category.toLowerCase()] || category.toUpperCase();
+            console.log('매핑된 카테고리:', mappedCategory);
+            
+            selectElement.value = mappedCategory;
+            
+            const selectedOption = selectElement.querySelector(`option[value="${mappedCategory}"]`);
+            if(selectedOption) {
+                customButton.textContent = selectedOption.textContent;
+                customButton.insertAdjacentHTML('beforeend', '<i class="ico-arrow-dropdown"></i>');
+            }
+        }
+    }
     function initInquirySelect() {
       const inquirySelect = document.querySelector('.custom-select:not(.select-group .custom-select)'); // select-group 외부의 custom-select
       const selectedBtn = inquirySelect.querySelector('.selected');
