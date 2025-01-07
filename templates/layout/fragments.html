@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="header">
+  <div class="header-primary">
+    <h1>
+      <a href="/kr" class="logo">
+        <span class="blind">케이엔제이</span>
+      </a>
+    </h1>
+    <div class="gnb">
+      <nav class="nav">
+        <ul class="depth1" data-lenis-prevent>
+          <li>
+            <a href="/kr/product/diesel">제품</a>
+            <div class="header-submenu">
+              <div class="header-submenu-title">
+                <div class="group">
+                  <h2 class="title">제품</h2>
+                  <a href="/kr/product/search" class="link-btn white">
+                  <span class="text">
+                    <span>제품 검색하기</span>
+                  </span>
+                    <span class="ico ico-arrow-link-white"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="header-submenu-list" data-lenis-prevent>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="javascript:">디젤 지게차</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/product/diesel/diesel2t33t-premium">2t - 3.3t, 프리미엄</a></li>
+                        <li><a href="/kr/product/diesel/diesel2t33t-standard">2t - 3.3t, 표준형</a></li>
+                        <li><a href="/kr/product/diesel/diesel35t5t">3.5t - 5t, 경제형</a></li>
+                        <li><a href="/kr/product/diesel/diesel5t7t">5t - 7t, 경제형</a></li>
+                        <li><a href="/kr/product/diesel/diesel5t8t">5t - 8t </a></li>
+                        <li><a href="/kr/product/diesel/diesel10t18t">10t - 18t </a></li>
+                        <li><a href="/kr/product/diesel/diesel18t30t">18t - 30t </a></li>
+                        <li><a href="/kr/product/diesel">전체보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="javascript:">LPG 지게차</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/product/lpg/lpg2t33t">2t - 3.3t</a></li>
+                        <li><a href="/kr/product/lpg/lpg35t45t">3.5t - 4.5t</a></li>
+                        <li><a href="/kr/product/lpg/lpg5t7t">5t - 7t</a></li>
+                        <li><a href="/kr/product/lpg">전체보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="javascript:">전동 좌승식 지게차</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/product/electric/electric15t2t-three">1.5t - 2t, 3륜</a></li>
+                        <li><a href="/kr/product/electric/electric1518t">1.5 - 1.8t</a></li>
+                        <li><a href="/kr/product/electric/electric16t2t">1.6t - 2t, 저상고</a></li>
+                        <li><a href="/kr/product/electric/electric15t2t-row">1.5t - 2t, 보급형</a></li>
+                        <li><a href="/kr/product/electric/electric2t35t">2t - 3.5t</a></li>
+                        <li><a href="/kr/product/electric/electric2t35t-row">2t - 3.5t, 보급형</a></li>
+                        <li><a href="/kr/product/electric/electric2t25t">2t - 2.5t, 경제형</a></li>
+                        <li><a href="/kr/product/electric/electric2t3t">2t - 3t, 쿠션 타이어</a></li>
+                        <li><a href="/kr/product/electric/electric4t5t">4t - 5t</a></li>
+                        <li><a href="/kr/product/electric">전체보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="javascript:">전동 입승식 지게차</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/product/stacker/stacker15t25">스탠드 업 라이더</a></li>
+                        <li><a href="/kr/product/stacker/stackermast">입승식 마스트무빙 리치트럭</a></li>
+                        <li><a href="/kr/product/stacker/stackergraph">입승식 팬터그래프 리치트럭</a></li>
+                        <li><a href="/kr/product/stacker/stackerreachtruck">좌승식 리치트럭</a></li>
+                        <li><a href="/kr/product/stacker/stackerpicker">고양고 오더피커</a></li>
+                        <li><a href="/kr/product/stacker">전체보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="javascript:">소형 창고 물류장비</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/product/equipments/equipmentspalette-pr">팔레트 트럭, 프리미엄</a></li>
+                        <li><a href="/kr/product/equipments/equipmentspalette">팔레트 트럭</a></li>
+                        <li><a href="/kr/product/equipments/equipmentsstacker-pr">스태커, 프리미엄</a></li>
+                        <li><a href="/kr/product/equipments/equipmentsstacker">스태커</a></li>
+                        <li><a href="/kr/product/equipments/equipmentstruck">견인차</a></li>
+                        <li><a href="/kr/product/equipments/equipments-transporting">운반차</a></li>
+                        <li><a href="/kr/product/equipments/equipments-workbench">고소작업대</a></li>
+                        <li><a href="/kr/product/equipments">전체보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="javascript:">친환경/디지털 제품</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/product/eco/lithium">리튬 인산철 배터리 지게차</a></li>
+                        <li><a href="/kr/product/eco/agf">무인지게차(AGF)</a></li>
+                        <li><a href="/kr/product/eco/hydrogen">수소연료전지 지게차</a></li>
+                        <li><a href="/kr/product/eco/machine">Machine IQ</a></li>
+                        <li><a href="/kr/product/eco">전체보기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item tablet">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/product/search">제품 검색하기</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="/kr/attachment/fork">어태치먼트</a>
+            <div class="header-submenu">
+              <div class="header-submenu-title">
+                <div class="group">
+                  <h2 class="title">어태치먼트</h2>
+                  <!-- <a href="javascript:" class="link-btn white">
+                    <span class="text">
+                      <span>제품 검색하기</span>
+                    </span>
+                    <span class="ico ico-arrow-link-white"></span>
+                  </a> -->
+                </div>
+              </div>
+              <div class="header-submenu-list" data-lenis-prevent>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/attachment">포크 무버</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/fork">포크 무버</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/kr/attachment">푸시 작업장치</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/push/pull">푸시 풀</a></li>
+                        <li><a href="/kr/attachment/push/inverter">인버터 푸시 클램프</a></li>
+                        <!-- <li><a href="/kr/attachment/push">전체보기</a></li> -->
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/attachment">사이드 쉬프터</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/shifter">사이드 쉬프터</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/kr/attachment">기타 작업장치</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/other/pallet">1-2 팔레트 핸들러</a></li>
+                        <li><a href="/kr/attachment/other/load">로드 익스텐더</a></li>
+                        <li><a href="/kr/attachment/other/drum">드럼 핸들러</a></li>
+                        <li><a href="/kr/attachment/other/ram">램</a></li>
+                        <!-- <li><a href="/kr/attachment/other">전체보기</a></li> -->
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/attachment">클램프</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/clamp/roll">로테이팅 롤 클램프</a></li>
+                        <li><a href="/kr/attachment/clamp/bale">베일 클램프</a></li>
+                        <li><a href="/kr/attachment/clamp/multipurpose">다목적 클램프</a></li>
+                        <li><a href="/kr/attachment/clamp/tire">타이어 클램프</a></li>
+                        <li><a href="/kr/attachment/clamp/fork">포크 클램프</a></li>
+                        <li><a href="/kr/attachment/clamp/drum">드럼 클램프</a></li>
+                        <li><a href="/kr/attachment/clamp/ingot">잉고트 클램프</a></li>
+                        <!-- <li><a href="/kr/attachment/clamp">전체보기</a></li> -->
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/attachment">로드 스태빌라이저</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/stabilizer">로드 스태빌라이저</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/attachment">힌지드 작업장치</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/hinged/fork">힌지드 포크</a></li>
+                        <li><a href="/kr/attachment/hinged/bucket">힌지드 버킷</a></li>
+                        <!-- <li><a href="/kr/attachment/hinged">전체보기</a></li> -->
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/kr/attachment">로테이팅 작업장치</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/attachment/rotating/fork">로테이팅 포크</a></li>
+                        <li><a href="/kr/attachment/rotating/turn">턴어로드</a></li>
+                        <!-- <li><a href="/kr/attachment/rotating">전체보기</a></li> -->
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:">부품 & 서비스</a>
+            <div class="header-submenu">
+              <div class="header-submenu-title">
+                <div class="group">
+                  <h2 class="title">부품 & 서비스</h2>
+                </div>
+              </div>
+              <div class="header-submenu-list" data-lenis-prevent>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/products">부품</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/parts-service/parts/genuine">순정부품</a></li>
+                        <li><a href="/kr/parts-service/parts/tire">타이어</a></li>
+                        <li><a href="/kr/parts-service/parts/filter">필터</a></li>
+                        <li><a href="/kr/parts-service/parts/oil">오일 및 윤활유</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item">
+                  <ul class="depth2">
+                    <li>
+                      <a href="/products">서비스</a>
+                      <ul class="depth3">
+                        <li><a href="/kr/parts-service/service/support">서비스 지원</a></li>
+                        <li><a href="/kr/parts-service/service/manual">취급설명서</a></li>
+                        <li><a href="/kr/parts-service/service/video">유지보수 비디오</a></li>
+                        <li><a href="/kr/parts-service/service/network">서비스 네트워크</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:">구매 문의</a>
+            <div class="header-submenu">
+              <div class="header-submenu-title h-fit">
+                <div class="group">
+                  <h2 class="title">구매 문의</h2>
+                </div>
+              </div>
+              <div class="header-submenu-list" data-lenis-prevent>
+                <div class="header-submenu-item h-fit">
+                  <ul class="depth2 pb-0">
+                    <li>
+                      <a href="/kr/purchase/contact" class="pb-0">상담신청</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item h-fit">
+                  <ul class="depth2 pb-0">
+                    <li>
+                      <a href="/kr/purchase/location" class="pb-0">국내 대리점 찾기</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:">회사소개</a>
+            <div class="header-submenu">
+              <div class="header-submenu-title">
+                <div class="group">
+                  <h2 class="title">회사소개</h2>
+                </div>
+              </div>
+              <div class="header-submenu-list" data-lenis-prevent>
+                <div class="header-submenu-item h-fit">
+                  <ul class="depth2 pb-0">
+                    <li>
+                      <a href="/kr/about/vision" class="pb-0">비전</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item h-fit">
+                  <ul class="depth2 pb-0">
+                    <li>
+                      <a href="/kr/about/history" class="pb-0">연혁</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item h-fit">
+                  <ul class="depth2 pb-0">
+                    <li>
+                      <a href="/kr/about/domestic" class="pb-0">전세계 사업장</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header-submenu-item h-fit">
+                  <ul class="depth2 pb-0">
+                    <li>
+                      <a href="/kr/about/ci" class="pb-0">브랜드 / CI</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="header-search btn_search_open">
+        <button class="toggle" type="button" aria-label="검색 열기" aria-expanded="false"></button>
+      </div>
+      <div class="logo-bobcat">
+        <span class="logo-img"></span>
+        <span class="hide">두산밥캣코리아</span>
+      </div>
+      <div class="hamburger">
+        <a href="javascript:">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="blind">전체메뉴 열기</span>
+        </a>
+      </div>
+    </div>
+    <div class="search_wrap">
+      <form name="" action="/kr/search/result" method="post">
+        <fieldset>
+          <legend>검색창</legend>
+          <div class="search_form">
+            <input type="text" name="headerKeyword" id="" value="" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요." autocomplete="off" class="search_input">
+            <button type="submit" class="btnset btn_search">
+              <img src="/common/images/hd-search.png" alt="검색">
+            </button>
+          </div>
+        </fieldset>
+      </form>
+      <button type="button" class="btnset btn_search_close">검색창 닫기</button>
+    </div>
+  </div>
+</th:block>
+
+<th:block th:fragment="footer">
+  <div class="inner">
+    <div class="content-top">
+      <div class="sitemap">
+        <article>
+          <dl>
+            <dt><a href="javascript:">제품</a></dt>
+            <dd><a href="/kr/product/diesel/">디젤 지게차</a></dd>
+            <dd><a href="/kr/product/equipments/">소형 창고 물류장비</a></dd>
+            <dd><a href="/kr/product/lpg/">LPG 지게차</a></dd>
+            <dd><a href="/kr/product/eco/">친환경/디지털 제품</a></dd>
+            <dd class="w-100"><a href="/kr/product/electric/">전동 좌승식 지게차</a></dd>
+            <dd class="w-100"><a href="/kr/product/stacker/">전동 입승식 지게차</a></dd>
+          </dl>
+        </article>
+        <article>
+          <dl>
+            <dt><a href="javascript:">어태치먼트</a></dt>
+            <dd><a href="/kr/attachment/fork/">포크 무버</a></dd>
+            <dd><a href="/kr/attachment/hinged/fork">힌지드 작업장치</a></dd>
+            <dd><a href="/kr/attachment/shifter/">사이드 쉬프터</a></dd>
+            <dd><a href="/kr/attachment/rotating/fork">로테이팅 작업장치</a></dd>
+            <dd><a href="/kr/attachment/clamp/roll">클램프</a></dd>
+            <dd><a href="/kr/attachment/push/pull">푸시 작업장치</a></dd>
+            <dd><a href="/kr/attachment/stabilizer/">로드 스태빌라이저</a></dd>
+            <dd><a href="/kr/attachment/other/pallet">기타 작업장치</a></dd>
+          </dl>
+        </article>
+        <article>
+          <dl>
+            <dt><a href="javascript:">부품 & 서비스</a></dt>
+            <dd class="w-100"><a href="/kr/parts-service/parts/genuine">순정부품</a></dd>
+            <dd class="w-100"><a href="/kr/parts-service/service/support">서비스 지원</a></dd>
+          </dl>
+        </article>
+        <article>
+          <dl>
+            <dt><a href="javascript:">구매 문의</a></dt>
+            <dd class="w-100"><a href="/kr/purchase/contact">상담신청</a></dd>
+            <dd class="w-100"><a href="/kr/purchase/location">국내 대리점 찾기</a></dd>
+          </dl>
+        </article>
+        <article>
+          <dl>
+            <dt><a href="javascript:">회사소개</a></dt>
+            <dd class="w-100"><a href="/kr/about/vision">비전</a></dd>
+            <dd class="w-100"><a href="/kr/about/history">연혁</a></dd>
+            <dd class="w-100"><a href="/kr/about/domestic">전세계 사업장</a></dd>
+            <dd class="w-100"><a href="/kr/about/ci">브랜드/CI</a></dd>
+          </dl>
+        </article>
+      </div>
+      <div class="con-right">
+        <div class="phone"><a href="tel:16886262">1688-6262</a></div>
+        <ul class="footer-link">
+          <li><a href="/kr/policy/legal">법적고지</a></li>
+          <li><a href="/kr/policy/terms">이용약관</a></li>
+          <li class="active"><a href="/kr/policy/privacy">개인정보처리방침</a></li>
+        </ul>
+        <ul class="footer-sns">
+          <li><a href="https://www.youtube.com/%EB%91%90%EC%82%B0%EC%82%B0%EC%97%85%EC%B0%A8%EB%9F%89" title="새창으로 열림" target="_blank"><i class="icon icon-youtube"></i></a></li>
+          <!-- <li><a href="javascript:" title="새창으로 열림" target="_blank"><i class="icon icon-kakao"></i></a></li>
+          <li><a href="javascript:" title="새창으로 열림" target="_blank"><i class="icon icon-instagram"></i></a></li>
+          <li><a href="javascript:" title="새창으로 열림" target="_blank"><i class="icon icon-facebook"></i></a></li>
+          <li><a href="javascript:" title="새창으로 열림" target="_blank"><i class="icon icon-linkedin"></i></a></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="content-bottom">
+      <div class="logo-box">
+        <img src="/common/images/logo-hd-light.png" alt="두산밥캣코리아">
+      </div>
+      <p class="copyright">©<span id="copyYear">2024</span> 두산밥캣코리아(주).</p>
+      <div class="site-wrap">
+        <button type="button" class="btn-site">Related Sites</button>
+        <div class="ico ico-arrow-drop"><span class="hide">화살표</span></div>
+        <ul class="familyLink">
+          <li><a href="https://www.doosanbobcat.com/kr" target="_blank" title="새창으로 열림">㈜두산밥캣</a></li>
+          <li><a href="https://www.bobcat.com/kr/ko" target="_blank" title="새창으로 열림">두산밥캣 소형건설기계</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let now = new Date();
+    let year = now.getFullYear();
+    document.querySelector("#copyYear").innerHTML = year;
+    console.log('year',year);
+  </script>
+</th:block>
+
+</html>

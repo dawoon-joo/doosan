@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="서비스 지원을 위한 가장 가까운 두산밥캣코리아의 지정정비공장을 확인해 보세요.">
+  <meta name="keywords" content="서비스 네트워크 : 부품 : 부품 & 서비스 : 두산밥캣코리아">
+  <meta property="og:url" content="https://www.doosan-iv.com/kr/parts-service/service/network">
+  <meta property="og:title" content="서비스 네트워크 : 부품 : 부품 & 서비스 : 두산밥캣코리아">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/common/images/sns_img.jpg">
+  <meta property="og:description" content="서비스 지원을 위한 가장 가까운 두산밥캣코리아의 지정정비공장을 확인해 보세요.">
+  <meta property="og:locale" content="ko">
+  <title>서비스 네트워크 : 부품 : 부품 & 서비스 : 두산밥캣코리아</title>
+
+  <link rel="icon" href="/common/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/common/css/base.css">
+  <link rel="stylesheet" href="/common/css/common.css">
+  <link rel="stylesheet" href="/common/css/sub.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="/common/js/lenis.min.js"></script>
+  <script src="/common/js/scrollreveal.min.js"></script>
+  <script src="/common/js/ScrollToPlugin.min.js"></script>
+  <script src="/common/js/ScrollTrigger.min.js"></script>
+  <script src="/common/js/swiper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <script src="/common/js/gsap.min.js"></script>
+  <script src="/common/js/product.js"></script>
+  <script src="/common/js/sub.js"></script>
+  <script src="/common/js/common.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-XDM39WP9N3></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XDM39WP9N3');
+</script>
+
+<body>
+  <header id="header" class="header">
+    <div th:replace="layout/fragments.html :: header"></div>
+  </header>
+  <div class="wrap sub nv">
+    <section class="sec sec-map">
+      <div id="map" style="width: 100%; height: 100%;"></div>
+      <div class="map-container">
+        <div class="map-drop"><i class="ico-arrow-dropdown"></i></div>
+        <div class="map-wrap">
+          <div class="map-top">
+            <div class="tab-btns">
+              <button type="button">전체</button>
+              <button type="button">영업대리점</button>
+              <button type="button">부품대리점</button>
+              <button type="button" class="active">지정정비공장</button>
+            </div>
+            <div class="tab-lists">
+              <div class="tab-item">
+                <div class="search-boxs">
+                  <h3 class="title">직접 입력</h3>
+                  <div class="search-input">
+                    <input type="text" placeholder="매장명 또는 주소를 입력하세요" id="searchInput">
+                    <button type="button" class="btn-keyword-search">
+                      검색하기
+                    </button>
+                  </div>
+                </div>
+                <div class="select-boxs">
+                  <h3 class="title">지역 선택</h3>
+                  <div class="select-group">
+                    <!-- 시/도 선택 -->
+                    <div class="custom-select">
+                      <button type="button" class="selected">
+                        시/도 선택
+                        <i class="ico-arrow-dropdown"></i>
+                      </button>
+                      <ul class="option-list" data-lenis-prevent>
+                        <li><button type="button" data-value="seoul">서울특별시</button></li>
+                        <li><button type="button" data-value="busan">부산광역시</button></li>
+                        <li><button type="button" data-value="daegu">대구광역시</button></li>
+                        <li><button type="button" data-value="incheon">인천광역시</button></li>
+                        <li><button type="button" data-value="gwangju">광주광역시</button></li>
+                        <li><button type="button" data-value="daejeon">대전광역시</button></li>
+                        <li><button type="button" data-value="ulsan">울산광역시</button></li>
+                        <li><button type="button" data-value="sejong">세종특별자치시</button></li>
+                        <li><button type="button" data-value="gyeonggi">경기도</button></li>
+                        <li><button type="button" data-value="gangwon">강원도</button></li>
+                        <li><button type="button" data-value="chungbuk">충청북도</button></li>
+                        <li><button type="button" data-value="chungnam">충청남도</button></li>
+                        <li><button type="button" data-value="jeonbuk">전라북도</button></li>
+                        <li><button type="button" data-value="jeonnam">전라남도</button></li>
+                        <li><button type="button" data-value="gyeongbuk">경상북도</button></li>
+                        <li><button type="button" data-value="gyeongnam">경상남도</button></li>
+                        <li><button type="button" data-value="jeju">제주특별자치도</button></li>
+                      </ul>
+                    </div>
+                    <!-- 군/구 선택 -->
+                    <div class="custom-select">
+                      <button type="button" class="selected">
+                        군/구 선택
+                        <i class="ico-arrow-dropdown"></i>
+                      </button>
+                      <ul class="option-list" data-lenis-prevent>
+                        <!-- 동적으로 추가될 옵션들 -->
+                      </ul>
+                    </div>
+                    <!-- 검색 버튼 추가 -->
+                    <button type="button" class="btn-search-location">
+                      검색하기
+                      <i class="ico-search"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="return">
+                  <span></span> 선택 초기화
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-list" data-lenis-prevent>
+            <div class="total">
+              총 <span class="accent-color">74</span>건의 검색 결과가 있습니다.
+            </div>
+            <div class="item-wrap">
+              <!-- <article>
+                <div class="flex-box">
+                  <span class="category">영업대리점</span>
+                  <h3 class="city">서울남부지사</h3>
+                </div>
+                <div class="address">경기도 남양주시 강변북로 661번길10(수석동) 2층</div>
+                <div class="phone"><span class="ico-phone"></span>02-508-8488</div>
+                <div class="location-link">
+                  <a href="javascript:"><span class="ico-kakaomap"></span>카카오맵에서 길찾기<span class="ico-link"></span></a>
+                </div>
+              </article> -->
+            </div>
+            <div class="indicator">
+              <button href="#" class="btn btn-prev-end"></button>
+              <button href="#" class="btn btn-prev"></button>
+              <ul class="indi"><li><a href="javascript:" class="active">1</a></li><li><a href="javascript:">2</a></li><li><a href="javascript:">3</a></li></ul>
+              <button href="#" class="btn btn-next"></button>
+              <button href="#" class="btn btn-next-end"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-bottom-banner">
+      <div class="grid-box">
+        <a href="/kr/purchase/contact" class="col left">
+          <div class="text-boxs">
+            <h2 class="heading">상담신청</h2>
+            <p class="desc">지게차에 대한 자세한 안내를 받아보세요.</p>
+          </div>
+        </a>
+        <a href="/kr/purchase/location" class="col right">
+          <div class="text-boxs">
+            <h2 class="heading">국내 대리점 찾기</h2>
+            <p class="desc">가장 가까운 대리점를 확인해 보세요. </p>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="inner">
+      </div> -->
+    </section>
+  </div>
+  <footer id="footer" class="footer">
+          <div th:replace="layout/fragments.html :: footer"></div>
+        </footer>
+  <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=85afd3ff5c14bdca6e743adbaa724fb3&libraries=services"></script> -->
+
+  <!-- 구글맵 스크립트 추가 -->
+  <script>
+    // 위치 데이터
+    let dealerData = [
+      {
+        "id": 1,
+        "city": "경기도",
+        "district": "남양주시",
+        "name": "두산지게차 서울판매 - 남부지사",
+        "address": "경기도 남양주시 강변북로 661번길10(수석동) 2층",
+        "phone": "02-508-8488",
+        "category": "영업대리점",
+        "lat": 37.589392987208,
+        "lng": 127.169317794644
+      },
+      {
+        "id": 2,
+        "city": "서울특별시",
+        "district": "강서구",
+        "name": "두산지게차 서울판매 - 중부지사",
+        "address": "서울특별시 강서구 마곡서로 158, 3층 314호",
+        "phone": "02-2693-1199",
+        "category": "영업대리점",
+        "lat": 37.5680890965874,
+        "lng": 126.825424095847
+      },
+      {
+        "id": 3,
+        "city": "경기도",
+        "district": "시흥시",
+        "name": "두산지게차 경기서부판매",
+        "address": "경기도 시흥시 엠티브이북로 31(정왕동)",
+        "phone": "031-434-8249",
+        "category": "영업대리점",
+        "lat": 37.3302495462192,
+        "lng": 126.685275592807
+      },
+      {
+        "id": 4,
+        "city": "경기도",
+        "district": "오산시",
+        "name": "두산지게차 경기남부판매",
+        "address": "경기도 오산시 동부대로 290(갈곶동)",
+        "phone": "031-372-8400",
+        "category": "영업대리점",
+        "lat": 37.1280166004017,
+        "lng": 127.079793179467
+      },
+      {
+        "id": 5,
+        "city": "경기도",
+        "district": "화성시",
+        "name": "두산지게차 경기중부판매",
+        "address": "경기도 화성시 봉담읍 삼천병마로 1078-2",
+        "phone": "031-227-7990",
+        "category": "영업대리점",
+        "lat": 37.2036580071436,
+        "lng": 126.943037192309
+      },
+      {
+        "id": 6,
+        "city": "경기도",
+        "district": "이천시",
+        "name": "두산지게차 경기동부판매",
+        "address": "경기도 이천시 호법면 중부대로 790",
+        "phone": "031-638-4218",
+        "category": "영업대리점",
+        "lat": 37.2442610603156,
+        "lng": 127.4197331567
+      },
+      {
+        "id": 7,
+        "city": "경기도",
+        "district": "양주시",
+        "name": "두산지게차 경기북부판매",
+        "address": "경기도 양주시 백석읍 꿈나무로 58 (나동)",
+        "phone": "031-878-2277",
+        "category": "영업대리점",
+        "lat": 37.8018097848989,
+        "lng": 126.997029919274
+      },
+      {
+        "id": 8,
+        "city": "인천광역시",
+        "district": "서구",
+        "name": "두산지게차 인천판매",
+        "address": "인천광역시 서구 도요지로 240 (검암동 666-2 럭키프라자 4층)",
+        "phone": "032-565-7610",
+        "category": "영업대리점",
+        "lat": 37.5565801702838,
+        "lng": 126.676982038323
+      },
+      {
+        "id": 9,
+        "city": "경기도",
+        "district": "화성시",
+        "name": "두산지게차 경인전동판매",
+        "address": "경기도 화성시 비봉면 비봉로 162",
+        "phone": "031-366-8357",
+        "category": "영업대리점",
+        "lat": 37.2353176492459,
+        "lng": 126.863291757687
+      },
+      {
+        "id": 10,
+        "city": "강원도",
+        "district": "강릉시",
+        "name": "두산지게차 강원판매",
+        "address": "강원도 강릉시 성덕로 176번길 22-3",
+        "phone": "033-653-6811",
+        "category": "영업대리점",
+        "lat": 37.7631036744802,
+        "lng": 128.934095865934
+      },
+      {
+        "id": 11,
+        "city": "충청북도",
+        "district": "청주시",
+        "name": "두산지게차 충북판매",
+        "address": "충청북도 청주시 흥덕구 월명로236번길 44(봉명동)",
+        "phone": "043-264-2425",
+        "category": "영업대리점",
+        "lat": 36.6553782304208,
+        "lng": 127.457063251603
+      },
+      {
+        "id": 12,
+        "city": "대전광역시",
+        "district": "대덕구",
+        "name": "두산지게차 충남판매",
+        "address": "대전광역시 대덕구 대전로 1440",
+        "phone": "042-673-7833",
+        "category": "영업대리점",
+        "lat": 36.3807423289545,
+        "lng": 127.425157477588
+      },
+      {
+        "id": 13,
+        "city": "충청남도",
+        "district": "천안시",
+        "name": "두산지게차 충남판매-당진,서산지사",
+        "address": "충청남도 천안시 동남구 고래울길 10-19",
+        "phone": "041-555-1470",
+        "category": "영업대리점",
+        "lat": 36.7964395275617,
+        "lng": 127.166532120646
+      },
+      {
+        "id": 14,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "두산지게차 대구판매",
+        "address": "대구광역시 서구 와룡로 447 2층",
+        "phone": "053-565-7700",
+        "category": "영업대리점",
+        "lat": 35.872563776224,
+        "lng": 128.538223049701
+      },
+      {
+        "id": 15,
+        "city": "충청남도",
+        "district": "아산시",
+        "name": "두산지게차 충청중부판매",
+        "address": "충청남도 아산시 탕정면 선문로 263-9",
+        "phone": "041-532-1236",
+        "category": "영업대리점",
+        "lat": 36.8016891023838,
+        "lng": 127.084128032172
+      },
+      {
+        "id": 16,
+        "city": "충청북도",
+        "district": "청주시",
+        "name": "두산지게차 충청전동판매",
+        "address": "충청북도 청주시 흥덕구 원터로 13-15, 2층(송절동)",
+        "phone": "043-236-4954",
+        "category": "영업대리점",
+        "lat": 36.6604406635837,
+        "lng": 127.453243916217
+      },
+      {
+        "id": 17,
+        "city": "광주광역시",
+        "district": "광산구",
+        "name": "두산지게차 전남판매",
+        "address": "광주광역시 광산구 동곡로 820(운수동)",
+        "phone": "062-953-6430",
+        "category": "영업대리점",
+        "lat": 35.1542934930255,
+        "lng": 126.781136259009
+      },
+      {
+        "id": 18,
+        "city": "전라남도",
+        "district": "순천시",
+        "name": "두산지게차 순천판매",
+        "address": "전라남도 순천시 해룡면 용전길 2",
+        "phone": "061-724-4750",
+        "category": "영업대리점",
+        "lat": 34.9026617505287,
+        "lng": 127.550157040873
+      },
+      {
+        "id": 19,
+        "city": "전라북도",
+        "district": "전주시",
+        "name": "두산지게차 전북판매",
+        "address": "전라북도 전주시 완산구 전주객사3길 84(고사동) 3층",
+        "phone": "063-255-1600",
+        "category": "영업대리점",
+        "lat": 35.8208819350633,
+        "lng": 127.141516444202
+      },
+      {
+        "id": 20,
+        "city": "울산광역시",
+        "district": "남구",
+        "name": "두산지게차 경남동부판매 - 울산지사",
+        "address": "울산광역시 남구 두왕로 34번길 34-25",
+        "phone": "052-265-7577",
+        "category": "영업대리점",
+        "lat": 35.5071234580585,
+        "lng": 129.313202037731
+      },
+      {
+        "id": 21,
+        "city": "부산광역시",
+        "district": "강서구",
+        "name": "두산지게차 경남동부판매 - 부산지사",
+        "address": "부산광역시 강서구 녹산산업북로 189(송정동)",
+        "phone": "051-831-3020",
+        "category": "영업대리점",
+        "lat": 35.0981681819434,
+        "lng": 128.845462989254
+      },
+      {
+        "id": 22,
+        "city": "경상북도",
+        "district": "포항시",
+        "name": "두산지게차 경북판매 – 포항지사",
+        "address": "경상북도 포항시 남구 연일읍 철강로 107번길 29-1",
+        "phone": "054-285-6633",
+        "category": "영업대리점",
+        "lat": 35.9920446090758,
+        "lng": 129.355129548909
+      },
+      {
+        "id": 23,
+        "city": "대구광역시",
+        "district": "달서구",
+        "name": "두산지게차 경북전동판매",
+        "address": "대구광역시 달서구 서당로 3길 61(신당동)",
+        "phone": "053-584-1509",
+        "category": "영업대리점",
+        "lat": 35.852648,
+        "lng": 128.492696
+      },
+      {
+        "id": 24,
+        "city": "경상북도",
+        "district": "구미시",
+        "name": "두산지게차 경북판매 – 구미지사",
+        "address": "경상북도 구미시 송동로 42-7",
+        "phone": "054-456-2433",
+        "category": "영업대리점",
+        "lat": 36.1365789061599,
+        "lng": 128.324955372598
+      },
+      {
+        "id": 25,
+        "city": "경상남도",
+        "district": "진주시",
+        "name": "두산지게차 경남서부판매-진주지사",
+        "address": "경상남도 진주시 정촌면 삼일로 105번길 6",
+        "phone": "055-753-9881",
+        "category": "영업대리점",
+        "lat": 35.130065809766,
+        "lng": 128.09945716121
+      },
+      {
+        "id": 26,
+        "city": "경상남도",
+        "district": "함안군",
+        "name": "두산지게차 경남서부판매-함안지사",
+        "address": "경상남도 함안군 칠원읍 삼칠로 128",
+        "phone": "055-586-0566",
+        "category": "영업대리점",
+        "lat": 35.3082058670989,
+        "lng": 128.520474850232
+      },
+      {
+        "id": 27,
+        "city": "경상남도",
+        "district": "거제시",
+        "name": "두산지게차 경남서부판매-통영지사",
+        "address": "경상남도 거제시 사등면 청포1길 7",
+        "phone": "055-634-1144",
+        "category": "영업대리점",
+        "lat": 34.8985352956211,
+        "lng": 128.507351738394
+      },
+      {
+        "id": 28,
+        "city": "경상남도",
+        "district": "김해시",
+        "name": "두산지게차 경남중부판매",
+        "address": "경상남도 김해시 진영읍 본산로241번길 6",
+        "phone": "055-328-4000",
+        "category": "영업대리점",
+        "lat": 35.3163436975618,
+        "lng": 128.752404788602
+      },
+      {
+        "id": 29,
+        "city": "경상남도",
+        "district": "창원시",
+        "name": "두산지게차 경남중부판매-창원지사",
+        "address": "경상남도 창원시 마산회원구 봉암북14길2",
+        "phone": "055-298-3777",
+        "category": "영업대리점",
+        "lat": 35.2178514829405,
+        "lng": 128.605678984482
+      },
+      {
+        "id": 30,
+        "city": "경상남도",
+        "district": "창원시",
+        "name": "두산지게차 경남서부전동판매",
+        "address": "경상남도 창원시 의창구 차상로 18번길 45 농산물도매시장 청과동 2층 208호",
+        "phone": "055-282-4664",
+        "category": "영업대리점",
+        "lat": 35.2287950597655,
+        "lng": 128.637284258234
+      },
+      {
+        "id": 31,
+        "city": "경상남도",
+        "district": "양산시",
+        "name": "두산지게차 경남동부전동판매",
+        "address": "경상남도 양산시 산막공단 북2길 5 (북정동 1-2번지)",
+        "phone": "055-384-7775",
+        "category": "영업대리점",
+        "lat": 35.3696359342428,
+        "lng": 129.051751331747
+      },
+      {
+        "id": 32,
+        "city": "제주특별자치도",
+        "district": "제주시",
+        "name": "두산지게차 제주판매",
+        "address": "제주시특별자치도 제주시 애월읍 광령10길 44",
+        "phone": "064-748-8606",
+        "category": "영업대리점",
+        "lat": 33.458807,
+        "lng": 126.440907
+      },
+    ];
+    let partsCenterData = [
+      {
+        "id": 1,
+        "city": "서울특별시",
+        "district": "영등포구",
+        "name": "(주)영등포부품센터",
+        "address": "서울특별시 영등포구 버드나루로 62 (영등포동7가)",
+        "phone": "02-2677-0704",
+        "category": "부품대리점",
+        "lat": 37.5240191600561,
+        "lng": 126.910595505286
+      },
+      {
+        "id": 2,
+        "city": "서울특별시",
+        "district": "영등포구",
+        "name": "(주)서울부품센터",
+        "address": "서울특별시 영등포구 버드나루로 56 (영등포동7가)",
+        "phone": "02-2676-3366",
+        "category": "부품대리점",
+        "lat": 37.5235635166381,
+        "lng": 126.910825127424
+      },
+      {
+        "id": 3,
+        "city": "서울특별시",
+        "district": "영등포구",
+        "name": "(주)디에이치아이부품센터",
+        "address": "서울특별시 영등포구 버드나루로 37 107호 (영등포동2가)",
+        "phone": "02-2671-4040",
+        "category": "부품대리점",
+        "lat": 37.5219558502009,
+        "lng": 126.911413242768
+      },
+      {
+        "id": 4,
+        "city": "경상남도",
+        "district": "진주시",
+        "name": "진주종합부품센터",
+        "address": "경상남도 진주시 대신로 107 (상평동)",
+        "phone": "055-753-2090",
+        "category": "부품대리점",
+        "lat": 35.1699593862125,
+        "lng": 128.117584689724
+      },
+      {
+        "id": 5,
+        "city": "전라북도",
+        "district": "군산시",
+        "name": "DS지게차부품",
+        "address": "전라북도 군산시 옥산면 백석로 94",
+        "phone": "063-445-3843",
+        "category": "부품대리점",
+        "lat": 35.9426050022563,
+        "lng": 126.721027434262
+      },
+      {
+        "id": 6,
+        "city": "경상북도",
+        "district": "구미시",
+        "name": "두산구미DFT",
+        "address": "경상북도 구미시 비산로1안길 7 (비산동)",
+        "phone": "054-461-6240",
+        "category": "부품대리점",
+        "lat": 36.1204226571772,
+        "lng": 128.374673989753
+      },
+      {
+        "id": 7,
+        "city": "제주특별자치도",
+        "district": "제주시",
+        "name": "제주새한상사",
+        "address": "제주특별자치도 제주시 공설로 9 (삼도일동)",
+        "phone": "064-753-1651",
+        "category": "부품대리점",
+        "lat": 33.4990681367742,
+        "lng": 126.516628290525
+      },
+      {
+        "id": 8,
+        "city": "서울특별시",
+        "district": "영등포구",
+        "name": "두산지게차부품(주)",
+        "address": "서울특별시 영등포구 버드나루로 66 (영등포동7가)",
+        "phone": "02-2637-2242",
+        "category": "부품대리점",
+        "lat": 37.5243881405695,
+        "lng": 126.910265640927
+      },
+      {
+        "id": 9,
+        "city": "서울특별시",
+        "district": "영등포구",
+        "name": "(주)두산성심센터",
+        "address": "서울특별시 영등포구 영등포로53길 36-6 (영등포동2가)",
+        "phone": "02-2632-2632",
+        "category": "부품대리점",
+        "lat": 37.5212172044128,
+        "lng": 126.909624192976
+      },
+      {
+        "id": 10,
+        "city": "인천광역시",
+        "district": "동구",
+        "name": "인천중기센타",
+        "address": "인천광역시 동구 방축로23번길 22 (송현동)",
+        "phone": "032-577-4111",
+        "category": "부품대리점",
+        "lat": 37.4878231692544,
+        "lng": 126.650132189796
+      },
+      {
+        "id": 11,
+        "city": "경기도",
+        "district": "평택시",
+        "name": "중앙부품센터",
+        "address": "경기도 평택시 청북읍 청오로 405-37",
+        "phone": "031-237-4974",
+        "category": "부품대리점",
+        "lat": 37.0320008707537,
+        "lng": 126.956043627636
+      },
+      {
+        "id": 12,
+        "city": "경기도",
+        "district": "용인시",
+        "name": "용인중공업",
+        "address": "경기도 용인시 처인구 백옥대로 1359 (유방동)",
+        "phone": "031-336-4211",
+        "category": "부품대리점",
+        "lat": 37.2566338810496,
+        "lng": 127.211596599258
+      },
+      {
+        "id": 13,
+        "city": "경기도",
+        "district": "안산시",
+        "name": "(주)안산지게차토탈써비스",
+        "address": "경기도 안산시 단원구 번영로 89 (성곡동) 시화공단 4마 204호",
+        "phone": "031-499-0700",
+        "category": "부품대리점",
+        "lat": 37.318473,
+        "lng": 126.734898
+      },
+      {
+        "id": 14,
+        "city": "경기도",
+        "district": "오산시",
+        "name": "남부부품센타",
+        "address": "경기도 오산시 경기대로 625 (내삼미동)",
+        "phone": "031-378-8866",
+        "category": "부품대리점",
+        "lat": 37.1772557007326,
+        "lng": 127.057900586544
+      },
+      {
+        "id": 15,
+        "city": "경기도",
+        "district": "화성시",
+        "name": "(주)서해부품",
+        "address": "경기도 화성시 팔탄면 온천로 485",
+        "phone": "031-354-5362",
+        "category": "부품대리점",
+        "lat": 37.1551021328665,
+        "lng": 126.886140088692
+      },
+      {
+        "id": 16,
+        "city": "인천광역시",
+        "district": "서구",
+        "name": "경동중기",
+        "address": "인천시 서구 원당대로 428번길 24-35",
+        "phone": "032-565-0406",
+        "category": "부품대리점",
+        "lat": 37.5888917910593,
+        "lng": 126.648780012846
+      },
+      {
+        "id": 17,
+        "city": "충청북도",
+        "district": "청주시",
+        "name": "미래중기(주)",
+        "address": "충청북도 청주시 흥덕구 월명로236번길 44 (봉명동)",
+        "phone": "043-267-0501",
+        "category": "부품대리점",
+        "lat": 36.6553782304208,
+        "lng": 127.457063251603
+      },
+      {
+        "id": 18,
+        "city": "광주광역시",
+        "district": "북구",
+        "name": "(주)덕수상사",
+        "address": "광주광역시 북구 버들로 15 (유동)",
+        "phone": "062-524-5328",
+        "category": "부품대리점",
+        "lat": 35.1580947416572,
+        "lng": 126.908693840593
+      },
+      {
+        "id": 19,
+        "city": "광주광역시",
+        "district": "광산구",
+        "name": "(주)동경중기",
+        "address": "광주광역시 광산구 평동옥동로 56 (월전동)",
+        "phone": "062-522-1821",
+        "category": "부품대리점",
+        "lat": 35.1173198871514,
+        "lng": 126.762853130424
+      },
+      {
+        "id": 20,
+        "city": "전라남도",
+        "district": "여수시",
+        "name": "대부상사",
+        "address": "전라남도 여수시 원학동길 2 (학용동)",
+        "phone": "061-684-5522",
+        "category": "부품대리점",
+        "lat": 34.7655108128284,
+        "lng": 127.67148173108
+      },
+      {
+        "id": 21,
+        "city": "전라북도",
+        "district": "익산시",
+        "name": "익산중기부품",
+        "address": "전라북도 익산시 익산대로4길 46 (인화동1가)",
+        "phone": "063-851-8922",
+        "category": "부품대리점",
+        "lat": 35.931230303183,
+        "lng": 126.94900462394
+      },
+      {
+        "id": 22,
+        "city": "경상남도",
+        "district": "창원시",
+        "name": "(주)창원중장비에이엠센터",
+        "address": "경상남도 창원시 마산회원구 봉암공단8길 77 (봉암동)",
+        "phone": "055-294-4001",
+        "category": "부품대리점",
+        "lat": 35.2141333917395,
+        "lng": 128.595802069113
+      },
+      {
+        "id": 23,
+        "city": "부산광역시",
+        "district": "사상구",
+        "name": "(주)영남중장비",
+        "address": "부산광역시 사상구 광장로20번길 64 (괘법동)",
+        "phone": "051-317-8711",
+        "category": "부품대리점",
+        "lat": 35.1597421395103,
+        "lng": 128.977644906907
+      },
+      {
+        "id": 24,
+        "city": "경상남도",
+        "district": "김해시",
+        "name": "대광 ＦL",
+        "address": "경상남도 김해시 한림면 김해대로 1065, 1283-6번지",
+        "phone": "055-328-0183",
+        "category": "부품대리점",
+        "lat": 35.295387,
+        "lng": 128.799314
+      },
+      {
+        "id": 25,
+        "city": "부산광역시",
+        "district": "사상구",
+        "name": "(주)한 지",
+        "address": "부산광역시 사상구 새벽시장로 146 (감전동)",
+        "phone": "051-325-9020",
+        "category": "부품대리점",
+        "lat": 35.1531927146824,
+        "lng": 128.989548289842
+      },
+      {
+        "id": 26,
+        "city": "경상북도",
+        "district": "포항시",
+        "name": "지게차포항센터",
+        "address": "경북 포항시 남구 연일읍 동문로 76",
+        "phone": "054-285-1190",
+        "category": "부품대리점",
+        "lat": 35.9965695411571,
+        "lng": 129.353003170318
+      },
+      {
+        "id": 27,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "대호중기상사",
+        "address": "대구광역시 서구 북비산로 99 (이현동)",
+        "phone": "053-566-1166",
+        "category": "부품대리점",
+        "lat": 35.8790402850149,
+        "lng": 128.543782476118
+      },
+      {
+        "id": 28,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "두산중기정비",
+        "address": "대구광역시 서구 와룡로 439-8 (이현동)",
+        "phone": "053-561-2900",
+        "category": "부품대리점",
+        "lat": 35.8724025252533,
+        "lng": 128.537430507905
+      },
+      {
+        "id": 29,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "보성중기상사",
+        "address": "대구광역시 서구 북비산로 71 (이현동)",
+        "phone": "053-553-1155",
+        "category": "부품대리점",
+        "lat": 35.8787248889668,
+        "lng": 128.540884043971
+      },
+      {
+        "id": 30,
+        "city": "울산광역시",
+        "district": "남구",
+        "name": "두산우진상사",
+        "address": "울산광역시 남구 두왕로 48번길 5-6 (선암동)",
+        "phone": "052-275-8870",
+        "category": "부품대리점",
+        "lat": 35.5079206883432,
+        "lng": 129.309429099048
+      },
+      {
+        "id": 31,
+        "city": "대전광역시",
+        "district": "대덕구",
+        "name": "두산충남부품센터",
+        "address": "대전광역시 대덕구 대전로 1440 (읍내동)",
+        "phone": "042-931-8235",
+        "category": "부품대리점",
+        "lat": 36.3807423289545,
+        "lng": 127.425157477588
+      },
+      {
+        "id": 32,
+        "city": "경상북도",
+        "district": "포항시",
+        "name": "두산부품센터",
+        "address": "경상북도 포항시 남구 연일읍 철강로107번길 29-1",
+        "phone": "054-285-4848",
+        "category": "부품대리점",
+        "lat": 35.9920446090758,
+        "lng": 129.355129548909
+      },
+      {
+        "id": 33,
+        "city": "강원도",
+        "district": "강릉시",
+        "name": "두산지게차강원판매",
+        "address": "강원도 강릉시 성덕로176번길 22-3 (두산동)",
+        "phone": "033-652-9151",
+        "category": "부품대리점",
+        "lat": 37.7631036744802,
+        "lng": 128.934095865934
+      },
+      {
+        "id": 34,
+        "city": "전라남도",
+        "district": "영암군",
+        "name": "두산협동중기부품센터",
+        "address": "전라남도 영암군 삼호읍 소등로 169",
+        "phone": "061-283-7787",
+        "category": "부품대리점",
+        "lat": 34.7762250530953,
+        "lng": 126.452311737402
+      },
+      {
+        "id": 35,
+        "city": "전라북도",
+        "district": "전주시",
+        "name": "두산지게차전북판매(주)",
+        "address": "전라북도 전주시 완산구 전주객사3길 84 (고사동)",
+        "phone": "063-251-0051",
+        "category": "부품대리점",
+        "lat": 35.8208819350633,
+        "lng": 127.141516444202
+      },
+    ];
+    let serviceData = [
+      {
+        "id": 1,
+        "city": "서울특별시",
+        "district": "영등포구",
+        "name": "성조물류㈜",
+        "address": "서울특별시 영등포구 양평동 6가 82-2",
+        "phone": "02-2637-9911",
+        "category": "지정정비공장",
+        "lat": 37.5425135346823,
+        "lng": 126.888731128802
+      },
+      {
+        "id": 2,
+        "city": "인천광역시",
+        "district": "서구",
+        "name": "경인중기센타",
+        "address": "인천광역시 서구 공촌동 302-5",
+        "phone": "032-524-0888",
+        "category": "지정정비공장",
+        "lat": 37.552244455996,
+        "lng": 126.684329289007
+      },
+      {
+        "id": 3,
+        "city": "인천광역시",
+        "district": "동구",
+        "name": "인천중기센타",
+        "address": "인천광역시 동구 송현동 140-10",
+        "phone": "032-577-4111",
+        "category": "지정정비공장",
+        "lat": 37.4877698463156,
+        "lng": 126.650137752801
+      },
+      {
+        "id": 4,
+        "city": "인천광역시",
+        "district": "남동구",
+        "name": "태영중기공업",
+        "address": "인천광역시 남동구 고잔동 761-3",
+        "phone": "032-446-3500",
+        "category": "지정정비공장",
+        "lat": 37.3906299458053,
+        "lng": 126.71267081522
+      },
+      {
+        "id": 5,
+        "city": "인천광역시",
+        "district": "남동구",
+        "name": "대인중기",
+        "address": "인천광역시 남동구 논현동 442-66",
+        "phone": "032-815-8808",
+        "category": "지정정비공장",
+        "lat": 37.4067748914289,
+        "lng": 126.701629741844
+      },
+      {
+        "id": 6,
+        "city": "경기도",
+        "district": "여주군",
+        "name": "유진사",
+        "address": "경기도 여주군 가남면 태평리 256-2",
+        "phone": "031-884-9902",
+        "category": "지정정비공장",
+        "lat": 37.2148504206432,
+        "lng": 127.544054381913
+      },
+      {
+        "id": 7,
+        "city": "경기도",
+        "district": "용인시",
+        "name": "용인중공업",
+        "address": "경기도 용인시 유방동 131-5",
+        "phone": "031-336-4211",
+        "category": "지정정비공장",
+        "lat": 37.2566331226905,
+        "lng": 127.211567176019
+      },
+      {
+        "id": 8,
+        "city": "경기도",
+        "district": "고양시",
+        "name": "고양건설기계공업사",
+        "address": "경기도 고양시 일산서구 구산동 1196",
+        "phone": "031-923-9703",
+        "category": "지정정비공장",
+        "lat": 37.6803260207452,
+        "lng": 126.70056634637
+      },
+      {
+        "id": 9,
+        "city": "경기도",
+        "district": "화성시",
+        "name": "명진상사",
+        "address": "경기도 화성시 봉담읍 왕림리 96-7",
+        "phone": "031-458-6550",
+        "category": "지정정비공장",
+        "lat": 37.1992604483478,
+        "lng": 126.939982224124
+      },
+      {
+        "id": 10,
+        "city": "경기도",
+        "district": "화성시",
+        "name": "㈜디아이에스",
+        "address": "경기도 화성시 팔탄면 덕우리 114-67",
+        "phone": "031-8059-5343",
+        "category": "지정정비공장",
+        "lat": 37.1400594484622,
+        "lng": 126.855881889882
+      },
+      {
+        "id": 11,
+        "city": "경기도",
+        "district": "이천시",
+        "name": "지게차솔루션",
+        "address": "경기도 이천시 호법면 안평리 38-16",
+        "phone": "031-637-7592",
+        "category": "지정정비공장",
+        "lat": 37.2460642161914,
+        "lng": 127.414490051373
+      },
+      {
+        "id": 12,
+        "city": "충청남도",
+        "district": "천안시",
+        "name": "두산지게차충남판매㈜",
+        "address": "충청남도 천안시 구성동 245-2",
+        "phone": "041-555-1470",
+        "category": "지정정비공장",
+        "lat": 36.796489749218,
+        "lng": 127.166253232894
+      },
+      {
+        "id": 13,
+        "city": "충청북도",
+        "district": "진천군",
+        "name": "미래중기㈜",
+        "address": "충청북도 진천군 진천읍 상신리 396-10",
+        "phone": "043-534-0501",
+        "category": "지정정비공장",
+        "lat": 36.8694370549376,
+        "lng": 127.463212088739
+      },
+      {
+        "id": 14,
+        "city": "충청북도",
+        "district": "청원군",
+        "name": "부원중공업㈜",
+        "address": "충청북도 청원군 옥산면 오산리 384-6",
+        "phone": "043-260-4848",
+        "category": "지정정비공장",
+        "lat": 36.6629193630115,
+        "lng": 127.371444293834
+      },
+      {
+        "id": 15,
+        "city": "전라남도",
+        "district": "영암군",
+        "name": "대성중기",
+        "address": "전라남도 영암군 삼호읍 현대대불로 43",
+        "phone": "061-417-2500",
+        "category": "지정정비공장",
+        "lat": 34.754238312807,
+        "lng": 126.412088280469
+      },
+      {
+        "id": 16,
+        "city": "충청북도",
+        "district": "청원군",
+        "name": "태백 중장비",
+        "address": "충청북도 청원군 강내면 저산태성로 282-17",
+        "phone": "043-237-5648",
+        "category": "지정정비공장",
+        "lat": 36.5793196202332,
+        "lng": 127.354627260922
+      },
+      {
+        "id": 17,
+        "city": "전라남도",
+        "district": "나주시",
+        "name": "두산지게차전남판매㈜",
+        "address": "전라남도 나주시 다시면 가운리 217-5",
+        "phone": "061-335-6430",
+        "category": "지정정비공장",
+        "lat": 35.0114190650349,
+        "lng": 126.662782197328
+      },
+      {
+        "id": 18,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "두산 FLS",
+        "address": "대구광역시 서구 중리동 1030-46",
+        "phone": "053-572-7889",
+        "category": "지정정비공장",
+        "lat": 35.8678915371696,
+        "lng": 128.53719875908
+      },
+      {
+        "id": 19,
+        "city": "대구광역시",
+        "district": "달서구",
+        "name": "동명종합중기",
+        "address": "대구광역시 달서구 장기동 668",
+        "phone": "053-588-5433",
+        "category": "지정정비공장",
+        "lat": 35.8418103462689,
+        "lng": 128.523937059663
+      },
+      {
+        "id": 20,
+        "city": "경상남도",
+        "district": "김해시",
+        "name": "동진중기정비",
+        "address": "경상남도 김해시 어방동 1063-2",
+        "phone": "055-337-1210",
+        "category": "지정정비공장",
+        "lat": 35.2352209283716,
+        "lng": 128.905690308081
+      },
+      {
+        "id": 21,
+        "city": "경상남도",
+        "district": "김해시",
+        "name": "(주)두산지게차서비스센터",
+        "address": "경상남도 김해시 화목동 492-8",
+        "phone": "055-328-0183",
+        "category": "지정정비공장",
+        "lat": 35.205830,
+        "lng": 128.852223
+      },
+      {
+        "id": 22,
+        "city": "경상북도",
+        "district": "칠곡군",
+        "name": "에프엘뱅크",
+        "address": "경상북도 칠곡군 북삼읍 어로리 743-101",
+        "phone": "054-471-8503",
+        "category": "지정정비공장",
+        "lat": 36.051853296976,
+        "lng": 128.332039789244
+      },
+      {
+        "id": 23,
+        "city": "경상북도",
+        "district": "김천시",
+        "name": "김천종합중기",
+        "address": "경상북도 김천시 신음동 43",
+        "phone": "054-439-9697",
+        "category": "지정정비공장",
+        "lat": 36.1318923383728,
+        "lng": 128.135669119396
+      },
+      {
+        "id": 24,
+        "city": "경기도",
+        "district": "안산시",
+        "name": "안산지게차토탈서비스",
+        "address": "경기도 안산시 단원구 성곡동 704-6 시화공단 4마 204호",
+        "phone": "031-499-0700",
+        "category": "지정정비공장",
+        "lat": 37.318473,
+        "lng": 126.734898
+      },
+      {
+        "id": 25,
+        "city": "경기도",
+        "district": "양주시",
+        "name": "두산지게차 경기북부판매",
+        "address": "경기도 양주시 백석읍 방성리 185-3",
+        "phone": "031-878-2277",
+        "category": "지정정비공장",
+        "lat": 37.801413264,
+        "lng": 126.996712569581
+      },
+      {
+        "id": 26,
+        "city": "경기도",
+        "district": "화성시",
+        "name": "경수산기",
+        "address": "경기도 화성시 안녕동 178-37",
+        "phone": "031-236-8276",
+        "category": "지정정비공장",
+        "lat": 37.1973934172998,
+        "lng": 126.993009206095
+      },
+      {
+        "id": 27,
+        "city": "경상남도",
+        "district": "김해시",
+        "name": "두산지게차김해판매㈜",
+        "address": "경상남도 김해시 진영읍 본산리 본산준공업지구 10B 7L",
+        "phone": "055-328-4000",
+        "category": "지정정비공장",
+        "lat": 35.319580,
+        "lng": 128.761879
+      },
+      {
+        "id": 28,
+        "city": "경상남도",
+        "district": "마산시",
+        "name": "두산지게차마산판매㈜",
+        "address": "경상남도 마산시 내서읍 중리 1129-5",
+        "phone": "055-253-0675",
+        "category": "지정정비공장",
+        "lat": 35.2392034727801,
+        "lng": 128.510087332299
+      },
+      {
+        "id": 29,
+        "city": "경상북도",
+        "district": "구미시",
+        "name": "두산지게차경북판매㈜",
+        "address": "경상북도 구미시 도량동 335-4",
+        "phone": "054-456-2433",
+        "category": "지정정비공장",
+        "lat": 36.1365420287971,
+        "lng": 128.325022407608
+      },
+      {
+        "id": 30,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "대호중기상사",
+        "address": "대구광역시 서구 이현동 33-12",
+        "phone": "053-566-1166",
+        "category": "지정정비공장",
+        "lat": 35.8789758938262,
+        "lng": 128.543835372275
+      },
+      {
+        "id": 31,
+        "city": "대구광역시",
+        "district": "서구",
+        "name": "두산지게차 대구판매",
+        "address": "대구광역시 서구 이현동 42-479",
+        "phone": "053-565-7700",
+        "category": "지정정비공장",
+        "lat": 35.8725939565812,
+        "lng": 128.538026664184
+      },
+      {
+        "id": 32,
+        "city": "부산광역시",
+        "district": "강서구",
+        "name": "두산지게차부산판매㈜",
+        "address": "부산광역시 강서구 송정동 1558-8",
+        "phone": "051-831-4378",
+        "category": "지정정비공장",
+        "lat": 35.0983311530876,
+        "lng": 128.845691675296
+      },
+      {
+        "id": 33,
+        "city": "전라남도",
+        "district": "순천시",
+        "name": "두산지게차 순천판매",
+        "address": "전라남도 순천시 해룡면 용전리 511-1",
+        "phone": "061-724-4750",
+        "category": "지정정비공장",
+        "lat": 34.9027770019552,
+        "lng": 127.549886029581
+      },
+      {
+        "id": 34,
+        "city": "충청북도",
+        "district": "청주시",
+        "name": "성우물류장비",
+        "address": "충북 청주시 청원구 내수읍 충청대로 563-19",
+        "phone": "043-236-1201",
+        "category": "지정정비공장",
+        "lat": 36.6985927840073,
+        "lng": 127.522118914342
+      },
+      {
+        "id": 35,
+        "city": "경상남도",
+        "district": "창원시",
+        "name": "(주)두산건기&산업차량AM센터",
+        "address": "경상남도 창원시 마산회원구 봉암공단 8길 77",
+        "phone": "055-328-0183",
+        "category": "지정정비공장",
+        "lat": 35.2141333917395,
+        "lng": 128.595802069113
+      }
+    ];
+    const locationData = [...dealerData, ...partsCenterData, ...serviceData];
+
+    // 지역 데이터
+    const areaData = {
+      '서울특별시': ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구'],
+      '부산광역시': ['강서구', '금정구', '남구', '동구', '동래구', '부산진구', '북구', '사상구', '사하구', '서구', '수영구', '연제구', '영도구', '중구', '해운대구', '기장군'],
+      '대구광역시': ['남구', '달서구', '동구', '북구', '서구', '수성구', '중구', '달성군'],
+      '인천광역시': ['계양구', '남동구', '동구', '미추홀구', '부평구', '서구', '연수구', '중구', '강화군', '옹진군'],
+      '광주광역시': ['광산구', '남구', '동구', '북구', '서구'],
+      '대전광역시': ['대덕구', '동구', '서구', '유성구', '중구'],
+      '울산광역시': ['남구', '동구', '북구', '중구', '울주군'],
+      '세종특별자치시': ['세종시'],
+      '경기도': ['고양시', '과천시', '광명시', '광주시', '구리시', '군포시', '김포시', '남양주시', '동두천시', '부천시', '성남시', '수원시', '시흥시', '안산시', '안성시', '안양시', '양주시', '오산시', '용인시', '의왕시', '의정부시', '이천시', '파주시', '평택시', '포천시', '하남시', '화성시', '가평군', '양평군', '여주군', '연천군'],
+      '강원도': ['강릉시', '동해시', '삼척시', '속초시', '원주시', '춘천시', '태백시', '고성군', '양구군', '양양군', '영월군', '인제군', '정선군', '철원군', '평창군', '홍천군', '화천군', '횡성군'],
+      '충청북도': ['제천시', '청주시', '충주시', '괴산군', '단양군', '보은군', '영동군', '옥천군', '음성군', '증평군', '진천군'],
+      '충청남도': ['계룡시', '공주시', '논산시', '보령시', '서산시', '아산시', '천안시', '금산군', '부여군', '서천군', '예산군', '청양군', '태안군', '홍성군'],
+      '전라북도': ['군산시', '김제시', '남원시', '익산시', '전주시', '정읍시', '고창군', '무주군', '부안군', '순창군', '완주군', '임실군', '장수군', '진안군'],
+      '전라남도': ['광양시', '나주시', '목포시', '순천시', '여수시', '강진군', '고흥군', '곡성군', '구례군', '담양군', '무안군', '보성군', '신안군', '영광군', '영암군', '완도군', '장성군', '장흥군', '진도군', '함평군', '해남군', '화순군'],
+      '경상북도': ['경산시', '경주시', '구미시', '김천시', '문경시', '상주시', '안동시', '영주시', '영천시', '포항시', '고령군', '군위군', '봉화군', '성주군', '영덕군', '영양군', '예천군', '울릉군', '울진군', '의성군', '청도군', '청송군', '칠곡군'],
+      '경상남도': ['거제시', '김해시', '밀양시', '사천시', '양산시', '진주시', '창원시', '통영시', '거창군', '고성군', '남해군', '산청군', '의령군', '창녕군', '하동군', '함안군', '함양군', '합천군'],
+      '제주특별자치도': ['제주시', '서귀포시']
+    };
+    let map; // 전역 변수로 map 선언
+    let markers = []; // 마커들을 관리할 배열
+    let activeInfowindow = null; // 현재 열린 인포윈도우 추적
+    let currentCategory = '전체';
+
+    // 카카오api 주소로 위도경도 구하는 함수
+    // function showLocationDataFormat() {
+    //   const results = [];
+    //   let processed = 0;
+    //
+    //   kakao.maps.load(async () => {
+    //     const geocoder = new kakao.maps.services.Geocoder();
+    //
+    //     for (const [index, location] of locationData.entries()) {
+    //       await new Promise(r => setTimeout(r, 100));
+    //
+    //       geocoder.addressSearch(location.address, (result, status) => {
+    //         if (status === kakao.maps.services.Status.OK) {
+    //           results[index] = {
+    //             "id": location.id,
+    //             "city": location.city,
+    //             "district": location.district,
+    //             "name": location.name,
+    //             "address": location.address,
+    //             "phone": location.phone,
+    //             "category": location.category,
+    //             "lat": parseFloat(result[0].y),
+    //             "lng": parseFloat(result[0].x)
+    //           };
+    //         } else {
+    //           console.log(`// 주소 검색 실패: ${location.name} (${location.address})`);
+    //           results[index] = {
+    //             "id": location.id,
+    //             "city": location.city,
+    //             "district": location.district,
+    //             "name": location.name,
+    //             "address": location.address,
+    //             "phone": location.phone,
+    //             "category": location.category,
+    //             "lat": null,
+    //             "lng": null
+    //           };
+    //         }
+    //
+    //         processed++;
+    //         // 모든 처리가 끝나면 전체 데이터 출력
+    //         if (processed === locationData.length) {
+    //           console.log('const locationData = ' + JSON.stringify(results, null, 2) + ';');
+    //         }
+    //       });
+    //     }
+    //   });
+    // }
+    // showLocationDataFormat();
+
+    function initializeMapWhenDataReady() {
+      if (typeof locationData !== 'undefined' && locationData.length > 0) {
+        const activeTab = document.querySelector('.tab-btns button.active');
+        currentCategory = activeTab ? activeTab.textContent : '전체';
+        const filteredData = currentCategory === '전체'
+          ? locationData
+          : locationData.filter(location => location.category === currentCategory);
+        initMap();
+        initLocationSelect();
+        initTabButtons();
+        initSearchBox();
+        initResetButton();
+        initMapDropdown();
+        displayMarkers(filteredData);
+        displaySearchResults(filteredData);
+        showLocationPopup();
+      } else {
+        // 데이터가 아직 없으면 100ms 후에 다시 시도
+        setTimeout(initializeMapWhenDataReady, 100);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeMapWhenDataReady();
+
+      const searchButton = document.querySelector('.btn-search-location');
+      if (searchButton) {
+        searchButton.addEventListener('click', handleSearch);
+      }
+    });
+
+    function showLocationPopup() {
+      // 기존 팝업이 있다면 제거
+      const existingPopup = document.querySelector('.location-popup-overlay');
+      if (existingPopup) existingPopup.remove();
+
+      const popupHTML = `
+        <div class="location-popup-overlay">
+          <div class="location-popup">
+            <div class="popup-content">
+              <p class="popup-text">현재 위치를 제공하여<br>주변 대리점을 검색합니다.</p>
+              <div class="popup-buttons">
+                <button class="btn-block">차단</button>
+                <button class="btn-allow">허용</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', popupHTML);
+
+      const popup = document.querySelector('.location-popup-overlay');
+      const blockBtn = popup.querySelector('.btn-block');
+      const allowBtn = popup.querySelector('.btn-allow');
+
+      // 차단 버튼
+      blockBtn.addEventListener('click', () => {
+        popup.remove();
+        // 서울시청 기준으로 검색
+        handleCurrentLocation({ lat: 37.566826, lng: 126.978656 });
+      });
+
+      // 허용 버튼
+      allowBtn.addEventListener('click', () => {
+        popup.remove();
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              handleCurrentLocation(pos);
+            },
+            (error) => {
+              alert('위치 정보를 가져올 수 없습니다.\n서울시청 기준으로 검색합니다.');
+              handleCurrentLocation({ lat: 37.566826, lng: 126.978656 });
+            },
+            {
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0
+            }
+          );
+        }
+      });
+    }
+    function addCurrentLocationButton() {
+      const locationButton = document.createElement('button');
+      locationButton.classList.add('current-location-btn');
+      locationButton.innerHTML = '내 주변 매장';
+
+      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
+
+    }
+
+
+    // 탭 버튼 초기화
+    function initTabButtons() {
+      const tabBtns = document.querySelectorAll('.tab-btns button');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // 탭 버튼 활성화 상태 변경
+          tabBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          // 카테고리 업데이트
+          currentCategory = this.textContent;
+
+          // 검색어 초기화
+          const searchInput = document.getElementById('searchInput');
+          if (searchInput) {
+            searchInput.value = ''; // 검색어 초기화
+          }
+
+          // 카테고리에 따른 데이터 필터링
+          let filteredData = currentCategory === '전체'
+            ? locationData
+            : locationData.filter(location => location.category === currentCategory);
+
+          displayMarkers(filteredData);
+          displaySearchResults(filteredData);
+
+          resetSelectBoxes();
+        });
+      });
+    }
+
+    // 셀렉트 박스 초기화
+    function resetSelectBoxes() {
+      const citySelect = document.querySelector('.custom-select:nth-child(1) .selected');
+      const districtSelect = document.querySelector('.custom-select:nth-child(2) .selected');
+      const districtOptionList = document.querySelector('.custom-select:nth-child(2) .option-list');
+
+      if (citySelect) {
+       citySelect.innerHTML = '시/도 선택<i class="ico-arrow-dropdown"></i>';
+      }
+      if (districtSelect) {
+       districtSelect.innerHTML = '군/구 선택<i class="ico-arrow-dropdown"></i>';
+      }
+      if (districtOptionList) {
+       districtOptionList.innerHTML = `
+         <li><button type="button" disabled class="disabled">-</button></li>
+       `;
+      }
+    }
+
+    // 지도 초기화
+    function initMap() {
+      const container = document.getElementById('map');
+      const options = {
+        center: { lat: 37.566826, lng: 126.978656 },
+        zoom: 7,
+        maxZoom: 18,
+        minZoom: 5,
+        disableDefaultUI: true,
+      };
+
+      map = new google.maps.Map(container, options);
+      addCurrentLocationButton();
+    }
+
+    // 마커 표시
+    function displayMarkers(locations) {
+      // 기존 마커 제거
+      markers.forEach(marker => marker.setMap(null));
+      markers = [];
+
+      const bounds = new google.maps.LatLngBounds();
+
+      locations.forEach(location => {
+        if (location.lat && location.lng) {
+          const position = new google.maps.LatLng(location.lat, location.lng);
+
+          const marker = new google.maps.Marker({
+            map: map,
+            position: position,
+            title: location.name
+          });
+
+          const infowindow = new google.maps.InfoWindow({
+            content: `
+              <div style="padding:10px;">
+                <h3>${location.name}</h3>
+                <p>${location.address}</p>
+                <p>${location.phone}</p>
+              </div>
+            `
+          });
+
+          marker.location = location;
+          marker.infowindow = infowindow;
+
+          marker.addListener('click', function() {
+            if (activeInfowindow) activeInfowindow.close();
+            infowindow.open(map, marker);
+            activeInfowindow = infowindow;
+          });
+
+          markers.push(marker);
+          bounds.extend(position);
+        }
+      });
+
+      if (markers.length > 0) {
+        map.fitBounds(bounds);
+      }
+    }
+
+    // 위치 선택 초기화
+    function initLocationSelect() {
+      const selectGroup = document.querySelector('.select-group');
+      const customSelects = selectGroup.querySelectorAll('.custom-select');
+      const citySelect = customSelects[0];
+      const districtSelect = customSelects[1];
+
+      const districtOptionList = districtSelect.querySelector('.option-list');
+      districtOptionList.innerHTML = `
+        <li><button type="button" disabled class="disabled">-</button></li>
+      `;
+
+      function handleOptionClick(select, option) {
+        const selectedBtn = select.querySelector('.selected');
+        const text = option.textContent;
+
+        selectedBtn.textContent = text;
+        selectedBtn.appendChild(document.createElement('i')).className = 'ico-arrow-dropdown';
+        select.classList.remove('active');
+
+        if (select === citySelect) {
+          updateDistrictOptions(text);
+        }
+      }
+
+      function updateDistrictOptions(cityValue) {
+        const districts = areaData[cityValue] || [];
+        const districtOptionList = districtSelect.querySelector('.option-list');
+        const districtButton = districtSelect.querySelector('.selected');
+
+        // 시/도 선택 여부에 따라 다른 옵션 리스트 생성
+        if (cityValue === '시/도 선택' || !cityValue) {
+         districtOptionList.innerHTML = `
+           <li><button type="button" disabled class="disabled">-</button></li>
+         `;
+        } else {
+         districtOptionList.innerHTML = `
+           <li><button type="button" data-value="">군/구 선택</button></li>
+           ${districts.map(district => `
+             <li><button type="button" data-value="${district}">${district}</button></li>
+           `).join('')}
+         `;
+        }
+
+        districtButton.textContent = '군/구 선택';
+        districtButton.appendChild(document.createElement('i')).className = 'ico-arrow-dropdown';
+
+        const newOptions = districtOptionList.querySelectorAll('button');
+        newOptions.forEach(option => {
+          option.addEventListener('click', () => handleOptionClick(districtSelect, option));
+        });
+      }
+
+      customSelects.forEach(select => {
+        const selectedBtn = select.querySelector('.selected');
+        const options = select.querySelectorAll('.option-list button');
+
+        selectedBtn.addEventListener('click', () => {
+          customSelects.forEach(s => {
+            if (s !== select) s.classList.remove('active');
+          });
+          select.classList.toggle('active');
+        });
+
+        options.forEach(option => {
+          option.addEventListener('click', () => handleOptionClick(select, option));
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!selectGroup.contains(e.target)) {
+          customSelects.forEach(select => select.classList.remove('active'));
+        }
+      });
+    }
+
+    // 검색 결과 표시
+    function displaySearchResults(locations) {
+      const articleWrap = document.querySelector('.item-wrap');
+      const totalCount = document.querySelector('.map-list .total .accent-color');
+      const itemsPerPage = 9;
+      let currentPage = 1;
+
+      totalCount.textContent = locations.length;
+
+      function displayPage(page) {
+        articleWrap.innerHTML = '';
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = locations.slice(start, end);
+
+        pageItems.forEach(location => {
+          const articleHTML = `
+            <article data-address="${location.address}">
+              <div class="flex-box">
+                <span class="category">${location.category || ''}</span>
+                <h3 class="city">${location.name}</h3>
+              </div>
+              <div class="address">${location.address}</div>
+              <a class="phone" href="tel:${location.phone}"><span class="ico-phone"></span>${location.phone}</a>
+              <div class="location-link">
+                <a href="https://map.kakao.com/link/to/${encodeURIComponent(location.name)},${location.lat},${location.lng}" target="_blank">
+                  <span class="ico-kakaomap"></span>
+                  길찾기
+                  <span class="ico-link"></span>
+                </a>
+              </div>
+            </article>
+          `;
+          articleWrap.insertAdjacentHTML('beforeend', articleHTML);
+        });
+
+        // 클릭 이벤트 추가
+        const articles = articleWrap.querySelectorAll('article');
+        articles.forEach(article => {
+          article.addEventListener('click', function() {
+            articles.forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const address = this.dataset.address;
+            const marker = markers.find(marker => marker.location.address === address);
+
+            if (marker) {
+              map.setCenter(marker.getPosition());
+              map.setZoom(20); // 구글맵은 setLevel 대신 setZoom 사용
+
+              if (activeInfowindow) {
+                activeInfowindow.close();
+              }
+
+              marker.infowindow.open(map, marker);
+              activeInfowindow = marker.infowindow;
+            }
+          });
+        });
+
+        updatePagination();
+      }
+
+      function updatePagination() {
+        const totalPages = Math.ceil(locations.length / itemsPerPage);
+
+        if (!document.querySelector('.indicator')) {
+            articleWrap.insertAdjacentHTML('afterend', `
+                <div class="indicator">
+                    <button href="#" class="btn btn-prev-end"></button>
+                    <button href="#" class="btn btn-prev"></button>
+                    <ul class="indi"></ul>
+                    <button href="#" class="btn btn-next"></button>
+                    <button href="#" class="btn btn-next-end"></button>
+                </div>
+            `);
+        }
+
+        const indiList = document.querySelector('.indi');
+        const prevBtn = document.querySelector('.btn-prev');
+        const nextBtn = document.querySelector('.btn-next');
+        const prevEndBtn = document.querySelector('.btn-prev-end');
+        const nextEndBtn = document.querySelector('.btn-next-end');
+
+        const pageGroup = Math.ceil(currentPage / 5);
+        const startPage = (pageGroup - 1) * 5 + 1;
+        const endPage = Math.min(totalPages, startPage + 4);
+
+        indiList.innerHTML = '';
+        for (let i = startPage; i <= endPage; i++) {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = 'javascript:';
+            a.textContent = i;
+            if (i === currentPage) {
+                a.classList.add('active');
+            }
+            a.addEventListener('click', () => {
+                currentPage = i;
+                displayPage(currentPage);
+                scrollToBottom();
+            });
+            li.appendChild(a);
+            indiList.appendChild(li);
+        }
+
+        // 버튼 비활성화 상태 관리
+        prevBtn.style.display = startPage === 1 ? 'none' : '';
+        nextBtn.style.display = endPage === totalPages ? 'none' : '';
+        prevEndBtn.style.display = currentPage === 1 ? 'none' : '';
+        nextEndBtn.style.display = currentPage === totalPages ? 'none' : '';
+
+        // 버튼 이벤트
+        prevBtn.onclick = () => {
+            currentPage = startPage - 1;
+            displayPage(currentPage);
+            scrollToBottom();
+        };
+
+        nextBtn.onclick = () => {
+            currentPage = endPage + 1;
+            displayPage(currentPage);
+            scrollToBottom();
+        };
+
+        prevEndBtn.onclick = () => {
+            currentPage = 1;
+            displayPage(currentPage);
+            scrollToBottom();
+        };
+
+        nextEndBtn.onclick = () => {
+            currentPage = totalPages;
+            displayPage(currentPage);
+            scrollToBottom();
+        };
+      }
+
+      function scrollToBottom() {
+          const mapList = document.querySelector('.map-list');
+          // mapList.scrollTop = mapList.scrollHeight;
+          mapList.scrollTop = 0;
+      }
+
+
+      displayPage(currentPage);
+    }
+
+    // 주소 검색
+    function initSearchBox() {
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.querySelector('.btn-keyword-search');
+
+      if (!searchInput || !searchButton) return;
+
+      function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        // 검색어가 없을 경우 알림 후 리턴
+        // if (!searchTerm) {
+        //   alert('검색어를 입력해주세요.');
+        //   searchInput.focus();
+        //   return;
+        // }
+
+        // 현재 선택된 카테고리로 먼저 필터링
+        let filteredData = currentCategory === '전체'
+          ? locationData
+          : locationData.filter(location => location.category === currentCategory);
+
+        // 검색어로 추가 필터링
+        if (searchTerm) {
+          filteredData = filteredData.filter(location =>
+            location.name.toLowerCase().includes(searchTerm) ||
+            location.address.toLowerCase().includes(searchTerm)
+          );
+        }
+
+        displayMarkers(filteredData);
+        displaySearchResults(filteredData);
+      }
+
+      // 검색 버튼 클릭 이벤트
+      searchButton.addEventListener('click', performSearch);
+
+      // 엔터 키 이벤트
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          performSearch();
+        }
+      });
+    }
+
+    // 초기화 버튼
+    function initResetButton() {
+      const resetButton = document.querySelector('.return');
+      if (!resetButton) return;
+
+      resetButton.addEventListener('click', function() {
+        // 검색어 초기화
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+          searchInput.value = '';
+        }
+
+        // 지역 선택 초기화
+        resetSelectBoxes();
+
+        // 현재 카테고리의 전체 데이터만 표시
+        let filteredData = currentCategory === '전체'
+          ? locationData
+          : locationData.filter(location => location.category === currentCategory);
+
+        displayMarkers(filteredData);
+        displaySearchResults(filteredData);
+      });
+    }
+
+    // debounce 함수 추가
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    // 검색 처리
+    function handleSearch() {
+      const citySelect = document.querySelector('.custom-select:nth-child(1) .selected');
+      const districtSelect = document.querySelector('.custom-select:nth-child(2) .selected');
+      const searchInput = document.getElementById('searchInput');
+
+      const selectedCity = citySelect.textContent.replace('ico-arrow-dropdown', '').trim();
+      const selectedDistrict = districtSelect.textContent.replace('ico-arrow-dropdown', '').trim();
+      const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+      let filteredLocations = currentCategory === '전체'
+        ? locationData
+        : locationData.filter(location => location.category === currentCategory);
+
+      // 지역 필터링
+      if (selectedDistrict !== '군/구 선택') {
+        filteredLocations = filteredLocations.filter(
+          location => location.city === selectedCity && location.district === selectedDistrict
+        );
+      } else if (selectedCity !== '시/도 선택') {
+        filteredLocations = filteredLocations.filter(location => location.city === selectedCity);
+      }
+
+      // 검색어 필터링
+      if (searchTerm) {
+        filteredLocations = filteredLocations.filter(location =>
+          location.name.toLowerCase().includes(searchTerm) ||
+          location.address.toLowerCase().includes(searchTerm)
+        );
+      }
+
+      if (filteredLocations.length > 0) {
+        const centerLocation = filteredLocations[0];
+        if (centerLocation && centerLocation.lat && centerLocation.lng) {
+          const center = new google.maps.LatLng(centerLocation.lat, centerLocation.lng);
+          map.setCenter(center);
+          map.setZoom(selectedDistrict !== '군/구 선택' ? 12 : 9);
+        }
+      }
+
+      displayMarkers(filteredLocations);
+      displaySearchResults(filteredLocations);
+    }
+
+    // 드롭다운 버튼 클릭 이벤트
+    function initMapDropdown() {
+      document.querySelectorAll('.map-container .map-drop').forEach(dropBtn => {
+        dropBtn.addEventListener('click', function() {
+          // 가장 가까운 부모 .map-container 찾기
+          const mapContainer = this.closest('.map-container');
+          if (mapContainer) {
+            // active 클래스 토글
+            mapContainer.classList.toggle('active');
+          }
+        });
+      });
+    }
+
+  </script>
+
+  <!-- <script src="https://maps.google.co.kr/maps/api/js?key=AIzaSyBMqcGVjN-wEnsYD6gjXAxXj7OeROZzhWo&callback=initMap"></script> -->
+  <script src="https://maps.google.co.kr/maps/api/js?key=AIzaSyBP8PKHnrtJujIPJYMObhR68a-HUEsxXmE&v=3&language=ko"></script>
+  <!-- <script src="https://maps.google.co.kr/maps/api/js?key=AIzaSyBP8PKHnrtJujIPJYMObhR68a-HUEsxXmE&callback=initMap"></script> -->
+</html>

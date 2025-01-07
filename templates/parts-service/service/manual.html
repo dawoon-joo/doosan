@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="두산밥캣 보유 장비의 안전, 운전, 운송, 급유 및 유지 관리에 대한 상세 정보를 취급설명서에서 확인하실 수 있습니다.">
+  <meta name="keywords" content="취급설명서 : 부품 : 부품 & 서비스 : 두산밥캣코리아">
+  <meta property="og:url" content="https://www.doosan-iv.com/kr/parts-service/service/manual">
+  <meta property="og:title" content="취급설명서 : 부품 : 부품 & 서비스 : 두산밥캣코리아">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/common/images/sns_img.jpg">
+  <meta property="og:description" content="두산밥캣 보유 장비의 안전, 운전, 운송, 급유 및 유지 관리에 대한 상세 정보를 취급설명서에서 확인하실 수 있습니다.">
+  <meta property="og:locale" content="ko">
+  <title>취급설명서 : 부품 : 부품 & 서비스 : 두산밥캣코리아</title>
+
+  <link rel="icon" href="/common/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/common/css/base.css">
+  <link rel="stylesheet" href="/common/css/common.css">
+  <link rel="stylesheet" href="/common/css/sub.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="/common/js/lenis.min.js"></script>
+  <script src="/common/js/scrollreveal.min.js"></script>
+  <script src="/common/js/ScrollToPlugin.min.js"></script>
+  <script src="/common/js/ScrollTrigger.min.js"></script>
+  <script src="/common/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <script src="/common/js/gsap.min.js"></script>
+  <script src="/common/js/product.js"></script>
+  <script src="/common/js/sub.js"></script>
+  <script src="/common/js/common.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-XDM39WP9N3></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XDM39WP9N3');
+</script>
+
+<body>
+  <header id="header" class="header">
+    <div th:replace="layout/fragments.html :: header"></div>
+  </header>
+  <div class="wrap sub nv">
+    <section class="sec sec-selector-type2">
+      <div class="inner">
+        <div class="sub-link-boxs">
+          <ul>
+            <li><a href="javascript:"><span class="hide">HOME</span><i class="ico ico-home"></i></a></li>
+            <li>부품 & 서비스</li>
+            <li>서비스</li>
+            <li class="drop">
+              취급설명서
+              <i class="ico-arrow-drop"></i>
+              <ul>
+                <li><a href="/kr/parts-service/service/support">서비스 지원</a></li>
+                <li><a href="/kr/parts-service/service/manual">취급설명서</a></li>
+                <li><a href="/kr/parts-service/service/video">유지보수 비디오</a></li>
+                <li><a href="/kr/parts-service/service/network">서비스 네트워크</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="text-boxs">
+          <h1 class="heading">취급설명서</h1>
+          <p class="text">
+            <span class="accent-color motion">운전자의 안전과 장비의 성능 유지</span>를 위해 <br class="pc">
+            운전자와 유지보수 담당자가 <span class="accent-color motion">숙지해야 할 상세 정보</span>를 확인하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sec service-manual">
+      <div class="inner">
+        <div class="content-body">
+          <div class="filter-search">
+            <div class="search-top">
+              <div class="guide">
+                <span></span>
+                맞춤형 검색
+              </div>
+              <div class="search-wrap">
+                <form action="/kr/parts-service/service/manual" id="searchForm" method="get" class="search-form">
+
+                  <input type="hidden" id="model" name="model" value=""/>
+                  <input type="hidden" id="powerSystem" name="powerSystem" value=""/>
+                  <input type="hidden" id="boardType" name="boardType" value=""/>
+                  <input type="hidden" id="loadCapacity" name="loadCapacity" value=""/>
+
+                  <div class="search-box">
+                    <input type="text" id="keyword" name="keyword" placeholder="검색어를 입력해주세요" class="search-input">
+                    <button type="submit" class="btn-search">
+                      <span class="hidden">검색</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="search-body">
+              <div class="search-list">
+                <div class="search-boxs">
+                  <div class="title">차종</div>
+                  <!-- [D] active 선택된 버튼 -->
+                  <!-- [D] disable 비활성화 -->
+                  <div class="search-items">
+                    <button type="button" id="forklift" name="forklift">지게차</button>
+                    <button type="button" id="small_logistics" name="small_logistics">소형물류장비</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">동력방식</div>
+                  <div class="search-items">
+                    <button type="button" id="diesel" name="diesel" class="disable">디젤</button>
+                    <button type="button" id="lpg" name="lpg" class="disable">LPG</button>
+                    <button type="button" id="electric" name="electric" class="disable">전동</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">탑승형식</div>
+                  <div class="search-items">
+                    <button type="button" id="left_hand" name="left_hand" class="disable">좌승식</button>
+                    <button type="button" id="stand" name="stand" class="disable">입승식</button>
+                  </div>
+                </div>
+                <div class="search-boxs">
+                  <div class="title">적재능력</div>
+                  <div class="search-items">
+                    <button type="button" id="small" name="small" class="disable">소형 (1톤~3톤)</button>
+                    <button type="button" id="medium" name="medium" class="disable">중형 (3.5톤~8톤)</button>
+                    <button type="button" id="large" name="large" class="disable">대형 (11톤~16톤)</button>
+<!--                    <button type="button" id="super_large" name="super_large" class="disable">초대형 (18톤~30톤)</button>-->
+                  </div>
+                </div>
+              </div>
+              <button id="initialize" class="return" type="button">
+                <span></span>
+                선택 초기화
+              </button>
+            </div>
+          </div>
+          <div class="filter-table">
+            <div class="total">
+              <dl>
+                <dt><span class="accent-color">Total</span> :</dt>
+                <dd>[[${productList.getTotalElements()}]] (<span class="accent-color" th:text="${productList.getNumber() + 1}"></span> / [[${productList.getTotalPages()}]] Page) </dd>
+              </dl>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>제품명</th>
+                    <th>자료명</th>
+                    <th>다운로드</th>
+                  </tr>
+                </thead>
+                <tbdoy>
+                  <!-- 디젤지게차 -->
+                  <tr th:each="product : ${productList}">
+                    <td th:text="${product.productName}">2t - 3.3t, 프리미엄 디젤 지게차</td>
+                    <td>취급설명서</td>
+                    <td><a th:href="${'/common/images/sub/product' + product.handbookDownUrl}" download title="다운로드"><span class="ico-download-type2"></span></a></td>
+                  </tr>
+
+                </tbdoy>
+              </table>
+
+<!--              <div class="pagination">-->
+<!--                <div class="wrap-indi xx">-->
+<!--                  <div class="indicator">-->
+<!--                    <button href="#" class="btn btn-prev-end invisible"></button>-->
+<!--                    <button href="#" class="btn btn-prev invisible"></button>-->
+<!--                    <ul class="indi">
+<li><a href="javascript:" class="active">1</a></li><li><a href="javascript:">2</a></li><li><a href="javascript:">3</a></li></ul>-->
+<!--                    <button href="#" class="btn btn-next"></button>-->
+<!--                    <button href="#" class="btn btn-next-end"></button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+              <div class="pagination">
+                <div class="wrap-indi xx">
+                  <div class="indicator"
+                       th:with="start=${T(java.lang.Math).floor(productList.getNumber()/5)*5 + 1}, last=(${start + 4 < productList.totalPages ? start + 4 : productList.totalPages})">
+                    <!--맨 앞 페이지-->
+                    <button th:if="${productList.hasPrevious()}"
+                            th:onclick="|location.href='/kr/parts-service/service/manual?page=${1}&keyword=${searchDto.keyword}&model=${searchDto.model}&powerSystem=${searchDto.powerSystem}&boardType=${searchDto.boardType}&loadCapacity=${searchDto.loadCapacity}'|"
+                            class="btn btn-prev-end invisible"></button>
+                    <!--이전 페이지-->
+                    <button th:if="${productList.hasPrevious()}"
+                            th:onclick="|location.href='/kr/parts-service/service/manual?page=${productList.getNumber()}&keyword=${searchDto.keyword}&model=${searchDto.model}&powerSystem=${searchDto.powerSystem}&boardType=${searchDto.boardType}&loadCapacity=${searchDto.loadCapacity}'|"
+                            class="btn btn-prev invisible"></button>
+
+                    <ul class="indi">
+                      <li th:if="${page > 0}"
+                          th:each="page : ${#numbers.sequence(start, last)}">
+                        <a th:href="|/kr/parts-service/service/manual?page=${page}&keyword=${searchDto.keyword}&model=${searchDto.model}&powerSystem=${searchDto.powerSystem}&boardType=${searchDto.boardType}&loadCapacity=${searchDto.loadCapacity}|"
+                           th:classappend="${page == productList.getNumber() +1} ? active"
+                           th:text="${page}">1</a>
+                      </li>
+<!--                      @{|/kr/parts-service/service/manual?page=${page}&keyword=${searchDto.keyword}&model=${searchDto.model}&powerSystem=${searchDto.powerSystem}&boardType=${searchDto.boardType}&loadCapacity=${searchDto.loadCapacity}|}-->
+                    </ul>
+
+                    <!--다음 페이지-->
+                    <button th:if="${productList.hasNext()}"
+                            th:onclick="|location.href='/kr/parts-service/service/manual?page=${productList.number+2}&keyword=${searchDto.keyword}&model=${searchDto.model}&powerSystem=${searchDto.powerSystem}&boardType=${searchDto.boardType}&loadCapacity=${searchDto.loadCapacity}'|"
+                            class="btn btn-next"></button>
+                    <!--맨 뒤 페이지-->
+                    <button th:if="${productList.hasNext()}"
+                            th:onclick="|location.href='/kr/parts-service/service/manual?page=${productList.getTotalPages()}&keyword=${searchDto.keyword}&model=${searchDto.model}&powerSystem=${searchDto.powerSystem}&boardType=${searchDto.boardType}&loadCapacity=${searchDto.loadCapacity}'|"
+                            class="btn btn-next-end"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-bottom-banner">
+      <div class="grid-box">
+        <a href="/kr/purchase/contact" class="col left">
+          <div class="text-boxs">
+            <h2 class="heading">상담신청</h2>
+            <p class="desc">지게차에 대한 자세한 안내를 받아보세요.</p>
+          </div>
+        </a>
+        <a href="/kr/purchase/location" class="col right">
+          <div class="text-boxs">
+            <h2 class="heading">국내 대리점 찾기</h2>
+            <p class="desc">가장 가까운 대리점를 확인해 보세요. </p>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="inner">
+      </div> -->
+    </section>
+  </div>
+  <footer id="footer" class="footer">
+          <div th:replace="layout/fragments.html :: footer"></div>
+    </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    ScrollReveal().reveal(".sec:not(.sec-bottom-banner) .text-boxs .heading", {...fadeUp});
+    ScrollReveal().reveal(".sec:not(.sec-bottom-banner) .text-boxs .text", {...fadeUp, delay: 200});
+    ScrollReveal().reveal(".filter-search", {...fadeUp});
+    ScrollReveal().reveal(".filter-table", {...fadeUp});
+  })
+  // 혹시 몰라서 만듬
+  // const ITEMS_PER_PAGE = 10;
+  // function initFilterTable() {
+  //   const filterButtons = document.querySelectorAll('.search-items button');
+  //   const tableBody = document.querySelector('.table-wrap table tbody');
+  //   const resetButton = document.querySelector('.return');
+  //   const pagination = document.querySelector('.pagination');
+  //
+  //   // 전체 데이터 (실제로는 서버에서 받아올 데이터)
+  //   const allItems = [
+  //     { type: '디젤', riding: '좌승식', capacity: '소형', name: '2t - 3.3t, 프리미엄 디젤 지게차', document: '취급설명서' },
+  //   ];
+  //
+  //   let filteredItems = [...allItems];
+  //   let currentPage = 1;
+  //   let activeFilters = {
+  //     type: null,
+  //     riding: null,
+  //     capacity: null
+  //   };
+  //
+  //   function updateTable() {
+  //     // 필터링된 아이템 계산
+  //     filteredItems = allItems.filter(item => {
+  //       if (activeFilters.type && item.type !== activeFilters.type) return false;
+  //       if (activeFilters.riding && item.riding !== activeFilters.riding) return false;
+  //       if (activeFilters.capacity && item.capacity !== activeFilters.capacity) return false;
+  //       return true;
+  //     });
+  //
+  //     // 페이지네이션 계산
+  //     const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+  //     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  //     const pageItems = filteredItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  //
+  //     // 테이블 업데이트
+  //     tableBody.innerHTML = pageItems.map(item => `
+  //       <tr>
+  //         <td>${item.name}</td>
+  //         <td>${item.document}</td>
+  //         <td><a href="#" download><span class="ico-download-type2"></span></a></td>
+  //       </tr>
+  //     `).join('');
+  //
+  //     // Total 카운트 업데이트
+  //     document.querySelector('.total dd').innerHTML =
+  //       `${filteredItems.length} (<span class="accent-color">${currentPage}</span> / ${totalPages} Page)`;
+  //
+  //     // 페이지네이션 업데이트
+  //     updatePagination(totalPages);
+  //   }
+  //
+  //   function updatePagination(totalPages) {
+  //     const indiList = document.querySelector('.indi');
+  //     const prevBtn = document.querySelector('.btn-prev');
+  //     const nextBtn = document.querySelector('.btn-next');
+  //     const prevEndBtn = document.querySelector('.btn-prev-end');
+  //     const nextEndBtn = document.querySelector('.btn-next-end');
+  //
+  //     // 페이지 버튼 생성
+  //     indiList.innerHTML = Array.from({length: totalPages}, (_, i) => i + 1)
+  //       .map(page => `
+  //         <li><a href="javascript:" class="${page === currentPage ? 'active' : ''}">${page}</a></li>
+  //       `).join('');
+  //
+  //     // 이전/다음 버튼 상태 업데이트
+  //     prevBtn.classList.toggle('invisible', currentPage === 1);
+  //     prevEndBtn.classList.toggle('invisible', currentPage === 1);
+  //     nextBtn.classList.toggle('invisible', currentPage === totalPages);
+  //     nextEndBtn.classList.toggle('invisible', currentPage === totalPages);
+  //   }
+  //
+  //   // 필터 버튼 클릭 이벤트
+  //   filterButtons.forEach(button => {
+  //     button.addEventListener('click', () => {
+  //       const category = button.closest('.search-boxs').querySelector('.title').textContent;
+  //       const value = button.textContent;
+  //
+  //       // 같은 카테고리의 다른 버튼들 비활성화
+  //       button.closest('.search-items').querySelectorAll('button').forEach(btn => {
+  //         btn.classList.remove('active');
+  //       });
+  //
+  //       // 현재 버튼 활성화/비활성화 토글
+  //       button.classList.toggle('active');
+  //
+  //       // 필터 상태 업데이트
+  //       if (button.classList.contains('active')) {
+  //         if (category === '동력방식') activeFilters.type = value;
+  //         else if (category === '탑승형식') activeFilters.riding = value;
+  //         else if (category === '적재능력') activeFilters.capacity = value;
+  //       } else {
+  //         if (category === '동력방식') activeFilters.type = null;
+  //         else if (category === '탑승형식') activeFilters.riding = null;
+  //         else if (category === '적재능력') activeFilters.capacity = null;
+  //       }
+  //
+  //       currentPage = 1; // 페이지 초기화
+  //       updateTable();
+  //     });
+  //   });
+  //
+  //   // 초기화 버튼 클릭 이벤트
+  //   resetButton.addEventListener('click', () => {
+  //     filterButtons.forEach(button => button.classList.remove('active'));
+  //     activeFilters = { type: null, riding: null, capacity: null };
+  //     currentPage = 1;
+  //     updateTable();
+  //   });
+  //
+  //   // 페이지네이션 클릭 이벤트
+  //   pagination.addEventListener('click', (e) => {
+  //     const pageLink = e.target.closest('.indi a');
+  //     if (pageLink) {
+  //       currentPage = parseInt(pageLink.textContent);
+  //       updateTable();
+  //     }
+  //
+  //     // 이전/다음 버튼 클릭
+  //     if (e.target.classList.contains('btn-prev')) currentPage--;
+  //     if (e.target.classList.contains('btn-next')) currentPage++;
+  //     if (e.target.classList.contains('btn-prev-end')) currentPage = 1;
+  //     if (e.target.classList.contains('btn-next-end')) currentPage = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+  //
+  //     if (e.target.classList.contains('btn')) {
+  //       updateTable();
+  //     }
+  //   });
+  //
+  //   // 초기 테이블 렌더링
+  //   updateTable();
+  // }
+  // initFilterTable();
+</script>
+
+  <script th:inline="javascript">
+
+    //active 된 class 제거
+    function removeIncludedActive(targetElement) {
+      if (targetElement.classList.contains('active')) {
+        targetElement.classList.remove('active');
+      }
+    }
+
+    //type 제외하고 active 된 class 제거
+    function deleteActive(targetElement, type) {
+      Array.from(targetElement).forEach((e) => {
+        if (e.id !== type) {
+          e.classList.remove('active');
+        }
+      });
+    }
+
+    //활성화된 엘리먼트 비활성화
+    function addNotIncludedDisabled(targetElement) {
+      if (!targetElement.classList.contains('disabled')) {
+        targetElement.classList.add('disable');
+      }
+    }
+
+    //초기화
+    function init(targetElement){
+      Array.from(targetElement).forEach((e) => {
+        e.classList.add('disable')
+        e.classList.remove('active')
+      });
+    }
+
+    //active 가져오기
+    function findByActive(targetElement){
+      Array.from(targetElement).forEach((e) => {
+        return e;
+      });
+    }
+
+    function formSubmit() {
+      Array.from(document.querySelectorAll('.search-list .active')).forEach((e, index) => {
+        console.log(index, e);
+        if (index === 0) {
+          document.querySelector("#model").value = e.id.toUpperCase();
+        }
+        if (index === 1) {
+          document.querySelector("#powerSystem").value = e.id.toUpperCase();
+        }
+        if (index === 2) {
+          document.querySelector("#boardType").value = e.id.toUpperCase();
+        }
+        if (index === 3) {
+          document.querySelector("#loadCapacity").value = e.id.toUpperCase();
+        }
+      });
+
+      document.querySelector('#searchForm').submit();
+    }
+
+    let forkliftElement = document.querySelector("#forklift");
+    let small_logisticsElement = document.querySelector("#small_logistics");
+
+    let dieselElement = document.querySelector("#diesel");
+    let lpgElement = document.querySelector("#lpg");
+    let electricElement = document.querySelector("#electric");
+
+    let left_handElement = document.querySelector("#left_hand");
+    let standElement = document.querySelector("#stand");
+
+    let smallElement = document.querySelector("#small");
+    let mediumElement = document.querySelector("#medium");
+    let largeElement = document.querySelector("#large");
+    let super_largeElement = document.querySelector("#super_large");
+
+
+    document.querySelector('.search-list').addEventListener('click', function (e) {
+
+      const targetElement = e.target;
+
+      //차종
+      if (targetElement.matches('#forklift')) {
+        forkliftElement.classList.add('active');
+        small_logisticsElement.classList.remove('active');
+
+        //동력방식
+        dieselElement.classList.remove('disable');
+        lpgElement.classList.remove('disable');
+        electricElement.classList.remove('disable');
+
+        //2-1 디젤
+        dieselElement.addEventListener('click',function(){
+          dieselElement.classList.add('active');
+          lpgElement.classList.remove('active');
+          electricElement.classList.remove('active');
+
+          //탑승형식
+          left_handElement.classList.remove('disable');
+          if (!standElement.classList.contains('disabled')) {
+            standElement.classList.add('disable');
+          }
+
+          removeIncludedActive(left_handElement);
+          removeIncludedActive(standElement);
+          init(document.querySelectorAll('.search-boxs')[3].querySelectorAll('button'));
+        });
+
+        //2-2 LPG
+        lpgElement.addEventListener('click',function(){
+          lpgElement.classList.add('active');
+          dieselElement.classList.remove('active');
+          electricElement.classList.remove('active');
+
+          //탑승형식
+          left_handElement.classList.remove('disable');
+          addNotIncludedDisabled(standElement);
+          removeIncludedActive(left_handElement);
+          removeIncludedActive(standElement);
+          init(document.querySelectorAll('.search-boxs')[3].querySelectorAll('button'));
+        });
+
+        //2-3 전동
+        electricElement.addEventListener('click',function(){
+          electricElement.classList.add('active');
+          dieselElement.classList.remove('active');
+          lpgElement.classList.remove('active');
+
+          //탑승형식
+          left_handElement.classList.remove('disable');
+          standElement.classList.remove('disable');
+
+          //탑승형식 초기화
+          // init(document.querySelectorAll('.search-boxs')[2].querySelectorAll('button'));
+
+          removeIncludedActive(left_handElement);//좌승식 클릭되어있으면 초기화
+          removeIncludedActive(standElement);
+          init(document.querySelectorAll('.search-boxs')[3].querySelectorAll('button'));//적재능력 초기화
+        });
+
+        //3-1 좌승식
+        let selectedLoadCapacity = document.querySelectorAll('.search-boxs')[3].getElementsByClassName('active');
+
+        document.querySelector('#left_hand').addEventListener('click',function(){
+
+          let firstSelectedPowerSystem = document.querySelectorAll('.search-boxs')[1].getElementsByClassName('active')[0];
+          if (firstSelectedPowerSystem.id === 'diesel') {
+            smallElement.classList.remove('disable');
+            mediumElement.classList.remove('disable');
+            largeElement.classList.remove('disable');
+          }
+          if (firstSelectedPowerSystem.id === 'lpg') {
+            smallElement.classList.remove('disable');
+            mediumElement.classList.remove('disable');
+          }
+          if (firstSelectedPowerSystem.id === 'electric') {
+            smallElement.classList.remove('disable');
+            mediumElement.classList.remove('disable');
+          }
+
+          left_handElement.classList.add('active');
+          removeIncludedActive(standElement);
+          deleteActive(selectedLoadCapacity, '');
+        });
+
+        //3-2 입승식
+        document.querySelector('#stand').addEventListener('click',function(){
+          let powerSelectedElement = document.querySelectorAll('.search-boxs')[1].getElementsByClassName('active')[0];
+
+          if (powerSelectedElement.id === 'electric') {
+            smallElement.classList.remove('disable');
+          }
+
+          standElement.classList.add('active');
+          removeIncludedActive(left_handElement);
+          addNotIncludedDisabled(mediumElement);
+          deleteActive(selectedLoadCapacity, '');
+        });
+
+        //4-1 소형
+        document.querySelector('#small').addEventListener('click',function(){
+          smallElement.classList.add('active');
+          deleteActive(selectedLoadCapacity, 'small');
+          formSubmit();
+        });
+
+        //4-2 중형
+        document.querySelector('#medium').addEventListener('click',function(){
+          mediumElement.classList.add('active');
+          deleteActive(selectedLoadCapacity, 'medium');
+          formSubmit();
+        });
+
+        //4-3 대형
+        document.querySelector('#large').addEventListener('click',function(){
+          largeElement.classList.add('active');
+          deleteActive(selectedLoadCapacity, 'large');
+          formSubmit();
+        });
+
+        //4-4 초대형
+        document.querySelector('#super_large').addEventListener('click',function(){
+          super_largeElement.classList.add('active');
+          deleteActive(selectedLoadCapacity, 'super_large');
+          formSubmit();
+        });
+
+        let selected01 = findByActive(document.querySelectorAll('.search-boxs')[0].getElementsByClassName('active'));
+        console.log('selected01',selected01);
+
+      }//end #forklift
+
+
+      //소형물류장비
+      if (targetElement.matches('#small_logistics')) {
+        small_logisticsElement.classList.add('active');
+        forkliftElement.classList.remove('active');
+
+        init(document.querySelectorAll('.search-boxs')[1].querySelectorAll('button'));
+        init(document.querySelectorAll('.search-boxs')[2].querySelectorAll('button'));
+        init(document.querySelectorAll('.search-boxs')[3].querySelectorAll('button'));
+
+        formSubmit();
+      }
+    });
+
+    let model = [[${searchDto.model}]];
+    let powerSystem = [[${searchDto.powerSystem}]];
+    let boardType = [[${searchDto.boardType}]];
+    let loadCapacity = [[${searchDto.loadCapacity}]];
+    let keyword = [[${searchDto.keyword}]];
+    let selectedLoadCapacity = document.querySelectorAll('.search-boxs')[3].getElementsByClassName('active');
+
+    // <input type="hidden" id="model" name="model" value=""/>
+    // <input type="hidden" id="powerSystem" name="powerSystem" value=""/>
+    // <input type="hidden" id="boardType" name="boardType" value=""/>
+    // <input type="hidden" id="loadCapacity" name="loadCapacity" value=""/>
+
+    if (keyword !== '') {
+      document.querySelector("#keyword").value = keyword;
+    }
+
+    switch (model) {
+      case 'FORKLIFT':
+        document.querySelector("#forklift").click();
+        document.querySelector("#model").value = 'FORKLIFT';
+        break;
+      case 'SMALL_LOGISTICS':
+        small_logisticsElement.classList.add('active');
+        forkliftElement.classList.remove('active');
+        document.querySelector("#model").value = 'SMALL_LOGISTICS';
+        break;
+    }
+
+    switch (powerSystem) {
+      case 'DIESEL':
+        document.querySelector("#diesel").click();
+        document.querySelector("#powerSystem").value = 'DIESEL';
+        break;
+      case 'LPG':
+        document.querySelector("#lpg").click();
+        document.querySelector("#powerSystem").value = 'LPG';
+        break;
+      case 'ELECTRIC':
+        document.querySelector("#electric").click();
+        document.querySelector("#powerSystem").value = 'ELECTRIC';
+        break;
+    }
+
+    switch (boardType) {
+      case 'LEFT_HAND':
+        document.querySelector("#left_hand").click();
+        document.querySelector("#boardType").value = 'LEFT_HAND';
+        break;
+      case 'STAND':
+        document.querySelector("#stand").click();
+        document.querySelector("#boardType").value = 'STAND';
+        break;
+    }
+
+    switch (loadCapacity) {
+      case 'SMALL':
+        smallElement.classList.add('active');
+        deleteActive(selectedLoadCapacity, 'small');
+        document.querySelector("#loadCapacity").value = 'SMALL';
+        break;
+      case 'MEDIUM':
+        mediumElement.classList.add('active');
+        deleteActive(selectedLoadCapacity, 'medium');
+        document.querySelector("#loadCapacity").value = 'MEDIUM';
+        break;
+      case 'LARGE':
+        largeElement.classList.add('active');
+        deleteActive(selectedLoadCapacity, 'large');
+        document.querySelector("#loadCapacity").value = 'LARGE';
+        break;
+    }
+
+    document.querySelector("#initialize").addEventListener('click', function (e) {
+      location.href = '/kr/parts-service/service/manual';
+    });
+
+  </script>
+
+
+</body>
+</html>

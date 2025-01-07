@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두산밥캣코리아</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/common/css/base.css">
+  <link rel="stylesheet" href="/common/css/common.css">
+  <link rel="stylesheet" href="/common/css/sub.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="/common/js/lenis.min.js"></script>
+  <script src="/common/js/scrollreveal.min.js"></script>
+  <script src="/common/js/ScrollToPlugin.min.js"></script>
+  <script src="/common/js/ScrollTrigger.min.js"></script>
+  <script src="/common/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+  <script src="/common/js/gsap.min.js"></script>
+  <script src="/common/js/product.js"></script>
+  <script src="/common/js/sub.js"></script>
+  <script src="/common/js/common.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-XDM39WP9N3></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XDM39WP9N3');
+</script>
+
+<body>
+  <header id="header" class="header">
+    <div th:replace="layout/fragments.html :: header"></div>
+  </header>
+  <div class="wrap sub nv">
+    <section class="sec sec-selector">
+      <div class="content-top">
+        <div class="inner large">
+          <div class="flex-box">
+            <div class="col sub-link-boxs basic">
+              <ul>
+                <li><a href="javascript:"><span class="hide">HOME</span><i class="ico ico-home"></i></a></li>
+                <li>제품</li>
+                <li>소형 창고 물류장비</li>
+                <li class="drop">
+                  팔레트 트럭, 프리미엄
+                  <i class="ico-arrow-drop"></i>
+                  <ul>
+                    <li><a href="/kr/product/equipments/equipmentspalette-pr">팔레트 트럭, 프리미엄</a></li>
+                    <li><a href="/kr/product/equipments/equipmentspalette">팔레트 트럭</a></li>
+                    <li><a href="/kr/product/equipments/equipmentsstacker-pr">스태커, 프리미엄</a></li>
+                    <li><a href="/kr/product/equipments/equipmentsstacker">스태커</a></li>
+                    <li><a href="/kr/product/equipments/equipmentstruck">견인차</a></li>
+                    <li><a href="/kr/product/equipments/equipments-transporting">운반차</a></li>
+                    <li><a href="/kr/product/equipments/equipments-workbench">고소작업대</a></li>
+                    <li><a href="/kr/product/equipments">전체보기</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="col btns">
+              <a href="javascript:" class="link-btn" download>
+                <span class="text">
+                  <span>카탈로그 다운로드</span>
+                </span>
+                <span class="ico ico-download"></span>
+              </a>
+              <a href="javascript:" class="link-btn" download>
+                <span class="text">
+                  <span>메뉴얼 다운로드</span>
+                </span>
+                <span class="ico ico-download"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-product-view">
+      <div class="product-view">
+        <div class="content-top">
+          <div class="col slide-wrap">
+            <div class="product-sw">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="/common/images/sub/product/equipments/product-slide.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="/common/images/sub/product/equipments/product-slide2.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="/common/images/sub/product/equipments/product-slide3.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="/common/images/sub/product/equipments/product-slide4.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="/common/images/sub/product/equipments/product-slide5.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <img src="/common/images/sub/product/equipments/product-slide6.png" alt="">
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="slide-btns">
+              <div class="slide-btn button-prev"><span class="hide">이전으로</span></div>
+              <div class="product-sw2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="/common/images/sub/product/equipments/product-slide.png" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="/common/images/sub/product/equipments/product-slide2.png" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="/common/images/sub/product/equipments/product-slide3.png" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="/common/images/sub/product/equipments/product-slide4.png" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="/common/images/sub/product/equipments/product-slide5.png" alt="">
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure>
+                      <img src="/common/images/sub/product/equipments/product-slide6.png" alt="">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div class="slide-btn button-next"><span class="hide">다음으로</span></div>
+            </div>
+          </div>
+          <div class="col text-wrap">
+            <div class="group">
+              <div class="text-boxs">
+                <h2 class="heading">팔레트 트럭, 프리미엄</h2>
+                <p class="text">BPL18S-7, BPL20S-7, BPM20S-7, BPR20S-7, BER30S-9, BER40S-9</p>
+                <p class="desc">
+                  핸드 팔레트 트럭부터 탑승식 파렛트 트럭에 이르기까지 다양한 환경에 적합한 모델을 제공합니다. <br class="pc">
+                  견고한 구조와 신뢰성 있는 부품은 생산성을 증가시켜주며, 부드러운 핸들링으로 사용자의 작업효율을 향상시켜줍니다
+                </p>
+              </div>
+              <ul class="list">
+                <li>
+                  <div class="title">
+                    <span class="icon ton"></span>
+                    적재 능력 (ton)
+                  </div>
+                  <div class="value">
+                    1.8 - 4.0
+                  </div>
+                </li>
+                <li>
+                  <div class="title">
+                    <span class="icon ps"></span>
+                    배터리전압 (V)
+                  </div>
+                  <div class="value">
+                    24
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content-body">
+          <div class="inner">
+            <h2 class="heading">제원</h2>
+            <div class="product-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec-bottom-banner">
+      <div class="grid-box">
+        <a href="javascript:" class="col left">
+          <div class="text-boxs">
+            <h2 class="heading">상담신청</h2>
+            <p class="desc">지게차에 대한 자세한 안내를 받아보세요.</p>
+          </div>
+        </a>
+        <a href="javascript:" class="col right">
+          <div class="text-boxs">
+            <h2 class="heading">국내 대리점 찾기</h2>
+            <p class="desc">가장 가까운 대리점를 확인해 보세요. </p>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="inner">
+      </div> -->
+    </section>
+  </div>
+  <footer id="footer" class="footer">
+          <div th:replace="layout/fragments.html :: footer"></div>
+        </footer>
+<script>
+</script>
+
+</html>
